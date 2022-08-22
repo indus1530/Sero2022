@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="edu.aku.imranahmed.sero2022">
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> <!-- Needed only if your app targets Android 5.0 (API level 21) or higher. -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!-- Needed only if your app targets Android 5.0 (API level 21) or higher. -->
+    <uses-feature android:name="android.hardware.location.gps" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" /> <!-- TakePhoto Permissions -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <application
+        android:name="edu.aku.imranahmed.sero2022.core.MainApp"
+        android:allowBackup="false"
+        android:hardwareAccelerated="true"
+        android:icon="@drawable/app_icon"
+        android:immersive="true"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@drawable/app_icon"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.main"
+        android:usesCleartextTraffic="false"
+        tools:replace="android:allowBackup">
+        <activity
+            android:name="edu.aku.imranahmed.sero2022.ui.ChildEndingActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden"  />
+        <activity
+            android:name="edu.aku.imranahmed.sero2022.ui.LoginActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="adjustResize|stateHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="edu.aku.imranahmed.sero2022.ui.ChangePasswordActivity"
+            android:exported="true" />
+        <activity
+            android:name="edu.aku.imranahmed.sero2022.ui.EndingActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeEnglish1"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name="edu.aku.imranahmed.sero2022.ui.SyncActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name="edu.aku.imranahmed.sero2022.database.AndroidManager"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light" />
+        <activity
+            android:name="edu.aku.imranahmed.sero2022.ui.lists.FormsReportPending"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="edu.aku.imranahmed.sero2022.ui.lists.FormsReportCluster"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="edu.aku.imranahmed.sero2022.ui.lists.FormsReportDate"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+
+        <activity
+            android:name="edu.aku.imranahmed.sero2022.ui.TakePhoto"
+            android:exported="false"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="edu.aku.imranahmed.sero2022.MainActivity"
+            android:exported="false"
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name="edu.aku.imranahmed.sero2022.ui.lists.HouseholdScreenActivity"
+            android:exported="false"
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name="edu.aku.imranahmed.sero2022.ui.IdentificationActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeEnglish1"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="edu.aku.imranahmed.sero2022.ui.sections.ConsentActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeEnglish1"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+
+        <activity
+            android:name="edu.aku.imranahmed.sero2022.ui.sections.SectionCBActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeEnglish1"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="edu.aku.imranahmed.sero2022.ui.sections.SectionCHActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeEnglish1"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name="edu.aku.imranahmed.sero2022.ui.sections.SectionIM1Activity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeEnglish1"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="edu.aku.imranahmed.sero2022.ui.sections.SectionIM2Activity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeEnglish1"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="edu.aku.imranahmed.sero2022.ui.sections.SectionRIActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeEnglish1"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="edu.aku.imranahmed.sero2022.ui.sections.SectionSS_1Activity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeEnglish1"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="edu.aku.imranahmed.sero2022.ui.sections.SectionSS_2Activity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeEnglish1"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name="edu.aku.imranahmed.sero2022.ui.WebViewActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeEnglish1"
+            android:windowSoftInputMode="adjustResize" />
+        <!--
+        <meta-data
+                    android:name="YEK_REVRES"
+                    android:value="GSTa@ndInC%apACIT12B?E(H+MbQeThWmZq4t7w!zsCsF)J@NcRfUjXn2r5u8x/A" />
+        -->
+        <meta-data
+            android:name="YEK_REVRES"
+            android:value="ThWmZq4t7w!zVaLu@b1ePeRcE!V3r5u8x/A?D*G-KaPdSgVkYp3s6v9y$BNE)H@M" />
+        <meta-data
+            android:name="YEK_TRATS"
+            android:value="12" />
+    </application>
+
+</manifest>
