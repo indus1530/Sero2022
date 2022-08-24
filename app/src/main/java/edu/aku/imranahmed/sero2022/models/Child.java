@@ -254,17 +254,17 @@ public class Child extends BaseObservable implements Observable {
     private String f04 = _EMPTY_;
     private String f05 = _EMPTY_;
     private String f06 = _EMPTY_;
-    private String f07 = _EMPTY_;
-    private String f0701 = _EMPTY_;
-    private String f0702 = _EMPTY_;
-    private String f0703 = _EMPTY_;
-    private String f0704 = _EMPTY_;
-    private String f0705 = _EMPTY_;
-    private String f0706 = _EMPTY_;
-    private String f0707 = _EMPTY_;
-    private String f0708 = _EMPTY_;
-    private String f0709 = _EMPTY_;
+    private String f07a = _EMPTY_;
+    private String f07b = _EMPTY_;
+    private String f07c = _EMPTY_;
+    private String f07d = _EMPTY_;
+    private String f07e = _EMPTY_;
+    private String f07f = _EMPTY_;
+    private String f07g = _EMPTY_;
+    private String f07h = _EMPTY_;
+    private String f07i = _EMPTY_;
     private String f0796 = _EMPTY_;
+    private String f0796x = _EMPTY_;
 
     //G
     public String g01 = _EMPTY_;
@@ -3080,108 +3080,119 @@ public class Child extends BaseObservable implements Observable {
 
     public void setF06(String f06) {
         this.f06 = f06;
+        setF07a(f06.equals("1") ? this.f07a : "");
+        setF07b(f06.equals("1") ? this.f07b : "");
+        setF07c(f06.equals("1") ? this.f07c : "");
+        setF07d(f06.equals("1") ? this.f07d : "");
+        setF07e(f06.equals("1") ? this.f07e : "");
+        setF07f(f06.equals("1") ? this.f07f : "");
+        setF07g(f06.equals("1") ? this.f07g : "");
+        setF07h(f06.equals("1") ? this.f07h : "");
+        setF07i(f06.equals("1") ? this.f07i : "");
+        setF0796(f06.equals("1") ? this.f0796 : "");
         notifyPropertyChanged(BR.f06);
     }
 
-    @Bindable
-    public String getF07() {
-        return f07;
-    }
-
-    public void setF07(String f07) {
-        this.f07 = f07;
-        notifyPropertyChanged(BR.f07);
-    }
 
     @Bindable
-    public String getF0701() {
-        return f0701;
+    public String getF07a() {
+        return f07a;
     }
 
-    public void setF0701(String f0701) {
-        this.f0701 = f0701;
-        notifyPropertyChanged(BR.f0701);
+    public void setF07a(String f07a) {
+        if (this.f07a.equals(f07a)) return;
+        this.f07a = f07a;
+        notifyPropertyChanged(BR.f07a);
     }
 
     @Bindable
-    public String getF0702() {
-        return f0702;
+    public String getF07b() {
+        return f07b;
     }
 
-    public void setF0702(String f0702) {
-        this.f0702 = f0702;
-        notifyPropertyChanged(BR.f0702);
-    }
-
-    @Bindable
-    public String getF0703() {
-        return f0703;
-    }
-
-    public void setF0703(String f0703) {
-        this.f0703 = f0703;
-        notifyPropertyChanged(BR.f0703);
+    public void setF07b(String f07b) {
+        if (this.f07b.equals(f07b)) return;
+        this.f07b = f07b;
+        notifyPropertyChanged(BR.f07b);
     }
 
     @Bindable
-    public String getF0704() {
-        return f0704;
+    public String getF07c() {
+        return f07c;
     }
 
-    public void setF0704(String f0704) {
-        this.f0704 = f0704;
-        notifyPropertyChanged(BR.f0704);
-    }
-
-    @Bindable
-    public String getF0705() {
-        return f0705;
-    }
-
-    public void setF0705(String f0705) {
-        this.f0705 = f0705;
-        notifyPropertyChanged(BR.f0705);
+    public void setF07c(String f07c) {
+        if (this.f07c.equals(f07c)) return;
+        this.f07c = f07c;
+        notifyPropertyChanged(BR.f07c);
     }
 
     @Bindable
-    public String getF0706() {
-        return f0706;
+    public String getF07d() {
+        return f07d;
     }
 
-    public void setF0706(String f0706) {
-        this.f0706 = f0706;
-        notifyPropertyChanged(BR.f0706);
-    }
-
-    @Bindable
-    public String getF0707() {
-        return f0707;
-    }
-
-    public void setF0707(String f0707) {
-        this.f0707 = f0707;
-        notifyPropertyChanged(BR.f0707);
+    public void setF07d(String f07d) {
+        if (this.f07d.equals(f07d)) return;
+        this.f07d = f07d;
+        notifyPropertyChanged(BR.f07d);
     }
 
     @Bindable
-    public String getF0708() {
-        return f0708;
+    public String getF07e() {
+        return f07e;
     }
 
-    public void setF0708(String f0708) {
-        this.f0708 = f0708;
-        notifyPropertyChanged(BR.f0708);
+    public void setF07e(String f07e) {
+        if (this.f07e.equals(f07e)) return;
+        this.f07e = f07e;
+        notifyPropertyChanged(BR.f07e);
     }
 
     @Bindable
-    public String getF0709() {
-        return f0709;
+    public String getF07f() {
+        return f07f;
     }
 
-    public void setF0709(String f0709) {
-        this.f0709 = f0709;
-        notifyPropertyChanged(BR.f0709);
+    public void setF07f(String f07f) {
+        if (this.f07f.equals(f07f)) return;
+        this.f07f = f07f;
+        notifyPropertyChanged(BR.f07f);
     }
+
+    @Bindable
+    public String getF07g() {
+        return f07g;
+    }
+
+    public void setF07g(String f07g) {
+        if (this.f07g.equals(f07g)) return;
+        this.f07g = f07g;
+        notifyPropertyChanged(BR.f07g);
+    }
+
+    @Bindable
+    public String getF07h() {
+        return f07h;
+    }
+
+    public void setF07h(String f07h) {
+        if (this.f07h.equals(f07h)) return;
+        this.f07h = f07h;
+        notifyPropertyChanged(BR.f07h);
+    }
+
+    @Bindable
+    public String getF07i() {
+        return f07i;
+    }
+
+    public void setF07i(String f07i) {
+        if (this.f07i.equals(f07i)) return;
+        this.f07i = f07i;
+        notifyPropertyChanged(BR.f07i);
+    }
+
 
     @Bindable
     public String getF0796() {
@@ -3189,9 +3200,23 @@ public class Child extends BaseObservable implements Observable {
     }
 
     public void setF0796(String f0796) {
+        if (this.f0796.equals(f0796)) return;
         this.f0796 = f0796;
+        setF0796x(f0796.equals("96") ? this.f0796x : "");
         notifyPropertyChanged(BR.f0796);
     }
+
+
+    @Bindable
+    public String getF0796x() {
+        return f0796x;
+    }
+
+    public void setF0796x(String f0796x) {
+        this.f0796x = f0796x;
+        notifyPropertyChanged(BR.f0796x);
+    }
+
 
     @Bindable
     public String getG01() {
@@ -3200,6 +3225,9 @@ public class Child extends BaseObservable implements Observable {
 
     public void setG01(String g01) {
         this.g01 = g01;
+        setG02(g01.equals("2") ? this.g02 : "");
+        setG03(g01.equals("1") ? this.g03 : "");
+        setG04(g01.equals("1") ? this.g04 : "");
         notifyPropertyChanged(BR.g01);
     }
 
@@ -3210,6 +3238,7 @@ public class Child extends BaseObservable implements Observable {
 
     public void setG02(String g02) {
         this.g02 = g02;
+        setG0296x(g02.equals("96") ? this.g0296x : "");
         notifyPropertyChanged(BR.g02);
     }
 
@@ -3506,17 +3535,17 @@ public class Child extends BaseObservable implements Observable {
             this.f04 = json.getString("f04");
             this.f05 = json.getString("f05");
             this.f06 = json.getString("f06");
-            this.f07 = json.getString("f07");
-            this.f0701 = json.getString("f0701");
-            this.f0702 = json.getString("f0702");
-            this.f0703 = json.getString("f0703");
-            this.f0704 = json.getString("f0704");
-            this.f0705 = json.getString("f0705");
-            this.f0706 = json.getString("f0706");
-            this.f0707 = json.getString("f0707");
-            this.f0708 = json.getString("f0708");
-            this.f0709 = json.getString("f0709");
+            this.f07a = json.getString("f07a");
+            this.f07b = json.getString("f07b");
+            this.f07c = json.getString("f07c");
+            this.f07d = json.getString("f07d");
+            this.f07e = json.getString("f07e");
+            this.f07f = json.getString("f07f");
+            this.f07g = json.getString("f07g");
+            this.f07h = json.getString("f07h");
+            this.f07i = json.getString("f07i");
             this.f0796 = json.getString("f0796");
+            this.f0796x = json.getString("f0796x");
         }
     }
 
@@ -3788,17 +3817,17 @@ public class Child extends BaseObservable implements Observable {
                 .put("f04", f04)
                 .put("f05", f05)
                 .put("f06", f06)
-                .put("f07", f07)
-                .put("f0701", f0701)
-                .put("f0702", f0702)
-                .put("f0703", f0703)
-                .put("f0704", f0704)
-                .put("f0705", f0705)
-                .put("f0706", f0706)
-                .put("f0707", f0707)
-                .put("f0708", f0708)
-                .put("f0709", f0709)
-                .put("f0796", f0796);
+                .put("f07a", f07a)
+                .put("f07b", f07b)
+                .put("f07c", f07c)
+                .put("f07d", f07d)
+                .put("f07e", f07e)
+                .put("f07f", f07f)
+                .put("f07g", f07g)
+                .put("f07h", f07h)
+                .put("f07i", f07i)
+                .put("f0796", f0796)
+                .put("f0796x", f0796x);
         return json.toString();
     }
 
