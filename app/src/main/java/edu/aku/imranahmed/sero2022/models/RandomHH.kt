@@ -22,6 +22,8 @@ class RandomHH {
     var contact: String? = _EMPTY_
     var selStructure: String? = _EMPTY_
     var tabno: String? = _EMPTY_
+    var childName: String? = _EMPTY_
+    var childSno: String? = _EMPTY_
 
     var rndType: String? = _EMPTY_
     var assignHH: String? = _EMPTY_
@@ -49,6 +51,8 @@ class RandomHH {
         this.contact = jsonObject.getString(RandomHHTable.COLUMN_CONTACT)
         this.selStructure = jsonObject.getString(RandomHHTable.COLUMN_HH_SELECTED_STRUCT)
         this.sno = jsonObject.getString(RandomHHTable.COLUMN_SNO)
+        this.childName = jsonObject.getString(RandomHHTable.COLUMN_CHILD_NAME)
+        this.childSno = jsonObject.getString(RandomHHTable.COLUMN_CHILD_SNO)
 
         return this
     }
@@ -68,6 +72,8 @@ class RandomHH {
         selStructure =
             cursor.getString(cursor.getColumnIndexOrThrow(RandomHHTable.COLUMN_HH_SELECTED_STRUCT))
         sno = cursor.getString(cursor.getColumnIndexOrThrow(RandomHHTable.COLUMN_SNO))
+        childName = cursor.getString(cursor.getColumnIndexOrThrow(RandomHHTable.COLUMN_CHILD_NAME))
+        childSno = cursor.getString(cursor.getColumnIndexOrThrow(RandomHHTable.COLUMN_CHILD_SNO))
         return this
     }
 

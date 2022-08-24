@@ -162,6 +162,7 @@ public class IdentificationActivity extends AppCompatActivity {
 
         bi.fldGrpIdentifier.setVisibility(View.GONE);
         bi.headhh.setVisibility(View.GONE);
+        bi.llchildName.setVisibility(View.GONE);
 
         bi.btnContinue.setBackgroundTintList(ContextCompat.getColorStateList(IdentificationActivity.this, R.color.gray));
         bi.btnContinue.setEnabled(false);
@@ -196,7 +197,9 @@ public class IdentificationActivity extends AppCompatActivity {
         selectedHousehold = db.getRandomByhhid(bi.hh12.getText().toString());
         if (selectedHousehold != null) {
             bi.hh16a.setText(selectedHousehold.getHhhead());    // Name of Head
+            bi.childName.setText(selectedHousehold.getChildName());
             bi.headhh.setVisibility(View.VISIBLE);
+            bi.llchildName.setVisibility(View.VISIBLE);
             bi.btnContinue.setBackgroundTintList(ContextCompat.getColorStateList(this, R.color.colorAccent));
             bi.btnContinue.setEnabled(true);
         } else {

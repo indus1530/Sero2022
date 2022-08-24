@@ -125,7 +125,10 @@ object CreateTable {
             + RandomHHTable.COLUMN_CONTACT + " TEXT,"
             + RandomHHTable.COLUMN_HH_SELECTED_STRUCT + " TEXT,"
             + RandomHHTable.COLUMN_RANDOMDT + " TEXT,"
-            + RandomHHTable.COLUMN_SNO + " TEXT );"
+            + RandomHHTable.COLUMN_SNO + " TEXT,"
+            + RandomHHTable.COLUMN_CHILD_NAME + " TEXT,"
+            + RandomHHTable.COLUMN_CHILD_SNO + " TEXT"
+            + " );"
             )
 
 /*    const val SQL_CREATE_VERSIONAPP = ("CREATE TABLE "

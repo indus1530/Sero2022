@@ -116,6 +116,8 @@ public class TableContracts {
         public static final String COLUMN_HH_SELECTED_STRUCT = "hhss";
         public static final String COLUMN_SNO = "sno";
         public static final String COLUMN_TAB_NO = "tabNo";
+        public static final String COLUMN_CHILD_NAME = "hh13cname";
+        public static final String COLUMN_CHILD_SNO = "hhchildsno";
         public static String COLUMN_DIST_CODE = "dist_id";
     }
 

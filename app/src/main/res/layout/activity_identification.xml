@@ -270,6 +270,7 @@
                                 android:gravity="center"
                                 android:hint="#-####-###"
                                 android:inputType="textCapCharacters"
+                                android:digits="ABCD0123456789"
                                 android:maxLength="10" />
 
                             <ImageButton
@@ -307,6 +308,40 @@
 
                             <CheckBox
                                 android:id="@+id/checkHh16a"
+                                android:layout_width="wrap_content"
+                                android:gravity="center_horizontal|center_vertical"
+                                android:layout_height="match_parent"
+                                android:text="@string/confirm" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/llchildName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal"
+                            android:visibility="gone"
+                            tools:visibility="visible">
+
+                            <TextView
+                                style="@style/sub_labels"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1.15"
+                                android:text="@string/ec14cname" />
+
+                            <TextView
+                                android:id="@+id/childName"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:gravity="center_vertical"
+                                android:background="@null"
+                                android:textColor="@color/colorPrimary"
+                                android:layout_weight="2" />
+
+                            <CheckBox
+                                android:id="@+id/childNameCheck"
                                 android:layout_width="wrap_content"
                                 android:gravity="center_horizontal|center_vertical"
                                 android:layout_height="match_parent"

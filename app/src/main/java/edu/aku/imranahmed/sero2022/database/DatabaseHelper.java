@@ -518,6 +518,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             values.put(RandomHHTable.COLUMN_CONTACT, randomHH.getContact());
             values.put(RandomHHTable.COLUMN_HH_SELECTED_STRUCT, randomHH.getSelStructure());
             values.put(RandomHHTable.COLUMN_SNO, randomHH.getSno());
+            values.put(RandomHHTable.COLUMN_CHILD_NAME, randomHH.getChildName());
+            values.put(RandomHHTable.COLUMN_CHILD_SNO, randomHH.getChildSno());
 
             long rowID = db.insertOrThrow(RandomHHTable.TABLE_NAME, null, values);
             if (rowID != -1) insertCount++;
