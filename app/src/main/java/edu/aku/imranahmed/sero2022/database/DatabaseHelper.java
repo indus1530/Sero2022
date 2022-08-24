@@ -160,6 +160,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(ChildTable.COLUMN_GPSACC, child.getGpsAcc());
 
         values.put(ChildTable.COLUMN_SCH, child.sCHtoString());
+        values.put(ChildTable.COLUMN_SF, child.sFtoString());
+        values.put(ChildTable.COLUMN_SG, child.sGtoString());
 
      /*   values.put(ChildsTable.COLUMN_SSS, child.sMtoString());
         values.put(ChildsTable.COLUMN_SCB, child.sNtoString());
@@ -435,7 +437,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return (int) count;
     }
 
-    public int syncAppUser(JSONArray userList) throws JSONException {
+    public int syncusers(JSONArray userList) throws JSONException {
         SQLiteDatabase db = this.getWritableDatabase(DATABASE_PASSWORD);
         db.delete(UsersTable.TABLE_NAME, null, null);
         int insertCount = 0;

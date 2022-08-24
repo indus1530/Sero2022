@@ -708,6 +708,67 @@
     <string name="istatus96">دیگر وضاحت کریں </string>
 
 
+    <string name='Q_f01'>f01</string>
+    <string name='Q_f02'>f02</string>
+    <string name='Q_f03'>f03</string>
+    <string name='Q_f04'>f04</string>
+    <string name='Q_f05'>f05</string>
+    <string name='Q_f06'>f06</string>
+    <string name='Q_f07'>f07</string>
+    <string name="f01">کیا پچھلے دو ہفتوں میں (بچے کا نام) کو  کھانسی/فلو ہوا؟</string>
+    <string name="f0101">ہاں</string>
+    <string name="f0102"> نہیں</string>
+    <string name="f0198">معلوم نہیں</string>
+    <string name="f02">کیا پچھلے دو ہفتوں میں (بچے کا نام) کو  تیز سانس  چلنے کی شکایت ہوئی  تھی؟</string>
+    <string name="f0201">ہاں</string>
+    <string name="f0202"> نہیں</string>
+    <string name="f0298">معلوم نہیں</string>
+    <string name="f03">کیا پچھلے دو ہفتوں میں (بچے کا نام) کو  تیز سانس  چلنے کی شکایت ہوئی  تھی؟</string>
+    <string name="f03">کیا پچھلے دو ہفتوں کے دوران  (بچے کا نام) کو  پسلیاں چلنے کی  شکایت ہوئی  تھی ؟</string>
+    <string name="f0301">ہاں</string>
+    <string name="f0302"> نہیں</string>
+    <string name="f0398">معلوم نہیں</string>
+    <string name="f04">کیا پچھلے دو ہفتوں میں (بچے کا نام) کو  اسہال ہوا تھا ؟ اسہال کا تعین روزانہ تین یا اس سے زیادہ بار  پانی  جیسے  پاخانے آنے  کے  طور پر   کیا جاتا ہے۔</string>
+    <string name="f04">کیا پچھلے دو ہفتوں میں (بچے کا نام) کو  اسہال ہوا تھا ؟ اسہال کا تعین روزانہ تین یا اس سے زیادہ بار  پانی  جیسے  پاخانے آنے  کے  طور پر   کیا جاتا ہے۔</string>
+    <string name="f0401">ہاں</string>
+    <string name="f0402"> نہیں</string>
+    <string name="f0498">معلوم نہیں</string>
+    <string name="f05">کیا پچھلے دو ہفتوں میں (بچے کا نام) کو  اسہال ہوا تھا ؟ اسہال کا تعین روزانہ تین یا اس سے زیادہ بار  پانی  جیسے  پاخانے آنے  کے  طور پر   کیا جاتا ہے۔</string>
+    <string name="f05">مشاہدہ کریں،کیا بچے کا سینہ خراب ہے (پسلیاں) چل رہی ہیں؟</string>
+    <string name="f0501">ہاں</string>
+    <string name="f0502"> نہیں</string>
+    <string name="f06">کیا پچھلے دو ہفتوں میں (بچے کا نام) کو  اسہال ہوا تھا ؟ اسہال کا تعین روزانہ تین یا اس سے زیادہ بار  پانی  جیسے  پاخانے آنے  کے  طور پر   کیا جاتا ہے۔</string>
+    <string name="f06">کیا (بچے کا نام) پچھلے چھ مہینوں میں کسی بیماری کا شکار ہوا  تھا جس  کی وجہ سے  اسے ہسپتال میں داخل ہونا پڑا ہو؟</string>
+    <string name="f0601">ہاں</string>
+    <string name="f0602"> نہیں</string>
+    <string name="f07">اگر ہاں، تو بیماری کی وضاحت کریں (براہ کرم ایک سے زیادہ  ہونے کی صورت میں بیماریوں کا نام  نوٹ کریں۔جو  جواب دہندہ بتاتی ہے وہ  لکھیں)</string>
+    <string name="f0701">بار بار پتلے پاخانے ہونا</string>
+    <string name="f0702">بخار</string>
+    <string name="f0703">تیز سانس لینا</string>
+    <string name="f0704">سینہ چلنے کی شکایت</string>
+    <string name="f0705">دست</string>
+    <string name="f0706">پیچش</string>
+    <string name="f0707">قے/الٹی</string>
+    <string name="f0708">پیٹ کا درد</string>
+    <string name="f0709">پیشاب کے وقت رونا</string>
+    <string name="f0796">وئی اور وضاحت کریں</string>
+
+    <string name='Q_g01'>g01</string>
+    <string name='Q_g02'>g02</string>
+    <string name='Q_g03'>g03</string>
+    <string name='Q_g04'>g04</string>
+    <string name="g01">خون کا نمونہ لیا گیاتھا؟</string>
+    <string name="g0101">اجازت   مل گئی  اور کامیابی کے ساتھ خون کا نمونہ حاصل کرلیا</string>
+    <string name="g0102">اجازت   مل گئی لیکن نمونہ حاصل  نہیں کیا جا سکا</string>
+    <string name="g02">اگر نہیں  تو ، خون کا نمونہ نہ لینے کی وجہ بیان کریں۔</string>
+    <string name="g0201">بچے نے خون لینے نہیں دیا</string>
+    <string name="g0202">بچے کا خون نہیں نکلا</string>
+    <string name="g0296">دیگر وضاحت کریں</string>
+    <string name="g03">اگر ہاں، تو لئے گئے  خون کے نمونے کی مقدار لکھیں۔</string>
+    <string name="g04">نمونہ کی بارکوڈ آئی ڈی</string>
+
+
+
     <string name='Qcb0title'>cb0title</string>
     <string name='Qcb01'>cb01</string>
     <string name='Qcb02'>cb02</string>

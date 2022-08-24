@@ -329,43 +329,20 @@
                             android:orientation="horizontal">
 
                             <TextView
-                                style="@style/sub_labels"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                style="@style/textView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:text="@string/cb03dd" />
 
-                            <TextView
-                                style="@style/sub_labels"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="@string/cb03mm" />
-
-                            <TextView
-                                style="@style/sub_labels"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="@string/cb03yy" />
-
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layoutDirection="ltr"
-                            android:orientation="horizontal">
-
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/cb03_dd"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:enabled="@{!child.cb03dk.equals(`98`)}"
                                 android:gravity="center"
-                                android:hint="@string/cb03dd"
+                                android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
                                 app:pattern="^[0-9]{2,2}$"
@@ -375,37 +352,51 @@
                                 app:minValue="1"
                                 app:type="range" />
 
+                            <TextView
+                                style="@style/textView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/cb03mm" />
+
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/cb03_mm"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:enabled="@{!child.cb03dk.equals(`98`)}"
                                 android:gravity="center"
-                                android:hint="@string/cb03mm"
+                                android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
                                 android:imeOptions="actionNext"
-
                                 android:text="@={child.cb03mm}"
                                 app:maxValue="12"
                                 app:minValue="1"
                                 app:type="range" />
 
+                            <TextView
+                                style="@style/textView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/cb03yy" />
+
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/cb03yy"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:enabled="@{!child.cb03dk.equals(`98`)}"
                                 android:gravity="center"
-                                android:hint="@string/cb03yy"
+                                android:hint="####"
                                 android:inputType="number"
                                 android:maxLength="4"
                                 android:text="@={child.cb03yy}"
                                 app:maxValue="2022"
                                 app:minValue="2018"
                                 app:type="range" />
+
 
                         </LinearLayout>
 
@@ -421,7 +412,9 @@
                             android:paddingStart="0dp"
                             android:textColor="@color/redDark"
                             android:text="@string/cb03dk" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
 
@@ -466,35 +459,19 @@
                             android:orientation="horizontal">
 
                             <TextView
-                                style="@style/sub_labels"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                style="@style/textView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:text="@string/cb04mm" />
 
-                            <TextView
-                                style="@style/sub_labels"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="@string/cb04yy" />
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-
-
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/cb04_mm"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:gravity="center"
-                                android:hint="@string/cb04mm"
+                                android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
                                 android:enabled="@{cb03dk.checked}"
@@ -503,23 +480,28 @@
                                 app:minValue="0"
                                 app:type="range" />
 
+                            <TextView
+                                style="@style/textView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/cb04yy" />
+
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/cb04_yy"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:gravity="center"
-                                android:hint="@string/cb04yy"
+                                android:hint="#"
                                 android:inputType="number"
                                 android:maxLength="1"
                                 android:enabled="@{cb03dk.checked}"
                                 android:text="@={child.cb04yy}"
                                 app:maxValue="2"
                                 android:imeOptions="actionNext"
-
                                 app:minValue="0"
                                 app:type="range" />
-
 
                         </LinearLayout>
 
@@ -536,8 +518,11 @@
                             android:textSize="13sp"
                             android:visibility="@{child.ageInMonths != -1 ? View.VISIBLE : View.GONE}"
                             tool:text="Age in months: 99" />
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
 
                 <!--EndButton LinearLayout-->

@@ -48,12 +48,12 @@ public class MainApp extends Application {
     // public static final String _IP = "https://cls-pae-fp51764";// .TEST server
     // public static final String _IP = "http://f49461:8080/prosystem";// .TEST server
     //public static final String _IP = "http://43.245.131.159:8080";// .TEST server
-    public static final String _HOST_URL = MainApp._IP + "/tpvics_r2/api/";// .TEST server;
+    public static final String _HOST_URL = MainApp._IP + "/sero_2022/api/";// .TEST server;
     public static final String _SERVER_URL = "syncgcm.php";
     public static final String _USER_URL = "resetpassword.php";
     public static final String _SERVER_GET_URL = "getDatagcm.php";
     public static final String _PHOTO_UPLOAD_URL = _HOST_URL + "uploads.php";
-    public static final String _UPDATE_URL = MainApp._IP + "/tpvics_r2/app/survey";
+    public static final String _UPDATE_URL = MainApp._IP + "/sero_2022/app/survey";
     public static final String _APP_FOLDER = "../app/survey";
     public static final String _EMPTY_ = "";
     private static final String TAG = "MainApp";

@@ -19,14 +19,16 @@ import edu.aku.imranahmed.sero2022.R;
 import edu.aku.imranahmed.sero2022.contracts.TableContracts;
 import edu.aku.imranahmed.sero2022.core.MainApp;
 import edu.aku.imranahmed.sero2022.database.DatabaseHelper;
-import edu.aku.imranahmed.sero2022.databinding.ActivitySectionCbBinding;
+import edu.aku.imranahmed.sero2022.databinding.ActivitySectionFBinding;
 import edu.aku.imranahmed.sero2022.ui.ChildEndingActivity;
 
-public class SectionCBActivity extends AppCompatActivity {
 
 
-    private static final String TAG = "SectionCBActivity";
-    ActivitySectionCbBinding bi;
+public class SectionFActivity extends AppCompatActivity {
+
+
+    private static final String TAG = "SectionFActivity";
+    ActivitySectionFBinding bi;
     private DatabaseHelper db;
     private String requestCode;
 
@@ -34,7 +36,7 @@ public class SectionCBActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTheme(MainApp.langRTL ? R.style.AppThemeUrdu : R.style.AppThemeEnglish1);
-        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_cb);
+        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_f);
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
 
@@ -52,7 +54,7 @@ public class SectionCBActivity extends AppCompatActivity {
         db = MainApp.appInfo.getDbHelper();
         long updcount = 0;
         try {
-            updcount = db.updatesChildColumn(TableContracts.ChildTable.COLUMN_SCB, child.sCBtoString());
+            updcount = db.updatesChildColumn(TableContracts.ChildTable.COLUMN_SF, child.sFtoString());
         } catch (JSONException e) {
             e.printStackTrace();
             Log.d(TAG, R.string.upd_db + e.getMessage());
@@ -107,25 +109,7 @@ public class SectionCBActivity extends AppCompatActivity {
     }
 
     private boolean formValidation() {
-
-        if (!Validator.emptyCheckingContainer(this, bi.GrpName)) {
-            return false;
-        }
-
-        if (child.getCb01a().equals("77")) {
-            if (!child.getCb01b().equals("77") && !child.getCb01b().equals("88")) {
-                return Validator.emptyCustomTextBox(this, bi.cb01b, "Incorrect value, Only 77 or 88 is allowed.");
-            }
-        }
-        if (child.getCb02a().equals("77")) {
-            if (!child.getCb02b().equals("77") && !child.getCb02b().equals("88")) {
-                return Validator.emptyCustomTextBox(this, bi.cb02b, "Incorrect value, Only 77 or 88 is allowed.");
-            }
-        }
-
-
-        return true;
-
+        return Validator.emptyCheckingContainer(this, bi.GrpName);
     }
 
 

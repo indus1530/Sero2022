@@ -59,7 +59,7 @@ public class TableContracts {
 
     public static abstract class UsersTable implements BaseColumns {
         public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
-        public static final String TABLE_NAME = "AppUser";
+        public static final String TABLE_NAME = "users";
         public static final String COLUMN_ID = "_id";
         public static final String COLUMN_UID = "_uid";
         public static final String COLUMN_USERNAME = "username";
@@ -140,6 +140,8 @@ public class TableContracts {
         public static final String COLUMN_SCH = "sch";
         public static final String COLUMN_SCB = "scb";
         public static final String COLUMN_SIM = "sim";
+        public static final String COLUMN_SF = "sF";
+        public static final String COLUMN_SG = "sG";
 
         public static final String COLUMN_DEVICEID = "deviceid";
         public static final String COLUMN_DEVICETAGID = "devicetagid";

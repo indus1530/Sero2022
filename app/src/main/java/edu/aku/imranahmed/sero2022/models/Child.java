@@ -247,6 +247,32 @@ public class Child extends BaseObservable implements Observable {
     private String im0515b95 = _EMPTY_;
     private String im051795 = _EMPTY_;
 
+    // F CHS
+    private String f01 = _EMPTY_;
+    private String f02 = _EMPTY_;
+    private String f03 = _EMPTY_;
+    private String f04 = _EMPTY_;
+    private String f05 = _EMPTY_;
+    private String f06 = _EMPTY_;
+    private String f07 = _EMPTY_;
+    private String f0701 = _EMPTY_;
+    private String f0702 = _EMPTY_;
+    private String f0703 = _EMPTY_;
+    private String f0704 = _EMPTY_;
+    private String f0705 = _EMPTY_;
+    private String f0706 = _EMPTY_;
+    private String f0707 = _EMPTY_;
+    private String f0708 = _EMPTY_;
+    private String f0709 = _EMPTY_;
+    private String f0796 = _EMPTY_;
+
+    //G
+    public String g01 = _EMPTY_;
+    public String g02 = _EMPTY_;
+    public String g0296x = _EMPTY_;
+    public String g03 = _EMPTY_;
+    public String g04 = _EMPTY_;
+
 
     private long ageInMonths = -1;
     private long trueAgeInMonths = -1;
@@ -881,77 +907,76 @@ public class Child extends BaseObservable implements Observable {
         setIm0510add(im01.equals("1") ? this.im0510add : "");
         setIm0510amm(im01.equals("1") ? this.im0510amm : "");
         setIm0510ayy(im01.equals("1") ? this.im0510ayy : "");
-        setIm0510a98(im01.equals("1") ?  this.im0510a98 : "");
+        setIm0510a98(im01.equals("1") ? this.im0510a98 : "");
 
 
         // At six weeks
         setIm0503dd(im01.equals("1") ? this.im0503dd : "");
         setIm0503mm(im01.equals("1") ? this.im0503mm : "");
         setIm0503yy(im01.equals("1") ? this.im0503yy : "");
-        setIm050398(im01.equals("1") ?  this.im050398 : "");
+        setIm050398(im01.equals("1") ? this.im050398 : "");
         setIm050495(im01.equals("1") ? this.im050495 : "");
 
         setIm0504dd(im01.equals("1") ? this.im0504dd : "");
         setIm0504mm(im01.equals("1") ? this.im0504mm : "");
         setIm0504yy(im01.equals("1") ? this.im0504yy : "");
-        setIm050498(im01.equals("1") ?  this.im050498 : "");
+        setIm050498(im01.equals("1") ? this.im050498 : "");
         setIm050595(im01.equals("1") ? this.im050595 : "");
 
         setIm0505dd(im01.equals("1") ? this.im0505dd : "");
         setIm0505mm(im01.equals("1") ? this.im0505mm : "");
         setIm0505yy(im01.equals("1") ? this.im0505yy : "");
-        setIm050598(im01.equals("1") ?  this.im050598 : "");
+        setIm050598(im01.equals("1") ? this.im050598 : "");
         setIm050695(im01.equals("1") ? this.im050695 : "");
 
         setIm0506dd(im01.equals("1") ? this.im0506dd : "");
         setIm0506mm(im01.equals("1") ? this.im0506mm : "");
         setIm0506yy(im01.equals("1") ? this.im0506yy : "");
-        setIm050698(im01.equals("1") ?  this.im050698 : "");
+        setIm050698(im01.equals("1") ? this.im050698 : "");
 
 
         // at 10 weeks
         setIm0507dd(im01.equals("1") ? this.im0507dd : "");
         setIm0507mm(im01.equals("1") ? this.im0507mm : "");
         setIm0507yy(im01.equals("1") ? this.im0507yy : "");
-        setIm050798(im01.equals("1") ?  this.im050798 : "");
+        setIm050798(im01.equals("1") ? this.im050798 : "");
         setIm050895(im01.equals("1") ? this.im050895 : "");
 
         setIm0508dd(im01.equals("1") ? this.im0508dd : "");
         setIm0508mm(im01.equals("1") ? this.im0508mm : "");
         setIm0508yy(im01.equals("1") ? this.im0508yy : "");
-        setIm050898(im01.equals("1") ?  this.im050898 : "");
+        setIm050898(im01.equals("1") ? this.im050898 : "");
         setIm050995(im01.equals("1") ? this.im050995 : "");
 
         setIm0509dd(im01.equals("1") ? this.im0509dd : "");
         setIm0509mm(im01.equals("1") ? this.im0509mm : "");
         setIm0509yy(im01.equals("1") ? this.im0509yy : "");
-        setIm050998(im01.equals("1") ?  this.im050998 : "");
+        setIm050998(im01.equals("1") ? this.im050998 : "");
         setIm051095(im01.equals("1") ? this.im051095 : "");
 
         setIm0510dd(im01.equals("1") ? this.im0510dd : "");
         setIm0510mm(im01.equals("1") ? this.im0510mm : "");
         setIm0510yy(im01.equals("1") ? this.im0510yy : "");
-        setIm051098(im01.equals("1") ?  this.im051098 : "");
-
+        setIm051098(im01.equals("1") ? this.im051098 : "");
 
 
         // at 14 weeks
         setIm0511dd(im01.equals("1") ? this.im0511dd : "");
         setIm0511mm(im01.equals("1") ? this.im0511mm : "");
         setIm0511yy(im01.equals("1") ? this.im0511yy : "");
-        setIm051198(im01.equals("1") ?  this.im051198 : "");
+        setIm051198(im01.equals("1") ? this.im051198 : "");
         setIm051295(im01.equals("1") ? this.im051295 : "");
 
         setIm0512dd(im01.equals("1") ? this.im0512dd : "");
         setIm0512mm(im01.equals("1") ? this.im0512mm : "");
         setIm0512yy(im01.equals("1") ? this.im0512yy : "");
-        setIm051298(im01.equals("1") ?  this.im051298 : "");
+        setIm051298(im01.equals("1") ? this.im051298 : "");
         setIm051395(im01.equals("1") ? this.im051395 : "");
 
         setIm0513dd(im01.equals("1") ? this.im0513dd : "");
         setIm0513mm(im01.equals("1") ? this.im0513mm : "");
         setIm0513yy(im01.equals("1") ? this.im0513yy : "");
-        setIm051398(im01.equals("1") ?  this.im051398 : "");
+        setIm051398(im01.equals("1") ? this.im051398 : "");
         setIm051495(im01.equals("1") ? this.im051495 : "");
 
         setIm0514dd(im01.equals("1") ? this.im0514dd : "");
@@ -1018,8 +1043,6 @@ public class Child extends BaseObservable implements Observable {
         setIm08(im02.equals("3") ? this.im08 : "");
 
 
-
-
         // at birth
         setIm0501dd(im02.equals("1") ? this.im0501dd : "");
         setIm0501mm(im02.equals("1") ? this.im0501mm : "");
@@ -1036,77 +1059,76 @@ public class Child extends BaseObservable implements Observable {
         setIm0510add(im02.equals("1") ? this.im0510add : "");
         setIm0510amm(im02.equals("1") ? this.im0510amm : "");
         setIm0510ayy(im02.equals("1") ? this.im0510ayy : "");
-        setIm0510a98(im02.equals("1") ?  this.im0510a98 : "");
+        setIm0510a98(im02.equals("1") ? this.im0510a98 : "");
 
 
         // at 6 weeks
         setIm0503dd(im02.equals("1") ? this.im0503dd : "");
         setIm0503mm(im02.equals("1") ? this.im0503mm : "");
         setIm0503yy(im02.equals("1") ? this.im0503yy : "");
-        setIm050398(im02.equals("1") ?  this.im050398 : "");
+        setIm050398(im02.equals("1") ? this.im050398 : "");
         setIm050495(im02.equals("1") ? this.im050495 : "");
 
         setIm0504dd(im02.equals("1") ? this.im0504dd : "");
         setIm0504mm(im02.equals("1") ? this.im0504mm : "");
         setIm0504yy(im02.equals("1") ? this.im0504yy : "");
-        setIm050498(im02.equals("1") ?  this.im050498 : "");
+        setIm050498(im02.equals("1") ? this.im050498 : "");
         setIm050595(im02.equals("1") ? this.im050595 : "");
 
         setIm0505dd(im02.equals("1") ? this.im0505dd : "");
         setIm0505mm(im02.equals("1") ? this.im0505mm : "");
         setIm0505yy(im02.equals("1") ? this.im0505yy : "");
-        setIm050598(im02.equals("1") ?  this.im050598 : "");
+        setIm050598(im02.equals("1") ? this.im050598 : "");
         setIm050695(im02.equals("1") ? this.im050695 : "");
 
         setIm0506dd(im02.equals("1") ? this.im0506dd : "");
         setIm0506mm(im02.equals("1") ? this.im0506mm : "");
         setIm0506yy(im02.equals("1") ? this.im0506yy : "");
-        setIm050698(im02.equals("1") ?  this.im050698 : "");
+        setIm050698(im02.equals("1") ? this.im050698 : "");
 
 
         // at 10 weeks
         setIm0507dd(im02.equals("1") ? this.im0507dd : "");
         setIm0507mm(im02.equals("1") ? this.im0507mm : "");
         setIm0507yy(im02.equals("1") ? this.im0507yy : "");
-        setIm050798(im02.equals("1") ?  this.im050798 : "");
+        setIm050798(im02.equals("1") ? this.im050798 : "");
         setIm050895(im02.equals("1") ? this.im050895 : "");
 
         setIm0508dd(im02.equals("1") ? this.im0508dd : "");
         setIm0508mm(im02.equals("1") ? this.im0508mm : "");
         setIm0508yy(im02.equals("1") ? this.im0508yy : "");
-        setIm050898(im02.equals("1") ?  this.im050898 : "");
+        setIm050898(im02.equals("1") ? this.im050898 : "");
         setIm050995(im02.equals("1") ? this.im050995 : "");
 
         setIm0509dd(im02.equals("1") ? this.im0509dd : "");
         setIm0509mm(im02.equals("1") ? this.im0509mm : "");
         setIm0509yy(im02.equals("1") ? this.im0509yy : "");
-        setIm050998(im02.equals("1") ?  this.im050998 : "");
+        setIm050998(im02.equals("1") ? this.im050998 : "");
         setIm051095(im02.equals("1") ? this.im051095 : "");
 
         setIm0510dd(im02.equals("1") ? this.im0510dd : "");
         setIm0510mm(im02.equals("1") ? this.im0510mm : "");
         setIm0510yy(im02.equals("1") ? this.im0510yy : "");
-        setIm051098(im02.equals("1") ?  this.im051098 : "");
-
+        setIm051098(im02.equals("1") ? this.im051098 : "");
 
 
         // at 14 weeks
         setIm0511dd(im02.equals("1") ? this.im0511dd : "");
         setIm0511mm(im02.equals("1") ? this.im0511mm : "");
         setIm0511yy(im02.equals("1") ? this.im0511yy : "");
-        setIm051198(im02.equals("1") ?  this.im051198 : "");
+        setIm051198(im02.equals("1") ? this.im051198 : "");
         setIm051295(im02.equals("1") ? this.im051295 : "");
 
         setIm0512dd(im02.equals("1") ? this.im0512dd : "");
         setIm0512mm(im02.equals("1") ? this.im0512mm : "");
         setIm0512yy(im02.equals("1") ? this.im0512yy : "");
-        setIm051298(im02.equals("1") ?  this.im051298 : "");
+        setIm051298(im02.equals("1") ? this.im051298 : "");
         setIm051395(im02.equals("1") ? this.im051395 : "");
 
         setIm0513dd(im02.equals("1") ? this.im0513dd : "");
         setIm0513mm(im02.equals("1") ? this.im0513mm : "");
         setIm0513yy(im02.equals("1") ? this.im0513yy : "");
-        setIm051398(im02.equals("1") ?  this.im051398 : "");
+        setIm051398(im02.equals("1") ? this.im051398 : "");
         setIm051495(im02.equals("1") ? this.im051495 : "");
 
         setIm0514dd(im02.equals("1") ? this.im0514dd : "");
@@ -3001,6 +3023,227 @@ public class Child extends BaseObservable implements Observable {
     }
 
 
+    @Bindable
+    public String getF01() {
+        return f01;
+    }
+
+    public void setF01(String f01) {
+        this.f01 = f01;
+        notifyPropertyChanged(BR.f01);
+    }
+
+    @Bindable
+    public String getF02() {
+        return f02;
+    }
+
+    public void setF02(String f02) {
+        this.f02 = f02;
+        notifyPropertyChanged(BR.f02);
+    }
+
+    @Bindable
+    public String getF03() {
+        return f03;
+    }
+
+    public void setF03(String f03) {
+        this.f03 = f03;
+        notifyPropertyChanged(BR.f03);
+    }
+
+    @Bindable
+    public String getF04() {
+        return f04;
+    }
+
+    public void setF04(String f04) {
+        this.f04 = f04;
+        notifyPropertyChanged(BR.f04);
+    }
+
+    @Bindable
+    public String getF05() {
+        return f05;
+    }
+
+    public void setF05(String f05) {
+        this.f05 = f05;
+        notifyPropertyChanged(BR.f05);
+    }
+
+    @Bindable
+    public String getF06() {
+        return f06;
+    }
+
+    public void setF06(String f06) {
+        this.f06 = f06;
+        notifyPropertyChanged(BR.f06);
+    }
+
+    @Bindable
+    public String getF07() {
+        return f07;
+    }
+
+    public void setF07(String f07) {
+        this.f07 = f07;
+        notifyPropertyChanged(BR.f07);
+    }
+
+    @Bindable
+    public String getF0701() {
+        return f0701;
+    }
+
+    public void setF0701(String f0701) {
+        this.f0701 = f0701;
+        notifyPropertyChanged(BR.f0701);
+    }
+
+    @Bindable
+    public String getF0702() {
+        return f0702;
+    }
+
+    public void setF0702(String f0702) {
+        this.f0702 = f0702;
+        notifyPropertyChanged(BR.f0702);
+    }
+
+    @Bindable
+    public String getF0703() {
+        return f0703;
+    }
+
+    public void setF0703(String f0703) {
+        this.f0703 = f0703;
+        notifyPropertyChanged(BR.f0703);
+    }
+
+    @Bindable
+    public String getF0704() {
+        return f0704;
+    }
+
+    public void setF0704(String f0704) {
+        this.f0704 = f0704;
+        notifyPropertyChanged(BR.f0704);
+    }
+
+    @Bindable
+    public String getF0705() {
+        return f0705;
+    }
+
+    public void setF0705(String f0705) {
+        this.f0705 = f0705;
+        notifyPropertyChanged(BR.f0705);
+    }
+
+    @Bindable
+    public String getF0706() {
+        return f0706;
+    }
+
+    public void setF0706(String f0706) {
+        this.f0706 = f0706;
+        notifyPropertyChanged(BR.f0706);
+    }
+
+    @Bindable
+    public String getF0707() {
+        return f0707;
+    }
+
+    public void setF0707(String f0707) {
+        this.f0707 = f0707;
+        notifyPropertyChanged(BR.f0707);
+    }
+
+    @Bindable
+    public String getF0708() {
+        return f0708;
+    }
+
+    public void setF0708(String f0708) {
+        this.f0708 = f0708;
+        notifyPropertyChanged(BR.f0708);
+    }
+
+    @Bindable
+    public String getF0709() {
+        return f0709;
+    }
+
+    public void setF0709(String f0709) {
+        this.f0709 = f0709;
+        notifyPropertyChanged(BR.f0709);
+    }
+
+    @Bindable
+    public String getF0796() {
+        return f0796;
+    }
+
+    public void setF0796(String f0796) {
+        this.f0796 = f0796;
+        notifyPropertyChanged(BR.f0796);
+    }
+
+    @Bindable
+    public String getG01() {
+        return g01;
+    }
+
+    public void setG01(String g01) {
+        this.g01 = g01;
+        notifyPropertyChanged(BR.g01);
+    }
+
+    @Bindable
+    public String getG02() {
+        return g02;
+    }
+
+    public void setG02(String g02) {
+        this.g02 = g02;
+        notifyPropertyChanged(BR.g02);
+    }
+
+    @Bindable
+    public String getG0296x() {
+        return g0296x;
+    }
+
+    public void setG0296x(String g0296x) {
+        this.g0296x = g0296x;
+        notifyPropertyChanged(BR.g0296x);
+    }
+
+    @Bindable
+    public String getG03() {
+        return g03;
+    }
+
+    public void setG03(String g03) {
+        this.g03 = g03;
+        notifyPropertyChanged(BR.g03);
+    }
+
+    @Bindable
+    public String getG04() {
+        return g04;
+    }
+
+    public void setG04(String g04) {
+        this.g04 = g04;
+        notifyPropertyChanged(BR.g04);
+    }
+
+
     public Child Hydrate(Cursor cursor) throws JSONException {
         this.id = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_ID));
         this.uid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_UID));
@@ -3028,6 +3271,8 @@ public class Child extends BaseObservable implements Observable {
         sCHHydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_SCH)));
         sCBHydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_SCB)));
         sIMHydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_SIM)));
+        sFHydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_SF)));
+        sGHydrate(cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_SG)));
         //CaluculateAge();
 
         return this;
@@ -3250,6 +3495,80 @@ public class Child extends BaseObservable implements Observable {
     }
 
 
+    public void sFHydrate(String string) throws JSONException {
+        Log.d(TAG, "sFHydrate: " + string);
+        if (string != null) {
+            JSONObject json = null;
+            json = new JSONObject(string);
+            this.f01 = json.getString("f01");
+            this.f02 = json.getString("f02");
+            this.f03 = json.getString("f03");
+            this.f04 = json.getString("f04");
+            this.f05 = json.getString("f05");
+            this.f06 = json.getString("f06");
+            this.f07 = json.getString("f07");
+            this.f0701 = json.getString("f0701");
+            this.f0702 = json.getString("f0702");
+            this.f0703 = json.getString("f0703");
+            this.f0704 = json.getString("f0704");
+            this.f0705 = json.getString("f0705");
+            this.f0706 = json.getString("f0706");
+            this.f0707 = json.getString("f0707");
+            this.f0708 = json.getString("f0708");
+            this.f0709 = json.getString("f0709");
+            this.f0796 = json.getString("f0796");
+        }
+    }
+
+
+    public void sGHydrate(String string) throws JSONException {
+        Log.d(TAG, "sGHydrate: " + string);
+        if (string != null) {
+            JSONObject json = null;
+            json = new JSONObject(string);
+            this.g01 = json.getString("g01");
+            this.g02 = json.getString("g02");
+            this.g0296x = json.getString("g0296x");
+            this.g03 = json.getString("g03");
+            this.g04 = json.getString("g04");
+        }
+    }
+
+
+
+
+    public JSONObject toJSONObject() throws JSONException {
+        JSONObject json = new JSONObject();
+
+        json.put(TableContracts.ChildTable.COLUMN_ID, this.id);
+        json.put(TableContracts.ChildTable.COLUMN_UID, this.uid);
+        json.put(TableContracts.ChildTable.COLUMN_EB_CODE, this.ebCode);
+        json.put(TableContracts.ChildTable.COLUMN_HHID, this.hhid);
+        json.put(TableContracts.ChildTable.COLUMN_PROJECT_NAME, this.projectName);
+        json.put(TableContracts.ChildTable.COLUMN_UUID, this.uuid);
+        json.put(TableContracts.ChildTable.COLUMN_SNO, this.sno);
+        json.put(TableContracts.ChildTable.COLUMN_USERNAME, this.userName);
+        json.put(TableContracts.ChildTable.COLUMN_SYSDATE, this.sysDate);
+        json.put(TableContracts.ChildTable.COLUMN_CSTATUS, this.cstatus);
+        json.put(TableContracts.ChildTable.COLUMN_DEVICEID, this.deviceId);
+        json.put(TableContracts.ChildTable.COLUMN_DEVICETAGID, this.deviceTag);
+        json.put(TableContracts.ChildTable.COLUMN_SYNCED, this.synced);
+        json.put(TableContracts.ChildTable.COLUMN_SYNC_DATE, this.syncDate);
+        json.put(TableContracts.ChildTable.COLUMN_APPVERSION, this.appver);
+        json.put(TableContracts.ChildTable.COLUMN_GPSLAT, this.gpsLat);
+        json.put(TableContracts.ChildTable.COLUMN_GPSLNG, this.gpsLng);
+        json.put(TableContracts.ChildTable.COLUMN_GPSDATE, this.gpsDT);
+        json.put(TableContracts.ChildTable.COLUMN_GPSACC, this.gpsAcc);
+        json.put(TableContracts.ChildTable.COLUMN_SCH, new JSONObject(sCHtoString()));
+        json.put(TableContracts.ChildTable.COLUMN_SCB, new JSONObject(sCBtoString()));
+        json.put(TableContracts.ChildTable.COLUMN_SIM, new JSONObject(sIMtoString()));
+        json.put(TableContracts.ChildTable.COLUMN_SF, new JSONObject(sFtoString()));
+        json.put(TableContracts.ChildTable.COLUMN_SG, new JSONObject(sGtoString()));
+
+        return json;
+    }
+
+
     public String sCHtoString() throws JSONException {
         Log.d(TAG, "sIMtoString: ");
         JSONObject json = new JSONObject();
@@ -3456,39 +3775,43 @@ public class Child extends BaseObservable implements Observable {
                 .put("cb01b", cb01b)
                 .put("cb02a", cb02a)
                 .put("cb02b", cb02b);
-
-
         return json.toString();
     }
 
 
-    public JSONObject toJSONObject() throws JSONException {
+    public String sFtoString() throws JSONException {
+        Log.d(TAG, "sFtoString: ");
         JSONObject json = new JSONObject();
+        json.put("f01", f01)
+                .put("f02", f02)
+                .put("f03", f03)
+                .put("f04", f04)
+                .put("f05", f05)
+                .put("f06", f06)
+                .put("f07", f07)
+                .put("f0701", f0701)
+                .put("f0702", f0702)
+                .put("f0703", f0703)
+                .put("f0704", f0704)
+                .put("f0705", f0705)
+                .put("f0706", f0706)
+                .put("f0707", f0707)
+                .put("f0708", f0708)
+                .put("f0709", f0709)
+                .put("f0796", f0796);
+        return json.toString();
+    }
 
-        json.put(TableContracts.ChildTable.COLUMN_ID, this.id);
-        json.put(TableContracts.ChildTable.COLUMN_UID, this.uid);
-        json.put(TableContracts.ChildTable.COLUMN_EB_CODE, this.ebCode);
-        json.put(TableContracts.ChildTable.COLUMN_HHID, this.hhid);
-        json.put(TableContracts.ChildTable.COLUMN_PROJECT_NAME, this.projectName);
-        json.put(TableContracts.ChildTable.COLUMN_UUID, this.uuid);
-        json.put(TableContracts.ChildTable.COLUMN_SNO, this.sno);
-        json.put(TableContracts.ChildTable.COLUMN_USERNAME, this.userName);
-        json.put(TableContracts.ChildTable.COLUMN_SYSDATE, this.sysDate);
-        json.put(TableContracts.ChildTable.COLUMN_CSTATUS, this.cstatus);
-        json.put(TableContracts.ChildTable.COLUMN_DEVICEID, this.deviceId);
-        json.put(TableContracts.ChildTable.COLUMN_DEVICETAGID, this.deviceTag);
-        json.put(TableContracts.ChildTable.COLUMN_SYNCED, this.synced);
-        json.put(TableContracts.ChildTable.COLUMN_SYNC_DATE, this.syncDate);
-        json.put(TableContracts.ChildTable.COLUMN_APPVERSION, this.appver);
-        json.put(TableContracts.ChildTable.COLUMN_GPSLAT, this.gpsLat);
-        json.put(TableContracts.ChildTable.COLUMN_GPSLNG, this.gpsLng);
-        json.put(TableContracts.ChildTable.COLUMN_GPSDATE, this.gpsDT);
-        json.put(TableContracts.ChildTable.COLUMN_GPSACC, this.gpsAcc);
-        json.put(TableContracts.ChildTable.COLUMN_SCH, new JSONObject(sCHtoString()));
-        json.put(TableContracts.ChildTable.COLUMN_SCB, new JSONObject(sCBtoString()));
-        json.put(TableContracts.ChildTable.COLUMN_SIM, new JSONObject(sIMtoString()));
 
-        return json;
+    public String sGtoString() throws JSONException {
+        Log.d(TAG, "sGtoString: ");
+        JSONObject json = new JSONObject();
+        json.put("g01", g01)
+                .put("g02", g02)
+                .put("g0296x", g0296x)
+                .put("g03", g03)
+                .put("g04", g04);
+        return json.toString();
     }
 
 

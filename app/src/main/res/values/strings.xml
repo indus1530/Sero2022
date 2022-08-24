@@ -677,7 +677,8 @@
     <string name="im101">Yes </string>
     <string name="im102">No </string>
     <string name="im103">Dont know</string>
-    <string name="im10a">Has (name) ever received Hepatitis B vaccination- that is, an injection in the arm or shoulder. Hepatitis B vaccine protects against a viral infection that causes inflammation and damage to the liver۔</string>    <string name="im10_1">Yes </string>
+    <string name="im10a">Has (name) ever received Hepatitis B vaccination- that is, an injection in the arm or shoulder. Hepatitis B vaccine protects against a viral infection that causes inflammation and damage to the liver۔</string>
+    <string name="im10_1">Yes </string>
     <string name="im10a1">Yes </string>
     <string name="im10_2">No </string>
     <string name="im10a2">No </string>
@@ -789,6 +790,67 @@
     <string name="cb04info">Record age in completed years and months. Record ‘0’ if less than 1 year.If  Responses to CB3 and CB4 are inconsistent, probe further and correct. </string>
     <string name="cb04mm">Age (in completed Months)</string>
     <string name="cb04yy">Age (in completed Years)</string>
+
+    <string name='Q_f01'>f01</string>
+    <string name='Q_f02'>f02</string>
+    <string name='Q_f03'>f03</string>
+    <string name='Q_f04'>f04</string>
+    <string name='Q_f05'>f05</string>
+    <string name='Q_f06'>f06</string>
+    <string name='Q_f07'>f07</string>
+    <string name="f01">In the past two weeks did (name of child) have cough/flu?</string>
+    <string name="f0101">Yes</string>
+    <string name="f0102">No</string>
+    <string name="f0198">Don&#039;t know</string>
+    <string name="f02">In the past two weeks did (name of child) have fast breathing?</string>
+    <string name="f0201">Yes</string>
+    <string name="f0202">No</string>
+    <string name="f0298">Don&#039;t know</string>
+    <string name="f03">In the past two weeks did (name of child) have fast breathing?</string>
+    <string name="f03">Does (name of child) have chest in drawing during last two weeks?</string>
+    <string name="f0301">Yes</string>
+    <string name="f0302">No</string>
+    <string name="f0398">Don&#039;t know</string>
+    <string name="f04">In the past two weeks did (name of child) have diarrhoea? Diarrhoea is determined as three or more watery stools per day</string>
+    <string name="f04">In the past two weeks did (name of child) have diarrhoea? Diarrhoea is determined as three or more watery stools per day</string>
+    <string name="f0401">Yes</string>
+    <string name="f0402">No</string>
+    <string name="f0498">Don&#039;t know</string>
+    <string name="f05">In the past two weeks did (name of child) have diarrhoea? Diarrhoea is determined as three or more watery stools per day</string>
+    <string name="f05">Observe, if the child has chest in drawing?</string>
+    <string name="f0501">Yes</string>
+    <string name="f0502">No</string>
+    <string name="f06">In the past two weeks did (name of child) have diarrhoea? Diarrhoea is determined as three or more watery stools per day</string>
+    <string name="f06">Did (name of child) suffer from any illness in the past six months for which he/she had to be hospitalized?</string>
+    <string name="f0601">Yes</string>
+    <string name="f0602">No</string>
+    <string name="f07">If yes, specify the illness (Please note more than one illness. Write what the respondent says)</string>
+    <string name="f0701">Frequent loose stools</string>
+    <string name="f0702">Fever</string>
+    <string name="f0703">Fast Breathing</string>
+    <string name="f0704">Chest Complaint</string>
+    <string name="f0705">Diarrhoea</string>
+    <string name="f0706">Dysentery</string>
+    <string name="f0707">Vomiting</string>
+    <string name="f0708">Stomach pain</string>
+    <string name="f0709">Crying while urinating</string>
+    <string name="f0796">Other Specify</string>
+
+
+    <string name='Q_g01'>g01</string>
+    <string name='Q_g02'>g02</string>
+    <string name='Q_g03'>g03</string>
+    <string name='Q_g04'>g04</string>
+    <string name="g01">Blood sample taken?</string>
+    <string name="g0101">Consented and collected sample successfully</string>
+    <string name="g0102">Consented but could not collect sample</string>
+    <string name="g02">Reason could not collect sample</string>
+    <string name="g0201">Uncooperative child</string>
+    <string name="g0202">Can’t bleed child</string>
+    <string name="g0296">Other, specify</string>
+    <string name="g03">If yes, write the volume of blood taken</string>
+    <string name="g04">Sample Barcode ID</string>
+
 
     <string name='Qcb0title'>cb0title</string>
     <string name='Qcb01'>cb01</string>

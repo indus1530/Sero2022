@@ -52,7 +52,7 @@ android {
         versionProps.store(versionPropsFile.newWriter(), null)
 
         defaultConfig {
-            applicationId "edu.aku.hassannaqvi.tpvics_r2"
+            applicationId "edu.aku.imranahmed.sero2022"
             versionCode versionBuild
             versionName "${versionNumber}.${versionPatch}${versionType}"
             minSdk 22
@@ -105,7 +105,7 @@ android {
         }
 
         debug {
-            resValue("string", "DB_PASSWORD_tpvics_r2.db", "VaLu@b1ePeRcE!V3")
+            resValue("string", "DB_PASSWORD_sero2022.db", "VaLu@b1ePeRcE!V3")
         }
     }
     compileOptions {
