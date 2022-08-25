@@ -269,8 +269,9 @@
                                 android:layout_weight="1"
                                 android:gravity="center"
                                 android:hint="#-####-###"
+                                app:mask="#-####-###"
                                 android:inputType="textCapCharacters"
-                                android:digits="ABCD0123456789"
+                                android:digits="ABCD-0123456789"
                                 android:maxLength="10" />
 
                             <ImageButton

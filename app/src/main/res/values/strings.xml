@@ -257,6 +257,7 @@
     <string name="ec2205">Child not eligible/Not 06-23 Months Age </string>
     <string name="ec2206">Incapacitated(Specify)</string>
     <string name="ec2296">Other specify</string>
+    <string name="ec2207">Refusal for blood sample</string>
     <string name="cb01info">As for Education Grade passed for mother/caregiver \n (Write 77 if un educated and for Religious Education , write 20)</string>
     <string name="cb01">What is your highest grade of completed education?</string>
     <string name="cb01a">Grade</string>

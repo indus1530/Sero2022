@@ -69,33 +69,16 @@ public class SectionFActivity extends AppCompatActivity {
 
     public void btnContinue(View view) {
         if (!formValidation()) return;
-        // saveDraft();
         if (updateDB()) {
-            if (child.getEc21().equals("1")) {
-                Intent forwardIntent = new Intent(this, SectionIM1Activity.class).putExtra("complete", true);
-                forwardIntent.putExtra("requestCode", requestCode);
-                forwardIntent.setFlags(Intent.FLAG_ACTIVITY_FORWARD_RESULT);
-                setResult(RESULT_OK, forwardIntent);
-                startActivity(forwardIntent);
-                finish();
-            } else {
-                Intent forwardIntent = new Intent(this, ChildEndingActivity.class).putExtra("complete", false);
-                forwardIntent.putExtra("requestCode", requestCode);
-                forwardIntent.putExtra("checkToEnable", 3);
-                forwardIntent.setFlags(Intent.FLAG_ACTIVITY_FORWARD_RESULT);
-                setResult(RESULT_OK, forwardIntent);
-                startActivity(forwardIntent);
-                finish();
-            }
+            Intent forwardIntent = new Intent(this, SectionGActivity.class);
+            forwardIntent.putExtra("requestCode", requestCode);
+            forwardIntent.putExtra("complete", true);
+            forwardIntent.setFlags(Intent.FLAG_ACTIVITY_FORWARD_RESULT);
+            setResult(RESULT_OK, forwardIntent);
 
-
-         /*   if (child.getEc21().equals("1")) {
-                startActivity(new Intent(this, SectionIM1Activity.class));
-            } else {
-                startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
-            }*/
-        } else
-            Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
+            startActivity(forwardIntent);
+            finish();
+        } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
     }
 
 

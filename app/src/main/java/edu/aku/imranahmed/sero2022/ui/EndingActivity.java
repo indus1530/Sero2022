@@ -54,6 +54,8 @@ public class EndingActivity extends AppCompatActivity {
         bi.istatuse.setEnabled(check);
         bi.istatusf.setEnabled(check);
         bi.istatusg.setEnabled(check);
+        bi.istatush.setEnabled(check);
+        bi.istatusi.setEnabled(check);
         bi.istatus96.setEnabled(check);
 
         switch (checkToEnable) {
@@ -79,6 +81,12 @@ public class EndingActivity extends AppCompatActivity {
                 bi.istatusg.setEnabled(!check);
                 break;
             case 8:
+                bi.istatush.setEnabled(!check);
+                break;
+            case 9:
+                bi.istatusi.setEnabled(!check);
+                break;
+            case 10:
                 bi.istatus96.setEnabled(!check);
                 break;
             default:
@@ -89,6 +97,8 @@ public class EndingActivity extends AppCompatActivity {
                 bi.istatuse.setEnabled(!check);
                 bi.istatusf.setEnabled(!check);
                 bi.istatusg.setEnabled(!check);
+                bi.istatush.setEnabled(check);
+                bi.istatusi.setEnabled(check);
                 bi.istatus96.setEnabled(!check);
 
         }
@@ -103,6 +113,8 @@ public class EndingActivity extends AppCompatActivity {
                 : bi.istatuse.isChecked() ? "5"
                 : bi.istatusf.isChecked() ? "6"
                 : bi.istatusg.isChecked() ? "7"
+                : bi.istatush.isChecked() ? "8"
+                : bi.istatusi.isChecked() ? "9"
                 : bi.istatus96.isChecked() ? "96"
                 : "-1");
         form.setiStatus96x(bi.istatus96x.getText().toString());

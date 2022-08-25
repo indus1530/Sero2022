@@ -1,6 +1,7 @@
 package edu.aku.imranahmed.sero2022.ui.sections;
 
 import static edu.aku.imranahmed.sero2022.core.MainApp.child;
+import static edu.aku.imranahmed.sero2022.core.MainApp.selectedHousehold;
 
 import android.content.Context;
 import android.content.Intent;
@@ -41,10 +42,14 @@ public class SectionCHActivity extends AppCompatActivity {
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_ch);
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
-        bi.setChild(MainApp.child);
+
         setGPS();
-        if (child.getEc13().equals(""))
-            MainApp.child.setEc13(String.valueOf(MainApp.childCount + 1));
+        /*if (child.getEc13().equals(""))
+            MainApp.child.setEc13(String.valueOf(MainApp.childCount + 1));*/
+
+        child.setEc13(selectedHousehold.getChildSno());
+        child.setEc14(selectedHousehold.getChildName());
+        bi.setChild(MainApp.child);
         Intent intent = getIntent();
 
         requestCode = intent.getStringExtra("requestCode");

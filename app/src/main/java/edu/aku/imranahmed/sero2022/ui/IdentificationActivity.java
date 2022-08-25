@@ -72,15 +72,16 @@ public class IdentificationActivity extends AppCompatActivity {
                     bi.hh12.setText(bi.hh12.getText().toString().substring(0, 6)); // A-0001
                 if (c == 3 && c1 == 2)
                     bi.hh12.setText(bi.hh12.getText().toString().substring(0, 1)); // A*/
+                if (c1 > 1 && charSequence.charAt(1) != '-') {
+                    txt = txt.charAt(0) + "-" + txt.substring(1);
+                    bi.hh12.setText(txt);
+                }
 
                 if (c1 > 6 && charSequence.charAt(6) != '-') {
                     txt = txt.substring(0, 6) + "-" + txt.substring(6);
                     bi.hh12.setText(txt);
                 }
-                if (c1 > 1 && charSequence.charAt(1) != '-') {
-                    txt = txt.charAt(0) + "-" + txt.substring(1);
-                    bi.hh12.setText(txt);
-                }
+
 
 
                 bi.hh12.setSelection(bi.hh12.getText().length());

@@ -134,6 +134,7 @@ public class MainActivity extends AppCompatActivity {
 
             case R.id.startInterview:
                 MainApp.form = new Form();
+                MainApp.child = new Child();
                 startActivity(new Intent(this, IdentificationActivity.class));
                 break;
             case R.id.seca1:

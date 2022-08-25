@@ -132,6 +132,24 @@
                                 android:checked="@{form.hh21.equals(`7`)}"
                                 android:onClick="@{()->form.setHh21(`7`)}"/>
 
+
+                            <RadioButton
+                                android:id="@+id/istatush"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.hh21.equals(`8`)}"
+                                android:text="@string/ec2205"
+                                android:onClick="@{()->form.setHh21(`8`)}" />
+
+                            <RadioButton
+                                android:id="@+id/istatusi"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.hh21.equals(`9`)}"
+                                android:text="@string/ec2206"
+                                android:onClick="@{()->form.setHh21(`9`)}" />
+
+
                             <RadioButton
                                 android:id="@+id/istatus96"
                                 android:layout_width="match_parent"

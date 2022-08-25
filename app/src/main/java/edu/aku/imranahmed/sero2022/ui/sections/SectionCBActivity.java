@@ -1,6 +1,8 @@
 package edu.aku.imranahmed.sero2022.ui.sections;
 
 import static edu.aku.imranahmed.sero2022.core.MainApp.child;
+import static edu.aku.imranahmed.sero2022.core.MainApp.selectedChildName;
+import static edu.aku.imranahmed.sero2022.core.MainApp.selectedHousehold;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -38,12 +40,36 @@ public class SectionCBActivity extends AppCompatActivity {
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
 
-        child.setEc13cline(child.getEc13());
-        child.setEc14cname(child.getEc14());
+        child.setEc13cline(selectedHousehold.getChildSno());
+        child.setEc14cname(selectedHousehold.getChildName());
         bi.setChild(child);
 
         Intent intent = getIntent();
         requestCode = intent.getStringExtra("requestCode");
+    }
+
+    private boolean insertNewRecord() {
+        if (!MainApp.child.getUid().equals("") || MainApp.superuser) return true;
+
+        MainApp.child.populateMeta();
+
+        long rowId = 0;
+        try {
+            rowId = db.addChild(MainApp.child);
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Toast.makeText(this, R.string.db_excp_error, Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        MainApp.child.setId(String.valueOf(rowId));
+        if (rowId > 0) {
+            MainApp.child.setUid(MainApp.child.getDeviceId() + MainApp.child.getId());
+            db.updatesChildColumn(TableContracts.ChildTable.COLUMN_UID, MainApp.child.getUid());
+            return true;
+        } else {
+            Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
+            return false;
+        }
     }
 
     private boolean updateDB() {
@@ -67,33 +93,18 @@ public class SectionCBActivity extends AppCompatActivity {
 
     public void btnContinue(View view) {
         if (!formValidation()) return;
+        if (!insertNewRecord()) return;
         // saveDraft();
         if (updateDB()) {
-            if (child.getEc21().equals("1")) {
-                Intent forwardIntent = new Intent(this, SectionIM1Activity.class).putExtra("complete", true);
-                forwardIntent.putExtra("requestCode", requestCode);
-                forwardIntent.setFlags(Intent.FLAG_ACTIVITY_FORWARD_RESULT);
-                setResult(RESULT_OK, forwardIntent);
-                startActivity(forwardIntent);
-                finish();
-            } else {
-                Intent forwardIntent = new Intent(this, ChildEndingActivity.class).putExtra("complete", false);
-                forwardIntent.putExtra("requestCode", requestCode);
-                forwardIntent.putExtra("checkToEnable", 3);
-                forwardIntent.setFlags(Intent.FLAG_ACTIVITY_FORWARD_RESULT);
-                setResult(RESULT_OK, forwardIntent);
-                startActivity(forwardIntent);
-                finish();
-            }
-
-
-         /*   if (child.getEc21().equals("1")) {
-                startActivity(new Intent(this, SectionIM1Activity.class));
-            } else {
-                startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
-            }*/
-        } else
+            setResult(RESULT_OK);
+            Intent i;
+            i = new Intent(this, SectionIM1Activity.class).putExtra("complete", true);
+            startActivity(i);
+            finish();
+        } else {
             Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
+        }
+
     }
 
 

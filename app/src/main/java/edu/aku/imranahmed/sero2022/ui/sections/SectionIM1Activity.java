@@ -17,6 +17,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.view.ContextThemeWrapper;
+import androidx.compose.ui.platform.InspectableModifier;
 import androidx.databinding.DataBindingUtil;
 
 import com.validatorcrawler.aliazaz.Validator;
@@ -36,6 +37,7 @@ import edu.aku.imranahmed.sero2022.contracts.TableContracts;
 import edu.aku.imranahmed.sero2022.core.MainApp;
 import edu.aku.imranahmed.sero2022.database.DatabaseHelper;
 import edu.aku.imranahmed.sero2022.databinding.ActivitySectionIm1Binding;
+import edu.aku.imranahmed.sero2022.ui.EndingActivity;
 import edu.aku.imranahmed.sero2022.ui.TakePhoto;
 
 public class SectionIM1Activity extends AppCompatActivity {
