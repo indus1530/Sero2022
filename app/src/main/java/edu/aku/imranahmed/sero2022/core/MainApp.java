@@ -41,7 +41,7 @@ import edu.aku.imranahmed.sero2022.models.Users;
 
 public class MainApp extends Application {
 
-    public static final String PROJECT_NAME = "SERO2022";
+    public static final String PROJECT_NAME = "SERO-2022";
     public static final String DIST_ID = null;
     public static final String SYNC_LOGIN = "sync_login";
     public static final String _IP = "https://vcoe1.aku.edu";// .LIVE server
