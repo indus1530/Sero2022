@@ -68,6 +68,7 @@ object CreateTable {
 */
             + ChildTable.COLUMN_EB_CODE + " TEXT, "
             + ChildTable.COLUMN_HHID + " TEXT, "
+            + ChildTable.COLUMN_G04SPECID + " TEXT,"
             + ChildTable.COLUMN_SNO + " TEXT, "
             + ChildTable.COLUMN_USERNAME + " TEXT, "
             + ChildTable.COLUMN_SYSDATE + " TEXT, "
@@ -127,7 +128,9 @@ object CreateTable {
             + RandomHHTable.COLUMN_RANDOMDT + " TEXT,"
             + RandomHHTable.COLUMN_SNO + " TEXT,"
             + RandomHHTable.COLUMN_CHILD_NAME + " TEXT,"
-            + RandomHHTable.COLUMN_CHILD_SNO + " TEXT"
+            + RandomHHTable.COLUMN_CHILD_SNO + " TEXT,"
+            + RandomHHTable.COLUMN_CHILD_NAME2 + " TEXT,"
+            + RandomHHTable.COLUMN_CHILD_SNO2 + " TEXT"
             + " );"
             )
 

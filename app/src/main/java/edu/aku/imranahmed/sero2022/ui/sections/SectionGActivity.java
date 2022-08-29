@@ -11,6 +11,8 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
+import com.google.zxing.integration.android.IntentIntegrator;
+import com.google.zxing.integration.android.IntentResult;
 import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
@@ -100,7 +102,6 @@ public class SectionGActivity extends AppCompatActivity {
     }
 
 
-
     @Override
     public void onBackPressed() {
         //Toast.makeText(this, "Back Press Not Allowed", Toast.LENGTH_SHORT).show();
@@ -108,6 +109,55 @@ public class SectionGActivity extends AppCompatActivity {
         returnIntent.putExtra("requestCode", requestCode);
         setResult(RESULT_CANCELED, returnIntent);
         finish();
+    }
+
+    // Get the results:
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
+        if (result != null) {
+            if (result.getContents() == null) {
+                Toast.makeText(this, "Cancelled", Toast.LENGTH_LONG).show();
+            } else {
+//                Toast.makeText(this, "Scanned: " + result.getContents(), Toast.LENGTH_LONG).show();
+
+                String strResult = result.getContents();
+                bi.g04.setText(strResult);
+                if (!checkQR())
+                    bi.EndButton.setVisibility(View.GONE);
+
+/*                try {
+                    String[] arrContents = strResult.split("-");
+                    bi.f1asiteA.setChecked(arrContents[2].equals("S1"));
+                    bi.f1asiteB.setChecked(arrContents[2].equals("S2"));
+                    bi.f1asiteC.setChecked(arrContents[2].equals("S3"));
+                    bi.f1asiteD.setChecked(arrContents[2].equals("S4"));
+                } catch (Exception e) {
+                    Toast.makeText(this, "Invalid ID", Toast.LENGTH_SHORT).show();
+                    bi.fldGrpCVQR.setVisibility(View.GONE);
+                }*/
+//                bi.f1aspecID.setText("Ctry: " + arrContents[0] + " | " + "City: " + arrContents[1] + " | " + "Site: " + arrContents[2] + " | " + "ID: " + arrContents[3]);
+            }
+        } else {
+            super.onActivityResult(requestCode, resultCode, data);
+        }
+    }
+
+    private boolean checkQR() {
+        if (db.checkSampleId_G04(bi.g04.getText().toString())) {
+            Toast.makeText(this, "Already Exist", Toast.LENGTH_SHORT).show();
+            return false;
+        } else {
+//            Toast.makeText(this, "Not Exist", Toast.LENGTH_SHORT).show();
+            bi.EndButton.setVisibility(View.VISIBLE);
+            return true;
+        }
+    }
+
+    public void scanQR(View view) {
+        // Scan QR Code
+        bi.EndButton.setVisibility(View.GONE);
+        new IntentIntegrator(this).initiateScan();
     }
 
 

@@ -183,4 +183,9 @@ dependencies {
     // UI Tests
     androidTestImplementation 'androidx.compose.ui:ui-test-junit4:1.1.1'
 
+    // QR Code Reader
+    implementation('com.journeyapps:zxing-android-embedded:3.3.0') { transitive = false }
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'com.google.zxing:core:3.3.0'
+
 }

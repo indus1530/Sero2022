@@ -150,6 +150,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(ChildTable.COLUMN_UUID, child.getUuid());
         values.put(ChildTable.COLUMN_EB_CODE, child.getEbCode());
         values.put(ChildTable.COLUMN_HHID, child.getHhid());
+        values.put(ChildTable.COLUMN_G04SPECID, child.getG04specid());
         values.put(ChildTable.COLUMN_SNO, child.getSno());
         values.put(ChildTable.COLUMN_USERNAME, child.getUserName());
         values.put(ChildTable.COLUMN_SYSDATE, child.getSysDate());
@@ -520,6 +521,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             values.put(RandomHHTable.COLUMN_SNO, randomHH.getSno());
             values.put(RandomHHTable.COLUMN_CHILD_NAME, randomHH.getChildName());
             values.put(RandomHHTable.COLUMN_CHILD_SNO, randomHH.getChildSno());
+            values.put(RandomHHTable.COLUMN_CHILD_NAME2, randomHH.getChild2Name());
+            values.put(RandomHHTable.COLUMN_CHILD_SNO2, randomHH.getChild2Sno());
 
             long rowID = db.insertOrThrow(RandomHHTable.TABLE_NAME, null, values);
             if (rowID != -1) insertCount++;
@@ -1377,5 +1380,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.close();
 
         return insertCount;
+    }
+
+
+    // Check Duplicate Sample ID Form G04
+    public boolean checkSampleId_G04(String sampleID) throws SQLException {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+
+        Cursor mCursor = db.rawQuery("SELECT * FROM " + ChildTable.TABLE_NAME + " WHERE " + ChildTable.COLUMN_G04SPECID + "=? ", new String[]{sampleID});
+        if (mCursor != null) {
+            /*if (mCursor.moveToFirst()) {
+                    MainApp.DIST_ID = mCursor.getString(mCursor.getColumnIndex(UsersContract.singleUser.DIST_ID));
+                }*/
+            return mCursor.getCount() > 0;
+        }
+        return false;
     }
 }

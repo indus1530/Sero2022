@@ -270,24 +270,32 @@
                                 android:text="@string/Q_g04" />
 
                             <TextView
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
                                 android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:text="@string/g04" />
 
-                        </LinearLayout>
+                            <EditText
+                                android:id="@+id/g04"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:editable="false"
+                                android:gravity="center"
+                                android:hint="##########"
+                                android:text="@={child.g04}" />
 
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/g04"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:hint="##########"
-                            android:inputType="number"
-                            android:maxLength="10"
-                            android:text="@={child.g04}"
-                            app:maxValue="9999999999"
-                            app:minValue="1"
-                            app:type="range" />
+                            <ImageButton
+                                android:id="@+id/scanQrFA"
+                                android:layout_width="56dp"
+                                android:layout_height="56dp"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerInParent="true"
+                                android:layout_margin="8dp"
+                                android:onClick="scanQR"
+                                android:src="@drawable/ic_qrcode" />
+
+                        </LinearLayout>
 
                     </LinearLayout>
 
@@ -296,6 +304,7 @@
 
                 <!--EndButton LinearLayout-->
                 <LinearLayout
+                    android:id="@+id/EndButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"

@@ -98,7 +98,6 @@ public class Form extends BaseObservable implements Observable {
     private String ss03xx = _EMPTY_;
     private String ss07 = _EMPTY_;
     private String ss07xx = _EMPTY_;
-    private String ss12 = _EMPTY_;
     private String ss12hhx = _EMPTY_;
     private String ss14a = _EMPTY_;
     private String ss14b = _EMPTY_;
@@ -910,7 +909,6 @@ public class Form extends BaseObservable implements Observable {
         this.ss07 = ss07;
         setSs07xx(ss07.equals("96") ? this.ss07xx : ""); // for all skips, mention all skipped questions
         final boolean b = ss07.equals("8") || ss07.equals("9") || ss07.equals("96");
-        setSs12(b ? "" : this.ss12);
         notifyPropertyChanged(BR.ss07);
     }
 
@@ -922,18 +920,6 @@ public class Form extends BaseObservable implements Observable {
     public void setSs07xx(String ss07xx) {
         this.ss07xx = ss07xx;
         notifyPropertyChanged(BR.ss07xx);
-    }
-
-
-    @Bindable
-    public String getSs12() {
-        return ss12;
-    }
-
-    public void setSs12(String ss12) {
-        this.ss12 = ss12;
-        setSs12hhx(ss12.equals("66") ? this.ss12hhx : ""); // for all skips, mention all skipped questions
-        notifyPropertyChanged(BR.ss12);
     }
 
     @Bindable
@@ -1587,7 +1573,6 @@ public class Form extends BaseObservable implements Observable {
             this.ss03xx = json.getString("ss03xx");
             this.ss07 = json.getString("ss07");
             this.ss07xx = json.getString("ss07xx");
-            this.ss12 = json.getString("ss12");
             this.ss12hhx = json.getString("ss12hhx");
             this.ss14a = json.getString("ss14a");
             this.ss14b = json.getString("ss14b");
@@ -1696,7 +1681,6 @@ public class Form extends BaseObservable implements Observable {
                 .put("ss03xx", ss03xx)
                 .put("ss07", ss07)
                 .put("ss07xx", ss07xx)
-                .put("ss12", ss12)
                 .put("ss12hhx", ss12hhx)
                 .put("ss14a", ss14a)
                 .put("ss14b", ss14b)

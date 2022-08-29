@@ -39,6 +39,7 @@ public class Child extends BaseObservable implements Observable {
     private String cstatus = _EMPTY_;
     private String ebCode = _EMPTY_;
     private String hhid = _EMPTY_;
+    private String g04specid = _EMPTY_;
     private String sno = _EMPTY_;
     private String deviceId = _EMPTY_;
     private String deviceTag = _EMPTY_;
@@ -363,6 +364,14 @@ public class Child extends BaseObservable implements Observable {
 
     public void setHhid(String hhid) {
         this.hhid = hhid;
+    }
+
+    public String getG04specid() {
+        return g04specid;
+    }
+
+    public void setG04specid(String g04specid) {
+        this.g04specid = g04specid;
     }
 
     public String getSno() {
@@ -3284,6 +3293,7 @@ public class Child extends BaseObservable implements Observable {
         this.hhid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_HHID));
         this.projectName = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_PROJECT_NAME));
         this.sno = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_SNO));
+        this.g04specid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_G04SPECID));
         this.userName = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_USERNAME));
         this.sysDate = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_SYSDATE));
         this.cstatus = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_CSTATUS));
@@ -3576,6 +3586,7 @@ public class Child extends BaseObservable implements Observable {
         json.put(TableContracts.ChildTable.COLUMN_PROJECT_NAME, this.projectName);
         json.put(TableContracts.ChildTable.COLUMN_UUID, this.uuid);
         json.put(TableContracts.ChildTable.COLUMN_SNO, this.sno);
+        json.put(TableContracts.ChildTable.COLUMN_G04SPECID, this.g04specid);
         json.put(TableContracts.ChildTable.COLUMN_USERNAME, this.userName);
         json.put(TableContracts.ChildTable.COLUMN_SYSDATE, this.sysDate);
         json.put(TableContracts.ChildTable.COLUMN_CSTATUS, this.cstatus);

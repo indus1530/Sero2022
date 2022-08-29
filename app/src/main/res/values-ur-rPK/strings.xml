@@ -351,7 +351,12 @@
     <string name="im2502">نشان موجود نہیں</string>
     <string name="im2503">بچہ موجود نہیں</string>
     <string name="im2504">مشاہدے سے منع کردیا</string>
-    <string name="im26">مشاہدہ اگر کوئی ہے تو لکھیں</string>
+    <string name="im26">کیا (نام) نے کبھی سفر کے دوران کسی چوکی/چیک پوائنٹ پرپولیو کے دو قطرے پیئے ہیں؟</string>
+    <string name="im2601">ہاں</string>
+    <string name="im2602">نہیں</string>
+    <string name="im2603">سفر نہیں کیا</string>
+    <string name="im2698">معلوم نہیں</string>
+    <!--    <string name="im26">مشاہدہ اگر کوئی ہے تو لکھیں</string>-->
     <string name="hh05">اینومیریشن بلاک نمبر </string>
     <string name="hh06">صوبہ  </string>
     <string name="hh07">ضلع</string>

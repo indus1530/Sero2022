@@ -116,8 +116,10 @@ public class TableContracts {
         public static final String COLUMN_HH_SELECTED_STRUCT = "hhss";
         public static final String COLUMN_SNO = "sno";
         public static final String COLUMN_TAB_NO = "tabNo";
-        public static final String COLUMN_CHILD_NAME = "hh13cname";
-        public static final String COLUMN_CHILD_SNO = "hhchildsno";
+        public static final String COLUMN_CHILD_NAME = "hh13cname1";
+        public static final String COLUMN_CHILD_SNO = "hhchildsno1";
+        public static final String COLUMN_CHILD_NAME2 = "hh13cname2";
+        public static final String COLUMN_CHILD_SNO2 = "hhchildsno2";
         public static String COLUMN_DIST_CODE = "dist_id";
     }
 
@@ -131,6 +133,7 @@ public class TableContracts {
         public static final String COLUMN_UUID = "_uuid";
         public static final String COLUMN_EB_CODE = "ebCode";
         public static final String COLUMN_HHID = "hhid";
+        public static final String COLUMN_G04SPECID = "g04SpecID";
         public static final String COLUMN_USERNAME = "username";
         public static final String COLUMN_CSTATUS = "cstatus";
         public static final String COLUMN_SYSDATE = "sysdate";

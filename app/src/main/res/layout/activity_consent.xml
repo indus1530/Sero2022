@@ -630,20 +630,22 @@
                             android:id="@+id/hh18"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="vertical">
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/hh18a"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:checked="@{form.hh18.equals(`1`)}"
                                 android:onClick="@{()->form.setHh18(`1`)}"
                                 android:text="@string/hh18a" />
 
                             <RadioButton
                                 android:id="@+id/hh18b"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:checked="@{form.hh18.equals(`2`)}"
                                 android:onClick="@{()->form.setHh18(`2`)}"
                                 android:text="@string/hh18b" />

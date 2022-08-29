@@ -577,7 +577,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.ss07.equals(`8`)}"
-                                android:onClick="@{()->form.setSs07(`8`) + ss08.clearCheck() + ss09.clearCheck() + ss11.clearCheck() + ss12.clearCheck()}"
+                                android:onClick="@{()->form.setSs07(`8`)}"
                                 android:text="@string/ss07h" />
 
 
@@ -586,7 +586,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.ss07.equals(`9`)}"
-                                android:onClick="@{()->form.setSs07(`9`) + ss08.clearCheck() + ss09.clearCheck() + ss11.clearCheck() + ss12.clearCheck()}"
+                                android:onClick="@{()->form.setSs07(`9`)}"
                                 android:text="@string/ss07i" />
 
 
@@ -595,7 +595,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.ss07.equals(`96`)}"
-                                android:onClick="@{()->form.setSs07(`96`) + ss08.clearCheck() + ss09.clearCheck() + ss11.clearCheck() + ss12.clearCheck()}"
+                                android:onClick="@{()->form.setSs07(`96`)}"
                                 android:text="@string/ss07x" />
                         </RadioGroup>
 
@@ -609,96 +609,6 @@
                             android:text="@={form.ss07xx}"
                             android:visibility="@{form.ss07.equals(`96`) ? View.VISIBLE : View.GONE}" />
 
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-
-                <!-- ss12  Radio   -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVss12"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                style="@style/quesNum"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:text="@string/Qss12" />
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:text="@string/ss12" />
-
-                        </LinearLayout>
-
-                        <RadioGroup
-                            android:id="@+id/ss12"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <RadioButton
-                                android:id="@+id/ss12a"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:checked="@{form.ss12.equals(`66`)}"
-                                android:onClick="@{()->form.setSs12(`66`)}"
-                                android:text="@string/ss12a" />
-
-
-                            <RadioButton
-                                android:id="@+id/ss12b"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:checked="@{form.ss12.equals(`10`)}"
-                                android:onClick="@{()->form.setSs12(`10`)}"
-                                android:text="@string/ss12b" />
-
-                            <RadioButton
-                                android:id="@+id/ss12c"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:checked="@{form.ss12.equals(`98`)}"
-                                android:onClick="@{()->form.setSs12(`98`)}"
-                                android:text="@string/ss12c" />
-                            <!--
-                                                       <RadioButton-->
-                            <!--                                android:id="@+id/ss12hh"-->
-                            <!--                                android:layout_width="match_parent"-->
-                            <!--                                android:layout_height="wrap_content"-->
-                            <!--                                android:checked="@{form.ss12.equals(``)}"-->
-                            <!--                                android:onClick="@{()->form.setSs12(``)}"-->
-                            <!--                                android:text="@string/ss12hh" />-->
-
-                        </RadioGroup>
-
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/ss12hhx"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="@string/ss12hh"
-                            android:inputType="number"
-                            android:maxLength="1"
-                            android:tag="ss12hh"
-                            android:text="@={form.ss12hhx}"
-                            android:visibility="@{form.ss12.equals(`66`) ? View.VISIBLE : View.GONE}"
-                            app:maxValue="9"
-                            app:minValue="1"
-                            app:type="range" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
