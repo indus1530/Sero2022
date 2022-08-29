@@ -96,20 +96,10 @@ public class Form extends BaseObservable implements Observable {
     private String ss02xx = _EMPTY_;
     private String ss03 = _EMPTY_;
     private String ss03xx = _EMPTY_;
-    private String ss04 = _EMPTY_;
-    private String ss05 = _EMPTY_;
-    private String ss05xx = _EMPTY_;
-    private String ss06 = _EMPTY_;
-    private String ss06xx = _EMPTY_;
     private String ss07 = _EMPTY_;
     private String ss07xx = _EMPTY_;
-    private String ss08 = _EMPTY_;
-    private String ss09 = _EMPTY_;
-    private String ss11 = _EMPTY_;
     private String ss12 = _EMPTY_;
     private String ss12hhx = _EMPTY_;
-    private String ss13 = _EMPTY_;
-    private String ss13xx = _EMPTY_;
     private String ss14a = _EMPTY_;
     private String ss14b = _EMPTY_;
     private String ss14c = _EMPTY_;
@@ -129,15 +119,6 @@ public class Form extends BaseObservable implements Observable {
     private String ss14q = _EMPTY_;
     private String ss14r = _EMPTY_;
     private String ss14s = _EMPTY_;
-    private String ss15a = _EMPTY_;
-    private String ss15b = _EMPTY_;
-    private String ss15c = _EMPTY_;
-    private String ss15d = _EMPTY_;
-    private String ss15e = _EMPTY_;
-    private String ss15f = _EMPTY_;
-    private String ss15g = _EMPTY_;
-    private String ss15h = _EMPTY_;
-    private String ss15i = _EMPTY_;
     private String ss17 = _EMPTY_;
     private String ss17xx = _EMPTY_;
     private String ss18 = _EMPTY_;
@@ -919,58 +900,6 @@ public class Form extends BaseObservable implements Observable {
         notifyPropertyChanged(BR.ss03xx);
     }
 
-    @Bindable
-    public String getSs04() {
-        return ss04;
-    }
-
-    public void setSs04(String ss04) {
-        this.ss04 = ss04;
-        setSs05(ss04.equals("1") ? this.ss05 : "");
-        notifyPropertyChanged(BR.ss04);
-    }
-
-    @Bindable
-    public String getSs05() {
-        return ss05;
-    }
-
-    public void setSs05(String ss05) {
-        this.ss05 = ss05;
-        setSs05xx(ss05.equals("96") ? this.ss05xx : ""); // for all skips, mention all skipped questions
-        notifyPropertyChanged(BR.ss05);
-    }
-
-    @Bindable
-    public String getSs05xx() {
-        return ss05xx;
-    }
-
-    public void setSs05xx(String ss05xx) {
-        this.ss05xx = ss05xx;
-        notifyPropertyChanged(BR.ss05xx);
-    }
-
-    @Bindable
-    public String getSs06() {
-        return ss06;
-    }
-
-    public void setSs06(String ss06) {
-        this.ss06 = ss06;
-        setSs06xx(ss06.equals("96") ? this.ss06xx : ""); // for all skips, mention all skipped questions
-        notifyPropertyChanged(BR.ss06);
-    }
-
-    @Bindable
-    public String getSs06xx() {
-        return ss06xx;
-    }
-
-    public void setSs06xx(String ss06xx) {
-        this.ss06xx = ss06xx;
-        notifyPropertyChanged(BR.ss06xx);
-    }
 
     @Bindable
     public String getSs07() {
@@ -981,9 +910,6 @@ public class Form extends BaseObservable implements Observable {
         this.ss07 = ss07;
         setSs07xx(ss07.equals("96") ? this.ss07xx : ""); // for all skips, mention all skipped questions
         final boolean b = ss07.equals("8") || ss07.equals("9") || ss07.equals("96");
-        setSs08(b ? "" : this.ss08);
-        setSs09(b ? "" : this.ss09);
-        setSs11(b ? "" : this.ss11);
         setSs12(b ? "" : this.ss12);
         notifyPropertyChanged(BR.ss07);
     }
@@ -998,38 +924,6 @@ public class Form extends BaseObservable implements Observable {
         notifyPropertyChanged(BR.ss07xx);
     }
 
-    @Bindable
-    public String getSs08() {
-        return ss08;
-    }
-
-    public void setSs08(String ss08) {
-        this.ss08 = ss08;
-        notifyPropertyChanged(BR.ss08);
-    }
-
-    @Bindable
-    public String getSs09() {
-        return ss09;
-    }
-
-    public void setSs09(String ss09) {
-        this.ss09 = ss09;
-        setSs11(ss09.equals("1") ? this.ss11 : "");
-        setSs12(ss09.equals("1") ? this.ss12 : "");
-        notifyPropertyChanged(BR.ss09);
-    }
-
-    @Bindable
-    public String getSs11() {
-        return ss11;
-    }
-
-    public void setSs11(String ss11) {
-        this.ss11 = ss11;
-        setSs12(ss11.equals("2") ? "" : this.ss12);
-        notifyPropertyChanged(BR.ss11);
-    }
 
     @Bindable
     public String getSs12() {
@@ -1052,26 +946,6 @@ public class Form extends BaseObservable implements Observable {
         notifyPropertyChanged(BR.ss12hhx);
     }
 
-    @Bindable
-    public String getSs13() {
-        return ss13;
-    }
-
-    public void setSs13(String ss13) {
-        this.ss13 = ss13;
-        setSs13xx(ss13.equals("96") ? this.ss13xx : ""); // for all skips, mention all skipped questions
-        notifyPropertyChanged(BR.ss13);
-    }
-
-    @Bindable
-    public String getSs13xx() {
-        return ss13xx;
-    }
-
-    public void setSs13xx(String ss13xx) {
-        this.ss13xx = ss13xx;
-        notifyPropertyChanged(BR.ss13xx);
-    }
 
     @Bindable
     public String getSs14a() {
@@ -1263,95 +1137,6 @@ public class Form extends BaseObservable implements Observable {
         notifyPropertyChanged(BR.ss14s);
     }
 
-    @Bindable
-    public String getSs15a() {
-        return ss15a;
-    }
-
-    public void setSs15a(String ss15a) {
-        this.ss15a = ss15a;
-        notifyPropertyChanged(BR.ss15a);
-    }
-
-    @Bindable
-    public String getSs15b() {
-        return ss15b;
-    }
-
-    public void setSs15b(String ss15b) {
-        this.ss15b = ss15b;
-        notifyPropertyChanged(BR.ss15b);
-    }
-
-    @Bindable
-    public String getSs15c() {
-        return ss15c;
-    }
-
-    public void setSs15c(String ss15c) {
-        this.ss15c = ss15c;
-        notifyPropertyChanged(BR.ss15c);
-    }
-
-    @Bindable
-    public String getSs15d() {
-        return ss15d;
-    }
-
-    public void setSs15d(String ss15d) {
-        this.ss15d = ss15d;
-        notifyPropertyChanged(BR.ss15d);
-    }
-
-    @Bindable
-    public String getSs15e() {
-        return ss15e;
-    }
-
-    public void setSs15e(String ss15e) {
-        this.ss15e = ss15e;
-        notifyPropertyChanged(BR.ss15e);
-    }
-
-    @Bindable
-    public String getSs15f() {
-        return ss15f;
-    }
-
-    public void setSs15f(String ss15f) {
-        this.ss15f = ss15f;
-        notifyPropertyChanged(BR.ss15f);
-    }
-
-    @Bindable
-    public String getSs15g() {
-        return ss15g;
-    }
-
-    public void setSs15g(String ss15g) {
-        this.ss15g = ss15g;
-        notifyPropertyChanged(BR.ss15g);
-    }
-
-    @Bindable
-    public String getSs15h() {
-        return ss15h;
-    }
-
-    public void setSs15h(String ss15h) {
-        this.ss15h = ss15h;
-        notifyPropertyChanged(BR.ss15h);
-    }
-
-    @Bindable
-    public String getSs15i() {
-        return ss15i;
-    }
-
-    public void setSs15i(String ss15i) {
-        this.ss15i = ss15i;
-        notifyPropertyChanged(BR.ss15i);
-    }
 
     @Bindable
     public String getSs17() {
@@ -1800,20 +1585,10 @@ public class Form extends BaseObservable implements Observable {
             this.ss02xx = json.getString("ss02xx");
             this.ss03 = json.getString("ss03");
             this.ss03xx = json.getString("ss03xx");
-            this.ss04 = json.getString("ss04");
-            this.ss05 = json.getString("ss05");
-            this.ss05xx = json.getString("ss05xx");
-            this.ss06 = json.getString("ss06");
-            this.ss06xx = json.getString("ss06xx");
             this.ss07 = json.getString("ss07");
             this.ss07xx = json.getString("ss07xx");
-            this.ss08 = json.getString("ss08");
-            this.ss09 = json.getString("ss09");
-            this.ss11 = json.getString("ss11");
             this.ss12 = json.getString("ss12");
             this.ss12hhx = json.getString("ss12hhx");
-            this.ss13 = json.getString("ss13");
-            this.ss13xx = json.getString("ss13xx");
             this.ss14a = json.getString("ss14a");
             this.ss14b = json.getString("ss14b");
             this.ss14c = json.getString("ss14c");
@@ -1833,15 +1608,6 @@ public class Form extends BaseObservable implements Observable {
             this.ss14q = json.getString("ss14q");
             this.ss14r = json.getString("ss14r");
             this.ss14s = json.getString("ss14s");
-            this.ss15a = json.getString("ss15a");
-            this.ss15b = json.getString("ss15b");
-            this.ss15c = json.getString("ss15c");
-            this.ss15d = json.getString("ss15d");
-            this.ss15e = json.getString("ss15e");
-            this.ss15f = json.getString("ss15f");
-            this.ss15g = json.getString("ss15g");
-            this.ss15h = json.getString("ss15h");
-            this.ss15i = json.getString("ss15i");
             this.ss17 = json.getString("ss17");
             this.ss17xx = json.getString("ss17xx");
             this.ss18 = json.getString("ss18");
@@ -1928,20 +1694,10 @@ public class Form extends BaseObservable implements Observable {
                 .put("ss02xx", ss02xx)
                 .put("ss03", ss03)
                 .put("ss03xx", ss03xx)
-                .put("ss04", ss04)
-                .put("ss05", ss05)
-                .put("ss05xx", ss05xx)
-                .put("ss06", ss06)
-                .put("ss06xx", ss06xx)
                 .put("ss07", ss07)
                 .put("ss07xx", ss07xx)
-                .put("ss08", ss08)
-                .put("ss09", ss09)
-                .put("ss11", ss11)
                 .put("ss12", ss12)
                 .put("ss12hhx", ss12hhx)
-                .put("ss13", ss13)
-                .put("ss13xx", ss13xx)
                 .put("ss14a", ss14a)
                 .put("ss14b", ss14b)
                 .put("ss14c", ss14c)
@@ -1961,15 +1717,6 @@ public class Form extends BaseObservable implements Observable {
                 .put("ss14q", ss14q)
                 .put("ss14r", ss14r)
                 .put("ss14s", ss14s)
-                .put("ss15a", ss15a)
-                .put("ss15b", ss15b)
-                .put("ss15c", ss15c)
-                .put("ss15d", ss15d)
-                .put("ss15e", ss15e)
-                .put("ss15f", ss15f)
-                .put("ss15g", ss15g)
-                .put("ss15h", ss15h)
-                .put("ss15i", ss15i)
                 .put("ss17", ss17)
                 .put("ss17xx", ss17xx)
                 .put("ss18", ss18)
