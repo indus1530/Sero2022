@@ -120,23 +120,10 @@ public class SectionGActivity extends AppCompatActivity {
                 Toast.makeText(this, "Cancelled", Toast.LENGTH_LONG).show();
             } else {
 //                Toast.makeText(this, "Scanned: " + result.getContents(), Toast.LENGTH_LONG).show();
-
                 String strResult = result.getContents();
                 bi.g04.setText(strResult);
                 if (!checkQR())
                     bi.EndButton.setVisibility(View.GONE);
-
-/*                try {
-                    String[] arrContents = strResult.split("-");
-                    bi.f1asiteA.setChecked(arrContents[2].equals("S1"));
-                    bi.f1asiteB.setChecked(arrContents[2].equals("S2"));
-                    bi.f1asiteC.setChecked(arrContents[2].equals("S3"));
-                    bi.f1asiteD.setChecked(arrContents[2].equals("S4"));
-                } catch (Exception e) {
-                    Toast.makeText(this, "Invalid ID", Toast.LENGTH_SHORT).show();
-                    bi.fldGrpCVQR.setVisibility(View.GONE);
-                }*/
-//                bi.f1aspecID.setText("Ctry: " + arrContents[0] + " | " + "City: " + arrContents[1] + " | " + "Site: " + arrContents[2] + " | " + "ID: " + arrContents[3]);
             }
         } else {
             super.onActivityResult(requestCode, resultCode, data);
