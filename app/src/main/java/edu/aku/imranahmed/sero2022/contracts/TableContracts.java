@@ -131,6 +131,8 @@ public class TableContracts {
         public static final String COLUMN_UUID = "_uuid";
         public static final String COLUMN_EB_CODE = "ebCode";
         public static final String COLUMN_HHID = "hhid";
+        public static final String COLUMN_CHILD_LNO = "childLno";
+        public static final String COLUMN_CHILD_NAME = "childName";
         public static final String COLUMN_G04SPECID = "g04SpecID";
         public static final String COLUMN_USERNAME = "username";
         public static final String COLUMN_CSTATUS = "cstatus";

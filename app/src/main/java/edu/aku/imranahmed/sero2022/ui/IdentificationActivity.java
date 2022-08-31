@@ -1,5 +1,6 @@
 package edu.aku.imranahmed.sero2022.ui;
 
+import static edu.aku.imranahmed.sero2022.core.MainApp.randomChild;
 import static edu.aku.imranahmed.sero2022.core.MainApp.selectedCluster;
 import static edu.aku.imranahmed.sero2022.core.MainApp.selectedHousehold;
 
@@ -122,6 +123,7 @@ public class IdentificationActivity extends AppCompatActivity {
         if (MainApp.form.getSynced().equals("1") && !MainApp.superuser) { // Do not allow synced form to be edited
             Toast.makeText(this, "This form has been locked.", Toast.LENGTH_SHORT).show();
         } else {
+            randomChild = db.getRandomChildByhhid(MainApp.hhid);
             finish();
             startActivity(new Intent(this, ConsentActivity.class));
         }

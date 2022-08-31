@@ -68,6 +68,8 @@ object CreateTable {
 */
             + ChildTable.COLUMN_EB_CODE + " TEXT, "
             + ChildTable.COLUMN_HHID + " TEXT, "
+            + ChildTable.COLUMN_CHILD_LNO + " TEXT, "
+            + ChildTable.COLUMN_CHILD_NAME + " TEXT, "
             + ChildTable.COLUMN_G04SPECID + " TEXT,"
             + ChildTable.COLUMN_SNO + " TEXT, "
             + ChildTable.COLUMN_USERNAME + " TEXT, "

@@ -170,7 +170,7 @@
                                 android:layout_weight="1"
                                 android:layout_height="match_parent"
                                 android:minHeight="48dp"
-                                android:text="@={child.ec13cline}" />
+                                android:text="@={child.childLno}" />
                         </LinearLayout>
 
 
@@ -213,7 +213,7 @@
                                 android:layout_weight="1"
                                 android:layout_height="match_parent"
                                 android:minHeight="48dp"
-                                android:text="@={child.ec14cname}" />
+                                android:text="@={child.childName}" />
                         </LinearLayout>
 
                     </LinearLayout>

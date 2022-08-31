@@ -22,8 +22,8 @@ import edu.aku.imranahmed.sero2022.contracts.TableContracts;
 import edu.aku.imranahmed.sero2022.core.MainApp;
 import edu.aku.imranahmed.sero2022.database.DatabaseHelper;
 import edu.aku.imranahmed.sero2022.databinding.ActivitySectionGBinding;
-import edu.aku.imranahmed.sero2022.ui.ChildEndingActivity;
-
+import edu.aku.imranahmed.sero2022.models.Child;
+import edu.aku.imranahmed.sero2022.ui.EndingActivity;
 
 
 public class SectionGActivity extends AppCompatActivity {
@@ -42,8 +42,8 @@ public class SectionGActivity extends AppCompatActivity {
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
 
-        child.setEc13cline(child.getEc13());
-        child.setEc14cname(child.getEc14());
+        child.setChildLno(child.getEc13());
+        child.setChildName(child.getEc14());
         bi.setChild(child);
 
         Intent intent = getIntent();
@@ -73,16 +73,20 @@ public class SectionGActivity extends AppCompatActivity {
         if (!formValidation()) return;
         // saveDraft();
         if (updateDB()) {
-
-                Intent forwardIntent = new Intent(this, ChildEndingActivity.class).putExtra("complete", false);
-            forwardIntent.putExtra("requestCode", requestCode);
-            forwardIntent.putExtra("complete", true);
+            child = new Child();
+            finish();
+            if (MainApp.randomChild.size() > 0) {
+                startActivity(new Intent(this, ChildSelectionActivity.class));
+            } else {
+                Intent forwardIntent = new Intent(this, EndingActivity.class);
+                forwardIntent.putExtra("requestCode", requestCode);
+                forwardIntent.putExtra("complete", true);
                 //forwardIntent.putExtra("checkToEnable", 3);
                 forwardIntent.setFlags(Intent.FLAG_ACTIVITY_FORWARD_RESULT);
                 setResult(RESULT_OK, forwardIntent);
                 startActivity(forwardIntent);
-                finish();
             }
+        } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
 
 
     }

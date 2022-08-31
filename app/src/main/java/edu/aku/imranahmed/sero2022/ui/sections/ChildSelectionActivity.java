@@ -1,6 +1,8 @@
 package edu.aku.imranahmed.sero2022.ui.sections;
 
 
+import static edu.aku.imranahmed.sero2022.core.MainApp.randomChild;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -13,7 +15,6 @@ import androidx.databinding.DataBindingUtil;
 import com.validatorcrawler.aliazaz.Validator;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import edu.aku.imranahmed.sero2022.R;
 import edu.aku.imranahmed.sero2022.core.MainApp;
@@ -43,8 +44,6 @@ public class ChildSelectionActivity extends AppCompatActivity {
 
     private void populateSpinner() {
 
-        List<RandomHH> randomHH = db.getRandomChildByhhid(MainApp.hhid);
-
         // Populate Provinces
 
         childNames = new ArrayList<>();
@@ -52,12 +51,9 @@ public class ChildSelectionActivity extends AppCompatActivity {
         childNames.add("...");
         childSerial.add("");
 
-        for (RandomHH random : randomHH) {
-
+        for (RandomHH random : randomChild) {
             childNames.add(random.getChildName());
             childSerial.add(random.getChildSno());
-
-
         }
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(ChildSelectionActivity.this,
@@ -69,9 +65,9 @@ public class ChildSelectionActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
-/*                bi.es1respline.setText("");
+                bi.es1respline.setText(childSerial.get(bi.es1resp.getSelectedItemPosition()));
 
-                //  if (position == 0) return;
+ /*                //  if (position == 0) return;
                 try {
                     MainApp.child = db.getChildrenByUUID(childNames.get(bi.es1resp.getSelectedItemPosition()));
                     if (MainApp.child.getUid().equals("")) {
@@ -86,6 +82,7 @@ public class ChildSelectionActivity extends AppCompatActivity {
                 }*/
                 if (position != 0) {
                     MainApp.selectedChildName = (childNames.get(bi.es1resp.getSelectedItemPosition()));
+                    MainApp.selectedChildPosition = (childSerial.get(bi.es1resp.getSelectedItemPosition()));
                 }
             }
 
@@ -99,7 +96,7 @@ public class ChildSelectionActivity extends AppCompatActivity {
 
     public void btnContinue(View view) {
         if (!formValidation()) return;
-
+        randomChild.remove(bi.es1resp.getSelectedItemPosition() - 1);
 //        childListAll.remove(bi.es1resp.getSelectedItemPosition() - 1);
         startActivity(new Intent(this, SectionCBActivity.class));
         finish();

@@ -150,6 +150,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(ChildTable.COLUMN_UUID, child.getUuid());
         values.put(ChildTable.COLUMN_EB_CODE, child.getEbCode());
         values.put(ChildTable.COLUMN_HHID, child.getHhid());
+        values.put(ChildTable.COLUMN_CHILD_LNO, child.getChildLno());
+        values.put(ChildTable.COLUMN_CHILD_NAME, child.getChildName());
         values.put(ChildTable.COLUMN_G04SPECID, child.getG04specid());
         values.put(ChildTable.COLUMN_SNO, child.getSno());
         values.put(ChildTable.COLUMN_USERNAME, child.getUserName());
@@ -1421,5 +1423,42 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             return mCursor.getCount() > 0;
         }
         return false;
+    }
+
+    public Child getChildByUUid(String sno, String name) throws JSONException {
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        Cursor c;
+        String[] columns = null;
+
+        String whereClause;
+        whereClause = ChildTable.COLUMN_UUID + "=? AND " +
+                ChildTable.COLUMN_CHILD_LNO + "=? AND " +
+                ChildTable.COLUMN_CHILD_NAME + "=? ";
+
+        String[] whereArgs = {MainApp.form.getUid(), sno, name};
+
+        String groupBy = null;
+        String having = null;
+
+        String orderBy = ChildTable.COLUMN_ID + " ASC";
+
+        Child child = new Child();
+
+        c = db.query(
+                ChildTable.TABLE_NAME,  // The table to query
+                columns,                   // The columns to return
+                whereClause,               // The columns for the WHERE clause
+                whereArgs,                 // The values for the WHERE clause
+                groupBy,                   // don't group the rows
+                having,                    // don't filter by row groups
+                orderBy                    // The sort order
+        );
+        while (c.moveToNext()) {
+            child = new Child().Hydrate(c);
+        }
+
+        db.close();
+
+        return child;
     }
 }

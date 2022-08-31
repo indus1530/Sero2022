@@ -3,6 +3,8 @@ package edu.aku.imranahmed.sero2022.models;
 import static edu.aku.imranahmed.sero2022.core.MainApp.PROJECT_NAME;
 import static edu.aku.imranahmed.sero2022.core.MainApp._EMPTY_;
 import static edu.aku.imranahmed.sero2022.core.MainApp.form;
+import static edu.aku.imranahmed.sero2022.core.MainApp.selectedChildName;
+import static edu.aku.imranahmed.sero2022.core.MainApp.selectedChildPosition;
 
 import android.database.Cursor;
 import android.util.Log;
@@ -26,7 +28,7 @@ import edu.aku.imranahmed.sero2022.core.MainApp;
 
 public class Child extends BaseObservable implements Observable {
 
-    private final String TAG = "Form";
+    private final String TAG = "Child";
     private final transient PropertyChangeRegistry propertyChangeRegistry = new PropertyChangeRegistry();
     // APP VARIABLES
     private String projectName = PROJECT_NAME;
@@ -39,6 +41,8 @@ public class Child extends BaseObservable implements Observable {
     private String cstatus = _EMPTY_;
     private String ebCode = _EMPTY_;
     private String hhid = _EMPTY_;
+    private String childLno = _EMPTY_;
+    private String childName = _EMPTY_;
     private String g04specid = _EMPTY_;
     private String sno = _EMPTY_;
     private String deviceId = _EMPTY_;
@@ -80,8 +84,6 @@ public class Child extends BaseObservable implements Observable {
     private String ec09 = _EMPTY_;
     private String ec11 = _EMPTY_;
     private String ec12 = _EMPTY_;
-    private String ec13cline = _EMPTY_;
-    private String ec14cname = _EMPTY_;
     private String ec18 = _EMPTY_;
     private String ec19 = _EMPTY_;
     private String ec21 = _EMPTY_;
@@ -291,7 +293,10 @@ public class Child extends BaseObservable implements Observable {
         setSysDate(MainApp.form.getSysDate());
         setUserName(MainApp.user.getUserName());
         setDeviceId(MainApp.deviceid);
-        setUuid(MainApp.form.getUid());  // not applicable in Form table
+        setUuid(MainApp.form.getUid());
+        setChildLno(selectedChildPosition);
+        setChildName(selectedChildName);
+        // not applicable in Form table
         setAppver(MainApp.appInfo.getAppVersion());
         setProjectName(PROJECT_NAME);
         setEbCode(MainApp.selectedHousehold.getEbCode());
@@ -593,23 +598,23 @@ public class Child extends BaseObservable implements Observable {
     }
 
     @Bindable
-    public String getEc13cline() {
-        return ec13cline;
+    public String getChildLno() {
+        return childLno;
     }
 
-    public void setEc13cline(String ec13cline) {
-        this.ec13cline = ec13cline;
-        notifyPropertyChanged(BR.ec13cline);
+    public void setChildLno(String childLno) {
+        this.childLno = childLno;
+        notifyPropertyChanged(BR.childLno);
     }
 
     @Bindable
-    public String getEc14cname() {
-        return ec14cname;
+    public String getChildName() {
+        return childName;
     }
 
-    public void setEc14cname(String ec14cname) {
-        this.ec14cname = ec14cname;
-        notifyPropertyChanged(BR.ec14cname);
+    public void setChildName(String childName) {
+        this.childName = childName;
+        notifyPropertyChanged(BR.childName);
     }
 
     @Bindable
@@ -732,7 +737,7 @@ public class Child extends BaseObservable implements Observable {
     public void setEc13(String ec13) {
         this.ec13 = ec13;
         this.sno = ec13;
-        this.ec13cline = ec13;
+        this.childLno = ec13;
         notifyPropertyChanged(BR.ec13);
     }
 
@@ -743,7 +748,7 @@ public class Child extends BaseObservable implements Observable {
 
     public void setEc14(String ec14) {
         this.ec14 = ec14;
-        this.ec14cname = ec14;
+        this.childName = ec14;
         notifyPropertyChanged(BR.ec14);
     }
 
@@ -3291,6 +3296,8 @@ public class Child extends BaseObservable implements Observable {
 */
         this.ebCode = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_EB_CODE));
         this.hhid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_HHID));
+        this.childLno = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_CHILD_LNO));
+        this.childName = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_CHILD_NAME));
         this.projectName = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_PROJECT_NAME));
         this.sno = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_SNO));
         this.g04specid = cursor.getString(cursor.getColumnIndexOrThrow(TableContracts.ChildTable.COLUMN_G04SPECID));
@@ -3357,8 +3364,6 @@ public class Child extends BaseObservable implements Observable {
             this.ec09 = json.getString("ec09");
             this.ec11 = json.getString("ec11");
             this.ec12 = json.getString("ec12");
-            this.ec13cline = json.getString("ec13cline");
-            this.ec14cname = json.getString("ec14cname");
             this.ec18 = json.getString("ec18");
             this.ec19 = json.getString("ec19");
             this.ec21 = json.getString("ec21");
@@ -3583,6 +3588,8 @@ public class Child extends BaseObservable implements Observable {
         json.put(TableContracts.ChildTable.COLUMN_UID, this.uid);
         json.put(TableContracts.ChildTable.COLUMN_EB_CODE, this.ebCode);
         json.put(TableContracts.ChildTable.COLUMN_HHID, this.hhid);
+        json.put(TableContracts.ChildTable.COLUMN_CHILD_LNO, this.childLno);
+        json.put(TableContracts.ChildTable.COLUMN_CHILD_NAME, this.childName);
         json.put(TableContracts.ChildTable.COLUMN_PROJECT_NAME, this.projectName);
         json.put(TableContracts.ChildTable.COLUMN_UUID, this.uuid);
         json.put(TableContracts.ChildTable.COLUMN_SNO, this.sno);
@@ -3803,8 +3810,6 @@ public class Child extends BaseObservable implements Observable {
                 .put("ec09", ec09)
                 .put("ec11", ec11)
                 .put("ec12", ec12)
-                .put("ec13cline", ec13cline)
-                .put("ec14cname", ec14cname)
                 .put("ec18", ec18)
                 .put("ec19", ec19)
                 .put("ec21", ec21)

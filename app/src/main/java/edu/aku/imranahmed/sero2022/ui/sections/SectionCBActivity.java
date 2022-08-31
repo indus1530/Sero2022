@@ -1,7 +1,8 @@
 package edu.aku.imranahmed.sero2022.ui.sections;
 
 import static edu.aku.imranahmed.sero2022.core.MainApp.child;
-import static edu.aku.imranahmed.sero2022.core.MainApp.selectedHousehold;
+import static edu.aku.imranahmed.sero2022.core.MainApp.selectedChildName;
+import static edu.aku.imranahmed.sero2022.core.MainApp.selectedChildPosition;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -38,9 +39,17 @@ public class SectionCBActivity extends AppCompatActivity {
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
 
-        child.setEc13cline(selectedHousehold.getChildSno());
-        child.setEc14cname(selectedHousehold.getChildName());
+//        bi.es1respline.setText(childSerial.get(bi.es1resp.getSelectedItemPosition()));
+
+        try {
+            child = db.getChildByUUid(selectedChildPosition, selectedChildName);
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Toast.makeText(this, "JSONException(CHILD): " + e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
         bi.setChild(child);
+        child.setChildLno(MainApp.selectedChildPosition);
+        child.setChildName(MainApp.selectedChildName);
 
         Intent intent = getIntent();
         requestCode = intent.getStringExtra("requestCode");
@@ -91,9 +100,9 @@ public class SectionCBActivity extends AppCompatActivity {
 
     public void btnContinue(View view) {
         if (!formValidation()) return;
-        if (!insertNewRecord()) return;
+        /*if (!insertNewRecord()) return;*/
         // saveDraft();
-        if (updateDB()) {
+        if (child.getUid().equals("") ? insertNewRecord() : updateDB()) {
             setResult(RESULT_OK);
             Intent i;
             i = new Intent(this, SectionIM1Activity.class).putExtra("complete", true);

@@ -91,12 +91,13 @@ public class MainApp extends Application {
 
     public static List<Child> childList;
     public static List<Integer> mwraList;
-    public static List<Integer> childListAll;
+    public static List<RandomHH> randomChild;
 
     public static int childCount = 0;
     public static String selectedMWRA;
     public static int selectedChild;
     public static String selectedChildName = "";
+    public static String selectedChildPosition = "";
     public static int memberCountComplete;
     public static boolean memberComplete;
 
