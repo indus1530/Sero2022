@@ -128,9 +128,7 @@ object CreateTable {
             + RandomHHTable.COLUMN_RANDOMDT + " TEXT,"
             + RandomHHTable.COLUMN_SNO + " TEXT,"
             + RandomHHTable.COLUMN_CHILD_NAME + " TEXT,"
-            + RandomHHTable.COLUMN_CHILD_SNO + " TEXT,"
-            + RandomHHTable.COLUMN_CHILD_NAME2 + " TEXT,"
-            + RandomHHTable.COLUMN_CHILD_SNO2 + " TEXT"
+            + RandomHHTable.COLUMN_CHILD_SNO + " TEXT"
             + " );"
             )
 

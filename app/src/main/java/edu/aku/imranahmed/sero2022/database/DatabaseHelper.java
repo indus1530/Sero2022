@@ -521,8 +521,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             values.put(RandomHHTable.COLUMN_SNO, randomHH.getSno());
             values.put(RandomHHTable.COLUMN_CHILD_NAME, randomHH.getChildName());
             values.put(RandomHHTable.COLUMN_CHILD_SNO, randomHH.getChildSno());
-            values.put(RandomHHTable.COLUMN_CHILD_NAME2, randomHH.getChild2Name());
-            values.put(RandomHHTable.COLUMN_CHILD_SNO2, randomHH.getChild2Sno());
 
             long rowID = db.insertOrThrow(RandomHHTable.TABLE_NAME, null, values);
             if (rowID != -1) insertCount++;
@@ -1114,6 +1112,34 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
         if (c != null && !c.isClosed()) {
             c.close();
+        }
+        return randomHH;
+    }
+
+    public List<RandomHH> getRandomChildByhhid(String hhid) {
+
+        SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
+        Cursor c = null;
+        String[] columns = null;
+        String whereClause = RandomHHTable.COLUMN_EB_CODE + " = ? AND " +
+                RandomHHTable.COLUMN_HH_NO + " = ? ";
+
+        String[] whereArgs = {selectedCluster.getEbcode(), hhid};
+        String groupBy = null;
+        String having = null;
+        String orderBy = null;
+        List<RandomHH> randomHH = new ArrayList<>();
+        c = db.query(
+                RandomHHTable.TABLE_NAME,   // The table to query
+                columns,                    // The columns to return
+                whereClause,                // The columns for the WHERE clause
+                whereArgs,                  // The values for the WHERE clause
+                groupBy,                    // don't group the rows
+                having,                     // don't filter by row groups
+                orderBy                     // The sort order
+        );
+        while (c.moveToNext()) {
+            randomHH.add(new RandomHH().hydrate(c));
         }
         return randomHH;
     }

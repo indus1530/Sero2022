@@ -19,11 +19,15 @@ import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import edu.aku.imranahmed.sero2022.R;
 import edu.aku.imranahmed.sero2022.core.MainApp;
 import edu.aku.imranahmed.sero2022.database.DatabaseHelper;
 import edu.aku.imranahmed.sero2022.databinding.ActivityIdentificationBinding;
 import edu.aku.imranahmed.sero2022.models.Form;
+import edu.aku.imranahmed.sero2022.models.RandomHH;
 import edu.aku.imranahmed.sero2022.ui.sections.ConsentActivity;
 
 
@@ -33,6 +37,7 @@ public class IdentificationActivity extends AppCompatActivity {
     ActivityIdentificationBinding bi;
     private DatabaseHelper db;
     private int c, c1;
+    private ArrayList<String> childNames;
 
 
     @Override
@@ -83,7 +88,6 @@ public class IdentificationActivity extends AppCompatActivity {
                 }
 
 
-
                 bi.hh12.setSelection(bi.hh12.getText().length());
             }
 
@@ -95,8 +99,6 @@ public class IdentificationActivity extends AppCompatActivity {
         });
 
     }
-
-
 
 
     private boolean formValidation() {
@@ -125,8 +127,6 @@ public class IdentificationActivity extends AppCompatActivity {
         }
 
     }
-
-
 
 
     public void btnEnd(View view) {
@@ -163,7 +163,8 @@ public class IdentificationActivity extends AppCompatActivity {
 
         bi.fldGrpIdentifier.setVisibility(View.GONE);
         bi.headhh.setVisibility(View.GONE);
-        bi.llchildName.setVisibility(View.GONE);
+        bi.llchildName1.setVisibility(View.GONE);
+        bi.llchildName2.setVisibility(View.GONE);
 
         bi.btnContinue.setBackgroundTintList(ContextCompat.getColorStateList(IdentificationActivity.this, R.color.gray));
         bi.btnContinue.setEnabled(false);
@@ -195,12 +196,28 @@ public class IdentificationActivity extends AppCompatActivity {
         bi.btnContinue.setBackgroundTintList(ContextCompat.getColorStateList(IdentificationActivity.this, R.color.gray));
         bi.btnContinue.setEnabled(false);
 
+        MainApp.hhid = bi.hh12.getText().toString();
+
         selectedHousehold = db.getRandomByhhid(bi.hh12.getText().toString());
         if (selectedHousehold != null) {
             bi.hh16a.setText(selectedHousehold.getHhhead());    // Name of Head
-            bi.childName.setText(selectedHousehold.getChildName());
+
+            List<RandomHH> randomHH = db.getRandomChildByhhid(MainApp.hhid);
+            childNames = new ArrayList<>();
+
+            for (RandomHH random : randomHH) {
+                childNames.add(random.getChildName());
+            }
+//            bi.childName.setText(selectedHousehold.getChildName());
+            bi.childName.setText(childNames.get(0));
+
+            if (childNames.size() > 1) {
+                bi.llchildName2.setVisibility(View.VISIBLE);
+                bi.childName2.setText(childNames.get(1));
+            }
+
             bi.headhh.setVisibility(View.VISIBLE);
-            bi.llchildName.setVisibility(View.VISIBLE);
+            bi.llchildName1.setVisibility(View.VISIBLE);
             bi.btnContinue.setBackgroundTintList(ContextCompat.getColorStateList(this, R.color.colorAccent));
             bi.btnContinue.setEnabled(true);
         } else {

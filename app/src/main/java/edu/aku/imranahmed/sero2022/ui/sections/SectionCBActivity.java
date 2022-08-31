@@ -1,7 +1,6 @@
 package edu.aku.imranahmed.sero2022.ui.sections;
 
 import static edu.aku.imranahmed.sero2022.core.MainApp.child;
-import static edu.aku.imranahmed.sero2022.core.MainApp.selectedChildName;
 import static edu.aku.imranahmed.sero2022.core.MainApp.selectedHousehold;
 
 import android.content.Intent;
@@ -22,7 +21,6 @@ import edu.aku.imranahmed.sero2022.contracts.TableContracts;
 import edu.aku.imranahmed.sero2022.core.MainApp;
 import edu.aku.imranahmed.sero2022.database.DatabaseHelper;
 import edu.aku.imranahmed.sero2022.databinding.ActivitySectionCbBinding;
-import edu.aku.imranahmed.sero2022.ui.ChildEndingActivity;
 
 public class SectionCBActivity extends AppCompatActivity {
 

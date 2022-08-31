@@ -317,7 +317,7 @@
                         </LinearLayout>
 
                         <LinearLayout
-                            android:id="@+id/llchildName"
+                            android:id="@+id/llchildName1"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="@drawable/bottom"
@@ -346,6 +346,40 @@
                                 android:layout_width="wrap_content"
                                 android:gravity="center_horizontal|center_vertical"
                                 android:layout_height="match_parent"
+                                android:text="@string/confirm" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/llchildName2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal"
+                            android:visibility="gone"
+                            tools:visibility="visible">
+
+                            <TextView
+                                style="@style/sub_labels"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1.15"
+                                android:text="@string/ec14cname" />
+
+                            <TextView
+                                android:id="@+id/childName2"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
+                                android:background="@null"
+                                android:gravity="center_vertical"
+                                android:textColor="@color/colorPrimary" />
+
+                            <CheckBox
+                                android:id="@+id/childNameCheck2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:gravity="center_horizontal|center_vertical"
                                 android:text="@string/confirm" />
 
                         </LinearLayout>

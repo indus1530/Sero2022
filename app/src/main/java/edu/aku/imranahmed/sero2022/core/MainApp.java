@@ -91,6 +91,7 @@ public class MainApp extends Application {
 
     public static List<Child> childList;
     public static List<Integer> mwraList;
+    public static List<Integer> childListAll;
 
     public static int childCount = 0;
     public static String selectedMWRA;
@@ -104,6 +105,7 @@ public class MainApp extends Application {
     public static String selectedDistrict = "";
     public static String selectedTehsil = "";
     public static String selectedUC = "";
+    public static String hhid = "";
 
     public static RandomHH selectedHousehold;
     public static int selectedLanguage = 0;

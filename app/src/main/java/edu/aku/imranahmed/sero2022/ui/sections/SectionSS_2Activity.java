@@ -20,7 +20,6 @@ import edu.aku.imranahmed.sero2022.contracts.TableContracts;
 import edu.aku.imranahmed.sero2022.core.MainApp;
 import edu.aku.imranahmed.sero2022.database.DatabaseHelper;
 import edu.aku.imranahmed.sero2022.databinding.ActivitySectionSs2Binding;
-import edu.aku.imranahmed.sero2022.models.Child;
 
 public class SectionSS_2Activity extends AppCompatActivity {
 
@@ -65,7 +64,8 @@ public class SectionSS_2Activity extends AppCompatActivity {
         if (updateDB()) {
             setResult(RESULT_OK);
             Intent i;
-            i = new Intent(this, SectionCBActivity.class).putExtra("complete", true).setFlags(Intent.FLAG_ACTIVITY_FORWARD_RESULT);
+//            i = new Intent(this, SectionCBActivity.class).putExtra("complete", true).setFlags(Intent.FLAG_ACTIVITY_FORWARD_RESULT);
+            i = new Intent(this, ChildSelectionActivity.class).putExtra("complete", true).setFlags(Intent.FLAG_ACTIVITY_FORWARD_RESULT);
             startActivity(i);
             finish();
         } else {
