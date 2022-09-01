@@ -463,12 +463,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             long rowID = db.insertOrThrow(UsersTable.TABLE_NAME, null, values);
             if (rowID != -1) insertCount++;
         }
-
-
-        db.close();
-
-        db.close();
-
         return insertCount;
     }
 
@@ -863,9 +857,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         if (c != null) {
             c.close();
         }
-        if (db != null) {
-            db.close();
-        }
         return allFC;
     }
 
@@ -1257,7 +1248,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
 
         c.close();
-        db.close();
 
         Log.d(TAG, "getUnsyncedFormHH: " + allForms.toString().length());
         Log.d(TAG, "getUnsyncedFormHH: " + allForms);
@@ -1332,7 +1322,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
 
         c.close();
-        db.close();
         return form;
 
     }
@@ -1364,8 +1353,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     whereArgs);
             if (rowID != -1) insertCount++;
         }
-
-        db.close();
 
         // Open all linked tables using Forms UID received from server
         syncUnlockedChildren(list);
@@ -1403,10 +1390,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     whereArgs);
             if (rowID != -1) insertCount++;
         }
-
-        db.close();
-        db.close();
-
         return insertCount;
     }
 
@@ -1430,8 +1413,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Cursor c;
         String[] columns = null;
 
-        String whereClause;
-        whereClause = ChildTable.COLUMN_UUID + "=? AND " +
+        String whereClause = ChildTable.COLUMN_UUID + "=? AND " +
                 ChildTable.COLUMN_CHILD_LNO + "=? AND " +
                 ChildTable.COLUMN_CHILD_NAME + "=? ";
 
@@ -1456,9 +1438,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         while (c.moveToNext()) {
             child = new Child().Hydrate(c);
         }
-
-        db.close();
-
         return child;
     }
 }
