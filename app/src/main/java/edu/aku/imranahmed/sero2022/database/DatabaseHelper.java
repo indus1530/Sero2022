@@ -153,7 +153,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(ChildTable.COLUMN_CHILD_LNO, child.getChildLno());
         values.put(ChildTable.COLUMN_CHILD_NAME, child.getChildName());
         values.put(ChildTable.COLUMN_G04SPECID, child.getG04specid());
-        values.put(ChildTable.COLUMN_SNO, child.getSno());
         values.put(ChildTable.COLUMN_USERNAME, child.getUserName());
         values.put(ChildTable.COLUMN_SYSDATE, child.getSysDate());
         values.put(ChildTable.COLUMN_CSTATUS, child.getCStatus());
@@ -162,18 +161,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(ChildTable.COLUMN_GPSDATE, child.getGpsDT());
         values.put(ChildTable.COLUMN_GPSACC, child.getGpsAcc());
 
+        values.put(ChildTable.COLUMN_SNO, child.getSno());
         values.put(ChildTable.COLUMN_SCH, child.sCHtoString());
+        values.put(ChildTable.COLUMN_SCB, child.sCBtoString());
+        values.put(ChildTable.COLUMN_SIM, child.sIMtoString());
         values.put(ChildTable.COLUMN_SF, child.sFtoString());
         values.put(ChildTable.COLUMN_SG, child.sGtoString());
 
-     /*   values.put(ChildsTable.COLUMN_SSS, child.sMtoString());
-        values.put(ChildsTable.COLUMN_SCB, child.sNtoString());
-        values.put(ChildsTable.COLUMN_IM, child.sOtoString());*/
-
         values.put(ChildTable.COLUMN_DEVICETAGID, child.getDeviceTag());
-/*
-        values.put(ChildTable.COLUMN_ENTRY_TYPE, child.getEntryType());
-*/
         values.put(ChildTable.COLUMN_DEVICEID, child.getDeviceId());
         values.put(ChildTable.COLUMN_APPVERSION, child.getAppver());
         values.put(ChildTable.COLUMN_SYNCED, child.getSynced());
@@ -1412,20 +1407,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase(DATABASE_PASSWORD);
         Cursor c;
         String[] columns = null;
-
-        String whereClause = ChildTable.COLUMN_UUID + "=? AND " +
-                ChildTable.COLUMN_CHILD_LNO + "=? AND " +
-                ChildTable.COLUMN_CHILD_NAME + "=? ";
-
+        String whereClause = ChildTable.COLUMN_UUID + "=? AND " + ChildTable.COLUMN_CHILD_LNO + "=? AND " + ChildTable.COLUMN_CHILD_NAME + "=? ";
         String[] whereArgs = {MainApp.form.getUid(), sno, name};
-
         String groupBy = null;
         String having = null;
-
         String orderBy = ChildTable.COLUMN_ID + " ASC";
-
         Child child = new Child();
-
         c = db.query(
                 ChildTable.TABLE_NAME,  // The table to query
                 columns,                   // The columns to return

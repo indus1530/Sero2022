@@ -26,9 +26,9 @@
             android:minHeight="?attr/actionBarSize"
             android:theme="@style/CustomToolbarTheme"
             app:popupTheme="@style/CustomPopupTheme"
+            app:subtitle="@string/cbsubheading"
             app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
             app:title="@string/cbmainheading"
-            app:subtitle="@string/cbsubheading"
             app:titleTextAppearance="@style/Toolbar.TitleText" />
 
         <ScrollView
@@ -65,27 +65,29 @@
 
                             <TextView
                                 android:layout_width="0dp"
-                                android:gravity="center_vertical"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
+                                android:gravity="center_vertical"
                                 android:text="@string/ec01" />
 
                             <io.blackbox_vision.datetimepickeredittext.view.DatePickerEditText
                                 android:id="@+id/ec01"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
+                                android:layout_weight="2"
                                 android:gravity="center"
                                 android:hint="YYYY-MM-DD"
                                 android:text="@={child.ec01}"
                                 app:dateFormat="yyyy-MM-dd"
-                                app:theme="@style/DatePickerEditTextDialogTheme"
-                                app:maxDate="CR_DATE" />
-
+                                app:maxDate="CR_DATE"
+                                app:theme="@style/DatePickerEditTextDialogTheme" />
 
                         </LinearLayout>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- ec02  Time   -->
                 <androidx.cardview.widget.CardView
@@ -112,7 +114,6 @@
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:gravity="center_vertical"
                                 android:layout_weight="1"
                                 android:text="@string/ec02" />
 
@@ -120,8 +121,8 @@
                             <io.blackbox_vision.datetimepickeredittext.view.TimePickerEditText
                                 android:id="@+id/ec02"
                                 android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
                                 android:focusable="false"
                                 android:gravity="center"
                                 android:hint="HH:mm"
@@ -131,7 +132,9 @@
                                 app:timeFormat="HH:mm" />
 
                         </LinearLayout>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
                 <!-- ec13cline  Input-Numeric   -->
@@ -159,23 +162,25 @@
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:gravity="center_vertical"
                                 android:layout_weight="1"
+                                android:gravity="center_vertical"
                                 android:text="@string/ec13cline" />
 
                             <TextView
                                 android:id="@+id/ec13"
                                 style="@style/sub_labels"
                                 android:layout_width="0dp"
-                                android:layout_weight="1"
                                 android:layout_height="match_parent"
+                                android:layout_weight="2"
                                 android:minHeight="48dp"
                                 android:text="@={child.childLno}" />
+
                         </LinearLayout>
 
-
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- ec14cname  Input   -->
                 <androidx.cardview.widget.CardView
@@ -210,14 +215,17 @@
                                 android:id="@+id/ec14cname"
                                 style="@style/sub_labels"
                                 android:layout_width="0dp"
-                                android:layout_weight="1"
                                 android:layout_height="match_parent"
+                                android:layout_weight="2"
                                 android:minHeight="48dp"
                                 android:text="@={child.childName}" />
+
                         </LinearLayout>
 
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- ec18  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -292,15 +300,18 @@
                                 android:checked="@{child.ec18.equals(`96`)}"
                                 android:onClick="@{()->child.setEc18(`96`) + ec19.clearCheck() + ec21.clearCheck()}"
                                 android:text="@string/ec1896" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- ec19  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVec19"
                     style="@style/cardView"
-
                     android:visibility="gone">
 
                     <LinearLayout
@@ -331,9 +342,7 @@
                             android:id="@+id/ec19"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-
-                            >
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:id="@+id/ec19a"
@@ -341,10 +350,9 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:checked="@{child.ec19.equals(`1`)}"
-                                android:onClick="@{()->child.setEc19(`1`)}"
-                                android:text="@string/ec19a"
                                 android:enabled="false"
-                                />
+                                android:onClick="@{()->child.setEc19(`1`)}"
+                                android:text="@string/ec19a" />
 
                             <RadioButton
                                 android:id="@+id/ec19b"
@@ -352,31 +360,16 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:checked="@{child.ec19.equals(`2`)}"
-                                android:onClick="@{()->child.setEc19(`2`)}"
                                 android:enabled="false"
-
+                                android:onClick="@{()->child.setEc19(`2`)}"
                                 android:text="@string/ec19b" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
-                <!-- ec20  Title   -->
-                <TextView
-                    style="@style/info"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/ec20"
-                    android:visibility="@{child.ec18.equals(`4`) || child.ec18.equals(`96`) ? View.GONE : View.VISIBLE}"
-
-                    />              <!-- ec20  Title   -->
-                <TextView
-                    style="@style/info"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/ec21info"
-                    android:visibility="@{child.ec18.equals(`4`) || child.ec18.equals(`96`) ? View.GONE : View.VISIBLE}"
-
-                    />
 
                 <!-- ec21  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -388,6 +381,18 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
+
+                        <TextView
+                            style="@style/info"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/ec20" />
+
+                        <TextView
+                            style="@style/info"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/ec21info" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -416,8 +421,8 @@
 
                             <RadioButton
                                 android:id="@+id/ec21a"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{child.ec21.equals(`1`)}"
                                 android:onClick="@{()->child.setEc21(`1`)}"
@@ -425,16 +430,18 @@
 
                             <RadioButton
                                 android:id="@+id/ec21b"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{child.ec21.equals(`2`)}"
                                 android:onClick="@{()->child.setEc21(`2`)}"
                                 android:text="@string/ec21b" />
-                        </RadioGroup>
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
 
+                        </RadioGroup>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
 
 
                 <!-- cb01  Title   -->
@@ -479,18 +486,16 @@
                             android:orientation="horizontal">
 
                             <TextView
-                                style="@style/sub_labels"
-                                android:layout_width="0dp"
+                                style="@style/textView"
+                                android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:gravity="center_horizontal|center_vertical"
-                                android:layout_weight="1"
                                 android:text="@string/cb01a" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
 
                                 android:id="@+id/cb01a"
                                 android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:gravity="center"
                                 android:hint="##"
@@ -504,32 +509,34 @@
                                 app:type="range" />
 
                             <TextView
-                                style="@style/sub_labels"
-                                android:layout_width="0dp"
+                                style="@style/textView"
+                                android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:gravity="center_horizontal|center_vertical"
-                                android:layout_weight="2"
                                 android:text="@string/cb01b" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/cb01b"
                                 android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
+                                android:enabled="@{child.cb01a.equals(`77`)}"
                                 android:gravity="center"
                                 android:hint="##"
                                 android:imeOptions="actionNext"
                                 android:inputType="number"
                                 android:maxLength="2"
-                                android:enabled="@{child.cb01a.equals(`77`)}"
                                 android:text="@={child.cb01b}"
                                 app:defaultValue="77"
                                 app:maxValue="88"
                                 app:minValue="77"
                                 app:type="range" />
+
                         </LinearLayout>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- cb02  Title   -->
                 <androidx.cardview.widget.CardView
@@ -573,21 +580,18 @@
                             android:orientation="horizontal">
 
                             <TextView
-                                style="@style/sub_labels"
-                                android:layout_width="0dp"
+                                style="@style/textView"
+                                android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:gravity="center_horizontal|center_vertical"
-                                android:layout_weight="1"
                                 android:text="@string/cb02a" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/cb02a"
                                 android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:gravity="center"
                                 android:hint="##"
-
                                 android:inputType="number"
                                 android:maxLength="2"
                                 android:text="@={child.cb02a}"
@@ -597,31 +601,33 @@
                                 app:type="range" />
 
                             <TextView
-                                style="@style/sub_labels"
-                                android:layout_width="0dp"
+                                style="@style/textView"
+                                android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:gravity="center_horizontal|center_vertical"
-                                android:layout_weight="2"
                                 android:text="@string/cb02b" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/cb02b"
                                 android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
+                                android:enabled="@{child.cb02a.equals(`77`)}"
                                 android:gravity="center"
                                 android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
-                                android:enabled="@{child.cb02a.equals(`77`)}"
                                 android:text="@={child.cb02b}"
                                 app:defaultValue="77"
                                 app:maxValue="88"
                                 app:minValue="77"
                                 app:type="range" />
+
                         </LinearLayout>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- cb03  Title   -->
                 <androidx.cardview.widget.CardView
@@ -679,13 +685,13 @@
                                 android:enabled="@{!child.cb03dk.equals(`98`)}"
                                 android:gravity="center"
                                 android:hint="##"
+                                android:imeOptions="actionNext"
                                 android:inputType="number"
                                 android:maxLength="2"
-                                app:pattern="^[0-9]{2,2}$"
                                 android:text="@={child.cb03dd}"
-                                android:imeOptions="actionNext"
                                 app:maxValue="31"
                                 app:minValue="1"
+                                app:pattern="^[0-9]{2,2}$"
                                 app:type="range" />
 
                             <TextView
@@ -703,9 +709,9 @@
                                 android:enabled="@{!child.cb03dk.equals(`98`)}"
                                 android:gravity="center"
                                 android:hint="##"
+                                android:imeOptions="actionNext"
                                 android:inputType="number"
                                 android:maxLength="2"
-                                android:imeOptions="actionNext"
                                 android:text="@={child.cb03mm}"
                                 app:maxValue="12"
                                 app:minValue="1"
@@ -733,26 +739,25 @@
                                 app:minValue="2018"
                                 app:type="range" />
 
+                            <CheckBox
+                                android:id="@+id/cb03dk"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="end"
+                                android:backgroundTint="@color/redOverlay"
+                                android:checked="@{child.cb03dk.equals(`98`)}"
+                                android:onClick="@{()->child.setCb03dk(child.cb03dk.equals(`98`)?``:`98`)}"
+                                android:paddingStart="0dp"
+                                android:tag="-1"
+                                android:text="@string/cb03dk"
+                                android:textColor="@color/redDark"
+                                android:textSize="12sp" />
 
                         </LinearLayout>
-
-                        <CheckBox
-                            android:id="@+id/cb03dk"
-                            android:layout_width="wrap_content"
-                            android:layout_gravity="end"
-                            android:layout_height="wrap_content"
-                            android:checked="@{child.cb03dk.equals(`98`)}"
-                            android:onClick="@{()->child.setCb03dk(child.cb03dk.equals(`98`)?``:`98`)}"
-                            android:tag="-1"
-                            android:backgroundTint="@color/redOverlay"
-                            android:paddingStart="0dp"
-                            android:textColor="@color/redDark"
-                            android:text="@string/cb03dk" />
 
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
-
 
 
                 <!--&lt;!&ndash; ec22  Radio   &ndash;&gt;
@@ -920,8 +925,6 @@
         </ScrollView>
 
     </LinearLayout>
-
-
 
 
 </layout>

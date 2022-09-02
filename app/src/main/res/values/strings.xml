@@ -788,9 +788,9 @@
     <string name="cb0title">Could you please bring (name)’s Birth Certificate, Immunization Card, and any other immunization record from a public or private health provider available in home? We will need to refer to those documents.</string>
     <string name="cb03info">Probe: What is (his/her) birthday? If the mother/caretaker knows the exact date of birth, also record the day; otherwise, circle ‘98’ for day. Month and year must be recorded</string>
     <string name="cb03">On what day, month and year was (name) born? </string>
-    <string name="cb03dd">Day of Birth</string>
-    <string name="cb03mm">Month of Birth</string>
-    <string name="cb03yy">Year of Birth</string>
+    <string name="cb03dd">Day</string>
+    <string name="cb03mm">Month</string>
+    <string name="cb03yy">Year</string>
     <string name="cb03dk">Don’t know</string>
     <string name="cb04">How old is (name)? </string>
     <string name="cb04info">Record age in completed years and months. Record ‘0’ if less than 1 year.If  Responses to CB3 and CB4 are inconsistent, probe further and correct. </string>
@@ -872,9 +872,9 @@
     <string name='Qec11'>ec11</string>
     <string name='Qec12'>ec12</string>
     <string name='Qec13'>ec13</string>
-    <string name='Qec13cline'>ec13cline</string>
+    <string name='Qec13cline'>ec13</string>
     <string name='Qec14'>ec14</string>
-    <string name='Qec14cname'>ec14cname</string>
+    <string name='Qec14cname'>ec14</string>
     <string name='Qec15'>ec15</string>
     <string name='Qec16'>ec16</string>
     <string name='Qec17'>ec17</string>

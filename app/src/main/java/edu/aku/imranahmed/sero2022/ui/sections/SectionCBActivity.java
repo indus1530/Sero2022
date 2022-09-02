@@ -39,7 +39,6 @@ public class SectionCBActivity extends AppCompatActivity {
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
 
-//        bi.es1respline.setText(childSerial.get(bi.es1resp.getSelectedItemPosition()));
 
         try {
             child = db.getChildByUUid(selectedChildPosition, selectedChildName);
@@ -48,12 +47,13 @@ public class SectionCBActivity extends AppCompatActivity {
             Toast.makeText(this, "JSONException(CHILD): " + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
         bi.setChild(child);
-        child.setChildLno(MainApp.selectedChildPosition);
-        child.setChildName(MainApp.selectedChildName);
+        child.setChildLno(child.getChildLno().isEmpty() ? MainApp.selectedChildPosition : child.getChildLno());
+        child.setChildName(child.getChildName().isEmpty() ? MainApp.selectedChildName : child.getChildName());
 
         Intent intent = getIntent();
         requestCode = intent.getStringExtra("requestCode");
     }
+
 
     private boolean insertNewRecord() {
         if (!MainApp.child.getUid().equals("") || MainApp.superuser) return true;

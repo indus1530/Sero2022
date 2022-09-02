@@ -78,6 +78,7 @@
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="2"
+                            android:hint="@string/ec13"
                             android:text="@={child.ec13}" />
 
                     </LinearLayout>
@@ -396,21 +397,22 @@
                                 app:minValue="2018"
                                 app:type="range" />
 
+                            <CheckBox
+                                android:id="@+id/cb03dk"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="end"
+                                android:backgroundTint="@color/redOverlay"
+                                android:checked="@{child.cb03dk.equals(`98`)}"
+                                android:onClick="@{()->child.setCb03dk(child.cb03dk.equals(`98`)?``:`98`)}"
+                                android:paddingStart="0dp"
+                                android:tag="-1"
+                                android:text="@string/cb03dk"
+                                android:textColor="@color/redDark"
+                                android:textSize="12sp" />
+
 
                         </LinearLayout>
-
-                        <CheckBox
-                            android:id="@+id/cb03dk"
-                            android:layout_width="wrap_content"
-                            android:layout_gravity="end"
-                            android:layout_height="wrap_content"
-                            android:checked="@{child.cb03dk.equals(`98`)}"
-                            android:onClick="@{()->child.setCb03dk(child.cb03dk.equals(`98`)?``:`98`)}"
-                            android:tag="-1"
-                            android:backgroundTint="@color/redOverlay"
-                            android:paddingStart="0dp"
-                            android:textColor="@color/redDark"
-                            android:text="@string/cb03dk" />
 
                     </LinearLayout>
 

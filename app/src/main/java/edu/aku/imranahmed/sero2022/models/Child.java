@@ -625,8 +625,7 @@ public class Child extends BaseObservable implements Observable {
     public void setEc18(String ec18) {
         this.ec18 = ec18;
         setEc19(ec18.equals("4") || ec18.equals("96") ? "" : this.ec19);
-        setEc21(ec18.equals("4") || ec18.equals("96") ? "" : this.ec19);
-
+        setEc21(ec18.equals("4") || ec18.equals("96") ? "" : this.ec21);
         notifyPropertyChanged(BR.ec18);
     }
 
