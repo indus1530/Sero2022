@@ -3335,9 +3335,6 @@ public class Child extends BaseObservable implements Observable {
             this.ec15 = json.getString("ec15");
             this.ec16 = json.getString("ec16");
             this.ec17 = json.getString("ec17");
-            this.cb03dd = json.getString("cb03dd");
-            this.cb03mm = json.getString("cb03mm");
-            this.cb03yy = json.getString("cb03yy");
             this.cb04mm = json.getString("cb04mm");
             this.cb04yy = json.getString("cb04yy");
             this.ageInMonths = json.getLong("ageInMonths");
@@ -3348,7 +3345,7 @@ public class Child extends BaseObservable implements Observable {
 
 
     public void sCBHydrate(String string) throws JSONException {
-        Log.d(TAG, "sIMHydrate: " + string);
+        Log.d(TAG, "sCBHydrate: " + string);
         if (string != null) {
             JSONObject json = null;
             json = new JSONObject(string);
@@ -3373,6 +3370,9 @@ public class Child extends BaseObservable implements Observable {
             this.cb01b = json.getString("cb01b");
             this.cb02a = json.getString("cb02a");
             this.cb02b = json.getString("cb02b");
+            this.cb03dd = json.getString("cb03dd");
+            this.cb03mm = json.getString("cb03mm");
+            this.cb03yy = json.getString("cb03yy");
         }
     }
 
@@ -3623,9 +3623,6 @@ public class Child extends BaseObservable implements Observable {
                 .put("ec15", ec15)
                 .put("ec16", ec16)
                 .put("ec17", ec17)
-                .put("cb03dd", cb03dd)
-                .put("cb03mm", cb03mm)
-                .put("cb03yy", cb03yy)
                 .put("cb04mm", cb04mm)
                 .put("cb04yy", cb04yy)
                 .put("ageInMonths", ageInMonths);
@@ -3818,7 +3815,10 @@ public class Child extends BaseObservable implements Observable {
                 .put("cb01a", cb01a)
                 .put("cb01b", cb01b)
                 .put("cb02a", cb02a)
-                .put("cb02b", cb02b);
+                .put("cb02b", cb02b)
+                .put("cb03dd", cb03dd)
+                .put("cb03mm", cb03mm)
+                .put("cb03yy", cb03yy);
         return json.toString();
     }
 
