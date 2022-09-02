@@ -3370,9 +3370,9 @@ public class Child extends BaseObservable implements Observable {
             this.cb01b = json.getString("cb01b");
             this.cb02a = json.getString("cb02a");
             this.cb02b = json.getString("cb02b");
-            this.cb03dd = json.getString("cb03dd");
-            this.cb03mm = json.getString("cb03mm");
-            this.cb03yy = json.getString("cb03yy");
+            this.cb03dd = json.has("cb03dd") ? json.getString("cb03dd") : "";
+            this.cb03mm = json.has("cb03mm") ? json.getString("cb03mm") : "";
+            this.cb03yy = json.has("cb03yy") ? json.getString("cb03yy") : "";
         }
     }
 
