@@ -4,8 +4,11 @@ import static edu.aku.imranahmed.sero2022.core.MainApp.child;
 import static edu.aku.imranahmed.sero2022.core.MainApp.selectedChildName;
 import static edu.aku.imranahmed.sero2022.core.MainApp.selectedChildPosition;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
@@ -17,11 +20,14 @@ import com.validatorcrawler.aliazaz.Validator;
 
 import org.json.JSONException;
 
+import java.util.Calendar;
+
 import edu.aku.imranahmed.sero2022.R;
 import edu.aku.imranahmed.sero2022.contracts.TableContracts;
 import edu.aku.imranahmed.sero2022.core.MainApp;
 import edu.aku.imranahmed.sero2022.database.DatabaseHelper;
 import edu.aku.imranahmed.sero2022.databinding.ActivitySectionCbBinding;
+import edu.aku.imranahmed.sero2022.ui.ChildEndingActivity;
 
 public class SectionCBActivity extends AppCompatActivity {
 
@@ -39,19 +45,31 @@ public class SectionCBActivity extends AppCompatActivity {
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
 
+        setGPS();
+
 
         try {
             child = db.getChildByUUid(selectedChildPosition, selectedChildName);
         } catch (JSONException e) {
             e.printStackTrace();
-            Toast.makeText(this, "JSONException(CHILD): " + e.getMessage(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "JSONException(getChildByUUid): " + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
         bi.setChild(child);
         child.setChildLno(child.getChildLno().isEmpty() ? MainApp.selectedChildPosition : child.getChildLno());
         child.setChildName(child.getChildName().isEmpty() ? MainApp.selectedChildName : child.getChildName());
 
+
         Intent intent = getIntent();
+
         requestCode = intent.getStringExtra("requestCode");
+
+        // Set min year for 23 - 6 months
+        Calendar cal = Calendar.getInstance();
+        // cal.add(Calendar.MONTH, -6);
+        bi.cb03yy.setMaxvalue(Float.parseFloat(String.valueOf(cal.get(Calendar.YEAR))));
+        cal.add(Calendar.MONTH, +6);
+        cal.add(Calendar.MONTH, -23 - 6); // 6 months buffer
+        bi.cb03yy.setMinvalue(Float.parseFloat(String.valueOf(cal.get(Calendar.YEAR))));
     }
 
 
@@ -103,11 +121,22 @@ public class SectionCBActivity extends AppCompatActivity {
         /*if (!insertNewRecord()) return;*/
         // saveDraft();
         if (child.getUid().equals("") ? insertNewRecord() : updateDB()) {
-            setResult(RESULT_OK);
-            Intent i;
-            i = new Intent(this, SectionIM1Activity.class).putExtra("complete", true);
-            startActivity(i);
-            finish();
+            if (child.getEc21().equals("1")) {
+                Intent forwardIntent = new Intent(this, SectionIM1Activity.class).putExtra("complete", true);
+                forwardIntent.putExtra("requestCode", requestCode);
+                forwardIntent.setFlags(Intent.FLAG_ACTIVITY_FORWARD_RESULT);
+                setResult(RESULT_OK, forwardIntent);
+                startActivity(forwardIntent);
+                finish();
+            } else {
+                Intent forwardIntent = new Intent(this, ChildEndingActivity.class).putExtra("complete", false);
+                forwardIntent.putExtra("requestCode", requestCode);
+                forwardIntent.putExtra("checkToEnable", 3);
+                forwardIntent.setFlags(Intent.FLAG_ACTIVITY_FORWARD_RESULT);
+                setResult(RESULT_OK, forwardIntent);
+                startActivity(forwardIntent);
+                finish();
+            }
         } else {
             Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
         }
@@ -154,5 +183,33 @@ public class SectionCBActivity extends AppCompatActivity {
         returnIntent.putExtra("requestCode", requestCode);
         setResult(RESULT_CANCELED, returnIntent);
         finish();
+    }
+
+    public void setGPS() {
+        SharedPreferences GPSPref = getSharedPreferences("GPSCoordinates", Context.MODE_PRIVATE);
+        try {
+            String lat = GPSPref.getString("Latitude", "0");
+            String lang = GPSPref.getString("Longitude", "0");
+            String acc = GPSPref.getString("Accuracy", "0");
+
+            if (lat == "0" && lang == "0") {
+                Toast.makeText(this, "Could not obtained points", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(this, "Points set", Toast.LENGTH_SHORT).show();
+            }
+
+            String date = DateFormat.format("dd-MM-yyyy HH:mm", Long.parseLong(GPSPref.getString("Time", "0"))).toString();
+
+            child.setGpsLat(lat);
+            child.setGpsLng(lang);
+            child.setGpsAcc(acc);
+            child.setGpsDT(date); // Timestamp is converted to date above
+
+//            Toast.makeText(this, "GPS set", Toast.LENGTH_SHORT).show();
+
+        } catch (Exception e) {
+            Log.e(TAG, "setGPS: " + e.getMessage());
+        }
+
     }
 }

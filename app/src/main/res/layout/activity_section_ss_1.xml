@@ -306,10 +306,9 @@
                             android:layout_height="wrap_content">
 
                             <TextView
-                                style="@style/sub_labels"
+                                style="@style/textView"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="12dp"
                                 android:text="@string/ss03atitle" />
 
                             <RadioButton
@@ -353,10 +352,9 @@
                                 android:text="@string/ss03e" />
 
                             <TextView
-                                style="@style/sub_labels"
+                                style="@style/textView"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="12dp"
                                 android:text="@string/ss03ftitle" />
 
                             <RadioButton
@@ -376,10 +374,9 @@
                                 android:text="@string/ss03g" />
 
                             <TextView
-                                style="@style/sub_labels"
+                                style="@style/textView"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="12dp"
                                 android:text="@string/ss03htitle" />
 
                             <RadioButton
@@ -431,10 +428,9 @@
                                 android:text="@string/ss03m" />
 
                             <TextView
-                                style="@style/sub_labels"
+                                style="@style/textView"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="12dp"
                                 android:text="@string/ss03ntitle" />
 
 
@@ -463,9 +459,13 @@
                                 android:tag="ss03x"
                                 android:text="@={form.ss03xx}"
                                 android:visibility="@{form.ss03.equals(`96`) ? View.VISIBLE : View.GONE}" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- ss07  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -502,10 +502,9 @@
                             android:layout_height="wrap_content">
 
                             <TextView
-                                style="@style/sub_labels"
+                                style="@style/textView"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="12dp"
                                 android:text="@string/ss07atitle" />
 
                             <RadioButton
@@ -542,10 +541,9 @@
 
 
                             <TextView
-                                style="@style/sub_labels"
+                                style="@style/textView"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="12dp"
                                 android:text="@string/ss07etitle" />
 
                             <RadioButton
@@ -597,6 +595,7 @@
                                 android:checked="@{form.ss07.equals(`96`)}"
                                 android:onClick="@{()->form.setSs07(`96`)}"
                                 android:text="@string/ss07x" />
+
                         </RadioGroup>
 
                         <EditText
@@ -610,6 +609,7 @@
                             android:visibility="@{form.ss07.equals(`96`) ? View.VISIBLE : View.GONE}" />
 
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
 

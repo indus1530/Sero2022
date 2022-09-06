@@ -92,8 +92,7 @@ public class ConsentActivity extends AppCompatActivity {
 
     public void btnContinue(View view) {
         if (!formValidation()) return;
-        if (!insertNewRecord()) return;
-        // saveDraft();
+        //if (!insertNewRecord()) return;
         if (updateDB()) {
             finish();
             if (form.getHh18().equals("1")) {

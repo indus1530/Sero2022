@@ -97,8 +97,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="@string/istatus03"
                                 android:checked="@{form.hh21.equals(`3`)}"
-                                android:onClick="@{()->form.setHh21(`3`)}"
-                                />
+                                android:onClick="@{()->form.setHh21(`3`)}" />
 
                             <RadioButton
                                 android:id="@+id/istatusd"

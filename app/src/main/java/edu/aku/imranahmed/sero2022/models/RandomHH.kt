@@ -24,6 +24,7 @@ class RandomHH {
     var tabno: String? = _EMPTY_
     var childName: String? = _EMPTY_
     var childSno: String? = _EMPTY_
+    var childGrp: String? = _EMPTY_
 
     var rndType: String? = _EMPTY_
     var assignHH: String? = _EMPTY_
@@ -53,6 +54,7 @@ class RandomHH {
         this.sno = jsonObject.getString(RandomHHTable.COLUMN_SNO)
         this.childName = jsonObject.getString(RandomHHTable.COLUMN_CHILD_NAME)
         this.childSno = jsonObject.getString(RandomHHTable.COLUMN_CHILD_SNO)
+        this.childGrp = jsonObject.getString(RandomHHTable.COLUMN_CHILD_GRP)
 
         return this
     }
@@ -74,6 +76,7 @@ class RandomHH {
         sno = cursor.getString(cursor.getColumnIndexOrThrow(RandomHHTable.COLUMN_SNO))
         childName = cursor.getString(cursor.getColumnIndexOrThrow(RandomHHTable.COLUMN_CHILD_NAME))
         childSno = cursor.getString(cursor.getColumnIndexOrThrow(RandomHHTable.COLUMN_CHILD_SNO))
+        childGrp = cursor.getString(cursor.getColumnIndexOrThrow(RandomHHTable.COLUMN_CHILD_GRP))
         return this
     }
 

@@ -118,6 +118,7 @@ public class TableContracts {
         public static final String COLUMN_TAB_NO = "tabNo";
         public static final String COLUMN_CHILD_NAME = "hh13cname";
         public static final String COLUMN_CHILD_SNO = "hhchildsno";
+        public static final String COLUMN_CHILD_GRP = "chgroup";
         public static String COLUMN_DIST_CODE = "dist_id";
     }
 
