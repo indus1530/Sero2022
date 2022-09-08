@@ -22,7 +22,6 @@ import edu.aku.imranahmed.sero2022.core.MainApp;
 import edu.aku.imranahmed.sero2022.database.DatabaseHelper;
 import edu.aku.imranahmed.sero2022.databinding.ActivitySectionRiBinding;
 import edu.aku.imranahmed.sero2022.ui.EndingActivity;
-import edu.aku.imranahmed.sero2022.ui.lists.HouseholdScreenActivity;
 
 public class SectionRIActivity extends AppCompatActivity {
 
@@ -132,7 +131,8 @@ public class SectionRIActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         Toast.makeText(this, "Back Press Not Allowed", Toast.LENGTH_SHORT).show();
-       setResult(RESULT_CANCELED); finish();
+        setResult(RESULT_CANCELED);
+        finish();
     }
 
 

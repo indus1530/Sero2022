@@ -92,7 +92,6 @@ public class ConsentActivity extends AppCompatActivity {
 
     public void btnContinue(View view) {
         if (!formValidation()) return;
-        //if (!insertNewRecord()) return;
         if (updateDB()) {
             finish();
             if (form.getHh18().equals("1")) {
@@ -120,14 +119,9 @@ public class ConsentActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-
-        // Backpressed Allowed
         super.onBackPressed();
-
-        //
         Toast.makeText(this, "Back Press Not Allowed", Toast.LENGTH_SHORT).show();
         setResult(RESULT_CANCELED);
-        //finish();
     }
 
     public void setGPS() {
