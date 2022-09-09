@@ -27,10 +27,15 @@
             android:minHeight="?attr/actionBarSize"
             android:theme="@style/CustomToolbarTheme"
             app:popupTheme="@style/CustomPopupTheme"
-            app:subtitle="@string/consentsubheading"
             app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
             app:title="@string/consentmainheading"
             app:titleTextAppearance="@style/Toolbar.TitleText" />
+
+        <TextView
+            style="@style/sub_labels"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/consentsubheading" />
 
         <ScrollView
             android:layout_width="match_parent"

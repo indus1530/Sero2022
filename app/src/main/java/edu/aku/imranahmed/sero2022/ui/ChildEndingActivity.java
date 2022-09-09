@@ -109,23 +109,8 @@ public class ChildEndingActivity extends AppCompatActivity {
             if (MainApp.randomChild.size() > 0) {
                 startActivity(new Intent(this, ChildSelectionActivity.class));
             } else {
-                Intent forwardIntent = new Intent(this, EndingActivity.class);
-                forwardIntent.putExtra("requestCode", requestCode);
-                forwardIntent.putExtra("complete", true);
-                //forwardIntent.putExtra("checkToEnable", 3);
-                forwardIntent.setFlags(Intent.FLAG_ACTIVITY_FORWARD_RESULT);
-                setResult(RESULT_OK, forwardIntent);
-                startActivity(forwardIntent);
+                startActivity(new Intent(this, EndingActivity.class).putExtra("checkToEnable", 1));
             }
-            /*Intent forwardIntent = new Intent();
-            forwardIntent.putExtra("requestCode", requestCode);
-            //forwardIntent.setFlags(Intent.FLAG_ACTIVITY_FORWARD_RESULT);
-            setResult(RESULT_OK, forwardIntent);
-            //startActivity(forwardIntent);
-            finish();
-           *//* Intent i = new Intent(this, MainActivity.class);
-            startActivity(i);
-           */
             Toast.makeText(this, "Data has been updated.", Toast.LENGTH_SHORT).show();
 
         } else {

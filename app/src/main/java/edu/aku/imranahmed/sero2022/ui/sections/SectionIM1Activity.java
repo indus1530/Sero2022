@@ -223,9 +223,16 @@ public class SectionIM1Activity extends AppCompatActivity {
 
     public void btnContinue(View view) {
         if (!formValidation()) return;
-        if (child.getAgeInMonths() < 6 || child.getAgeInMonths() > 23) {
-            invalidChildDialog(child.getChildName(), child.getAgeInMonths());
-            return;
+        if (bi.fldGrpCVim04.getVisibility() == View.GONE) {
+            if (child.getAgeInMonths() < 6 || child.getAgeInMonths() > 23) {
+                invalidChildDialog(child.getChildName(), child.getAgeInMonths());
+                return;
+            }
+        } else {
+            if (child.getTrueAgeInMonths() < 6 || child.getTrueAgeInMonths() > 23) {
+                invalidChildDialog(child.getChildName(), child.getTrueAgeInMonths());
+                return;
+            }
         }
         if (updateDB()) {
             Intent forwardIntent = new Intent(this, SectionIM2Activity.class);
