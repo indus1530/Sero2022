@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
 
     <string name="app_name"><big>SERO</big> <i><u><small>2022</small></u></i></string>
@@ -162,7 +163,7 @@
     <string name="sectionhhhouseholdinformationhhsubheading">Household Information</string>
     <string name="cbmainheading">CB: ELIGIBLE CHILD’S BACKGROUND</string>
     <string name="cbsubheading">Information of Eligible Children of 6-23 Months Old</string>
-    <string name="sectionsssocioeconomicstatusssmainheading">SECTION SS: SOCIO-ECONOMIC STATUS (SS) </string>
+    <string name="sectionsssocioeconomicstatusssmainheading">SOCIO-ECONOMIC STATUS (SS)</string>
     <string name="sectionsssocioeconomicstatussssubheading">Instructions: This section will be filled by the Head of the household (HH) or knowledgeable member atleast 18 years old</string>
     <string name="immainheading">IM: IMMUNIZATION</string>
     <string name="sectionchlistofchildren0623monthsoldmainheading">SECTION CH:</string>
@@ -196,7 +197,7 @@
     <string name="hh12aa">Yes</string>
     <string name="hh12ab">No</string>
     <string name="hh13">Name of the Respondent</string>
-    <string name="hh18t">Assalam Alaikum, my name is %1$ , And I belong to Aga Khan University Pakistan. And the Aga Khan University Department of Pediatrics &amp; Child Health invites you to participate in this survey which will assess the level of immunity of  your children have against polio as polio is currently very high in Pakistan. It is common, therefore, it is necessary to immediately address the factors that play a role in reducing the effectiveness of the polio vaccine, so in this regard, Aga Khan University, Pakistan is conducting a survey to find out about all such factors. Information can be obtained that affects the effectiveness of the polio vaccine.  If you agreed to participate in this survey and give us permission to complete the questionnaire, we will ask you about your, childhood illness, health-seeking attitudes. We will ask you about your children`s immunization coverage. During the survey 2 ml blood sample will also be taken from the child to check the immunity against polio. A blood sample will be taken by the expert staff of Aga Khan Hospital and the sample will be sent to Aga Khan Hospital for testing. This entire procedure may take about 30 minutes to complete.</string>
+    <string name="hh18t">Assalam Alaikum, my name is %1$s, \nAnd I belong to Aga Khan University Pakistan. \nAnd the Aga Khan University Department of Pediatrics &amp; Child Health \n\nInvites you to participate in this survey which will assess the level of immunity of  your children have against polio as polio is currently very high in Pakistan. \n\nIt is common, therefore, it is necessary to immediately address the factors that play a role in reducing the effectiveness of the polio vaccine, so in this regard, \nAga Khan University, Pakistan is conducting a survey to find out about all such factors. Information can be obtained that affects the effectiveness of the polio vaccine.  If you agreed to participate in this survey and give us permission to complete the questionnaire, we will ask you about your, childhood illness, health-seeking attitudes. We will ask you about your children`s immunization coverage. During the survey 2 ml blood sample will also be taken from the child to check the immunity against polio. A blood sample will be taken by the expert staff of Aga Khan Hospital and the sample will be sent to Aga Khan Hospital for testing. \n\nThis entire procedure may take about 30 minutes to complete.</string>
     <string name="hh18">May I start the interview now?</string>
     <string name="hh13a">Respondents Contact Number</string>
     <string name="hh18a">Yes, Permission is Given</string>
@@ -208,9 +209,10 @@
     <string name="hh15b">No</string>
     <string name="hh16a">HH Head</string>
     <string name="hh16b">Head of Households Contact No </string>
-    <string name="hh19">How many members are living in this household? (NUMBER OF PERSONS) (If 95 or more, record ‘95’) Note for enumorators: Persons who live in this dwelling/ compound and usually share a meal together </string>
-    <string name="hh19info"> (NUMBER OF PERSONS) (If 95 or more, record ‘95’) Note for enumerators: Persons who live in this dwelling/ compound and usually share a meal together </string>
-    <string name="hh20"> Does this HH have children 06-23 months years of age? (i.e., children who have reached their first birthday, but not their second birthday)</string>
+    <string name="hh19">How many members are living in this household ?</string>
+    <string name="hh19info">If 95 or more, record ‘95’ \nNote for enumerators: Persons who live in this dwelling / compound and usually share a meal together </string>
+    <string name="hh20">Does this HH have children 06–23 months years of age ?</string>
+    <string name="hh20info">i.e., children who have reached their first birthday, but not their second birthday</string>
     <string name="hh201">Yes</string>
     <string name="hh202">No</string>
     <string name="hh20a">If Yes, Numbers of childrens 06-23 months:</string>
@@ -223,8 +225,8 @@
     <string name="hh21f">Dwelling not found</string>
     <string name="hh21g">No child of 06-23 months in this household</string>
     <string name="hh21x">Other (specify) </string>
-    <string name="hh19a">Number of Male Members</string>
-    <string name="hh19b">Number of Female Members</string>
+    <string name="hh19a">Male Members</string>
+    <string name="hh19b">Female Members</string>
     <string name="ec01">Date of Interview</string>
     <string name="ec02">Record the time     </string>
     <string name="ec03">Interviews Code</string>

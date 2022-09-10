@@ -563,7 +563,7 @@
                 android:minHeight="56dp"
                 android:radius="10dp"
                 android:text="MAIN SCREEN"
-                android:textColor="@color/white"
+                android:textColor="@color/colorPrimaryDark"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 

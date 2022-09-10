@@ -113,7 +113,8 @@ public class SectionGActivity extends AppCompatActivity {
                 String strResult = result.getContents();
                 bi.g04.setText(strResult);
                 if (!checkQR())
-                    bi.EndButton.setVisibility(View.GONE);
+                    bi.btnEnd.setVisibility(View.GONE);
+                bi.btnContinue.setVisibility(View.GONE);
             }
         } else {
             super.onActivityResult(requestCode, resultCode, data);
@@ -125,15 +126,16 @@ public class SectionGActivity extends AppCompatActivity {
             Toast.makeText(this, "Already Exist", Toast.LENGTH_SHORT).show();
             return false;
         } else {
-//            Toast.makeText(this, "Not Exist", Toast.LENGTH_SHORT).show();
-            bi.EndButton.setVisibility(View.VISIBLE);
+            bi.btnEnd.setVisibility(View.VISIBLE);
+            bi.btnContinue.setVisibility(View.VISIBLE);
             return true;
         }
     }
 
     public void scanQR(View view) {
         // Scan QR Code
-        bi.EndButton.setVisibility(View.GONE);
+        bi.btnEnd.setVisibility(View.GONE);
+        bi.btnContinue.setVisibility(View.GONE);
         new IntentIntegrator(this).initiateScan();
     }
 
