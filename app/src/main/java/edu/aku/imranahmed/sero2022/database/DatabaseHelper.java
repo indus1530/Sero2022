@@ -58,8 +58,8 @@ import edu.aku.hassannaqvi.tpvics_r2.models.Villages;
 public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = PROJECT_NAME + ".db";
     public static final String DATABASE_COPY = PROJECT_NAME + "_copy.db";
-    private static final int DATABASE_VERSION = 2;
     public static final String DATABASE_PASSWORD = IBAHC;
+    private static final int DATABASE_VERSION = 2;
     private final String TAG = "DatabaseHelper";
 
     public DatabaseHelper(Context context) {
