@@ -17,20 +17,61 @@
         android:orientation="vertical">
 
 
-        <!-- CUSTOM TOOLBAR -->
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            style="@null"
+        <!--EndButton LinearLayout-->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorPrimary"
-            android:minHeight="?attr/actionBarSize"
-            android:theme="@style/CustomToolbarTheme"
-            app:popupTheme="@style/CustomPopupTheme"
-            app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
-            app:subtitle="@string/consentsubheading"
-            app:title="@string/consentmainheading"
-            app:titleTextAppearance="@style/Toolbar.TitleText" />
+            android:orientation="horizontal">
+
+
+            <!-- CUSTOM TOOLBAR -->
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                style="@null"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/colorPrimary"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="@style/CustomToolbarTheme"
+                app:popupTheme="@style/CustomPopupTheme"
+                app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
+                app:title="@string/consentmainheading"
+                app:titleTextAppearance="@style/Toolbar.TitleText" />
+
+            <Button
+                android:id="@+id/btn_End"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                android:onClick="btnEnd"
+                android:text="Cancel"
+                android:textColor="@color/colorPrimary"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btn_Continue"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/capsule"
+                android:backgroundTintMode="src_atop"
+                android:onClick="btnContinue"
+                android:padding="10dp"
+                android:text="Save"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+        <!--EndButton LinearLayout-->
+
+
+        <TextView
+            style="@style/sub_labels"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/consentsubheading" />
 
         <ScrollView
             android:layout_width="match_parent"
@@ -68,8 +109,8 @@
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:gravity="center_vertical"
                                 android:layout_weight="1"
+                                android:gravity="center_vertical"
                                 android:text="@string/hh01" />
 
                             <io.blackbox_vision.datetimepickeredittext.view.DatePickerEditText
@@ -115,8 +156,8 @@
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:gravity="center_vertical"
                                 android:layout_weight="1"
+                                android:gravity="center_vertical"
                                 android:text="@string/hh02" />
 
                             <io.blackbox_vision.datetimepickeredittext.view.TimePickerEditText
@@ -127,8 +168,8 @@
                                 android:focusable="false"
                                 android:gravity="center"
                                 android:hint="HH:mm"
-                                app:is24HourView="true"
                                 android:text="@={form.hh02}"
+                                app:is24HourView="true"
                                 app:theme="@style/DatePickerEditTextDialogTheme"
                                 app:timeFormat="HH:mm" />
 
@@ -581,9 +622,9 @@
                 <!-- hh18t  Title   --> <!-- hh18  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVhh18"
+                    style="@style/cardView"
                     android:layout_height="0dp"
-                    android:layout_weight="1"
-                    style="@style/cardView">
+                    android:layout_weight="1">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -597,8 +638,8 @@
                             android:layout_height="0dp"
                             android:layout_weight="1"
                             android:background="#fefede"
-                            android:lineHeight="24dp"
                             android:gravity="center_vertical"
+                            android:lineHeight="24dp"
                             android:padding="24dp"
                             android:paddingStart="24dp"
                             android:paddingEnd="24dp"
@@ -649,50 +690,18 @@
                                 android:checked="@{form.hh18.equals(`2`)}"
                                 android:onClick="@{()->form.setHh18(`2`)}"
                                 android:text="@string/hh18b" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
-                <!--EndButton LinearLayout-->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="end"
-                    android:layout_marginTop="24dp"
-                    android:orientation="horizontal"
-                    android:padding="24dp">
-
-                    <Button
-                        android:id="@+id/btn_End"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:background="@android:color/transparent"
-                        android:onClick="btnEnd"
-                        android:text="Cancel"
-                        android:textColor="@color/colorPrimary"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-
-                    <Button
-                        android:id="@+id/btn_Continue"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:background="@drawable/capsule"
-                        android:backgroundTint="@color/colorAccent"
-                        android:backgroundTintMode="src_atop"
-                        android:onClick="btnContinue"
-                        android:text="Save"
-                        android:textColor="@color/white"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-
-                </LinearLayout>
-                <!--EndButton LinearLayout-->
 
             </LinearLayout>
+
         </ScrollView>
 
     </LinearLayout>
+
 </layout>

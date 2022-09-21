@@ -1,5 +1,6 @@
 package edu.aku.imranahmed.sero2022.ui;
 
+import static edu.aku.imranahmed.sero2022.core.MainApp.form;
 import static edu.aku.imranahmed.sero2022.core.MainApp.randomChild;
 import static edu.aku.imranahmed.sero2022.core.MainApp.selectedCluster;
 import static edu.aku.imranahmed.sero2022.core.MainApp.selectedHousehold;
@@ -24,6 +25,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import edu.aku.imranahmed.sero2022.R;
+import edu.aku.imranahmed.sero2022.contracts.TableContracts;
 import edu.aku.imranahmed.sero2022.core.MainApp;
 import edu.aku.imranahmed.sero2022.database.DatabaseHelper;
 import edu.aku.imranahmed.sero2022.databinding.ActivityIdentificationBinding;
@@ -38,7 +40,7 @@ public class IdentificationActivity extends AppCompatActivity {
     ActivityIdentificationBinding bi;
     private DatabaseHelper db;
     private int c, c1;
-    private ArrayList<String> childNames;
+    private ArrayList<String> childNames, childGrp;
 
 
     @Override
@@ -58,26 +60,23 @@ public class IdentificationActivity extends AppCompatActivity {
         bi.hh12.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                //  Log.d(TAG, "beforeTextChanged: charSequence-"+charSequence+" i-"+i+ " i1-"+i1 +" i2-"+i2);
                 c = charSequence.length();
-
             }
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                bi.headhh.setVisibility(View.GONE);
+                bi.llchildName1.setVisibility(View.GONE);
+                bi.llchildName2.setVisibility(View.GONE);
+                bi.cvhh12a.setVisibility(View.GONE);
+                bi.hh12a.clearCheck();
+                bi.hh16a.setText("");
+                bi.childName.setText("");
+                bi.childgrp.setText("");
+                bi.childName2.setText("");
+                bi.childgrp2.setText("");
                 c1 = charSequence.length();
                 String txt = charSequence.toString();
-                Log.d(TAG, "onTextChanged: c-" + c + " c1-" + c1 + "\t\t\tCHAR: " + charSequence);
-                Log.d(TAG, "onTextChanged: i-" + i + " i1-" + i1 + " i2-" + i2 + "\t\t\tCHAR: " + charSequence);
-         /*       if (c == 0 && c1 == 1)
-                    bi.hh12.setText(bi.hh12.getText().toString() + "-"); // A-
-                if (c == 5 && c1 == 6)
-                    bi.hh12.setText(bi.hh12.getText().toString() + "-"); // A-0001-
-
-                if (c == 8 && c1 == 7)
-                    bi.hh12.setText(bi.hh12.getText().toString().substring(0, 6)); // A-0001
-                if (c == 3 && c1 == 2)
-                    bi.hh12.setText(bi.hh12.getText().toString().substring(0, 1)); // A*/
                 if (c1 > 1 && charSequence.charAt(1) != '-') {
                     txt = txt.charAt(0) + "-" + txt.substring(1);
                     bi.hh12.setText(txt);
@@ -87,8 +86,6 @@ public class IdentificationActivity extends AppCompatActivity {
                     txt = txt.substring(0, 6) + "-" + txt.substring(6);
                     bi.hh12.setText(txt);
                 }
-
-
                 bi.hh12.setSelection(bi.hh12.getText().length());
             }
 
@@ -99,6 +96,57 @@ public class IdentificationActivity extends AppCompatActivity {
             }
         });
 
+        bi.hh12a.setOnCheckedChangeListener((radioGroup, i) -> {
+            form.setHh12a("");
+            if (bi.hh12aa.isChecked()) form.setHh12a("1");
+            if (bi.hh12ab.isChecked()) form.setHh12a("2");
+        });
+
+    }
+
+
+    private boolean insertNewRecord() {
+        if (!form.getUid().equals("") || MainApp.superuser) return true;
+
+        MainApp.form.populateMeta();
+
+        long rowId = 0;
+        try {
+            rowId = db.addForm(MainApp.form);
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Toast.makeText(this, R.string.db_excp_error + " FORM-add", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        MainApp.form.setId(String.valueOf(rowId));
+        if (rowId > 0) {
+            MainApp.form.setUid(MainApp.form.getDeviceId() + MainApp.form.getId());
+            db.updatesFormColumn(TableContracts.FormsTable.COLUMN_UID, MainApp.form.getUid());
+            return true;
+        } else {
+            Toast.makeText(this, R.string.upd_db_error + " FORM-update", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+    }
+
+
+    private boolean updateDB() {
+        if (MainApp.superuser) return true;
+
+        db = MainApp.appInfo.getDbHelper();
+        long updcount = 0;
+        try {
+            updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_SHH, form.sHHtoString());
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Log.d(TAG, R.string.upd_db + e.getMessage());
+            Toast.makeText(this, R.string.upd_db + e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
+        if (updcount > 0) return true;
+        else {
+            Toast.makeText(this, R.string.upd_db_error, Toast.LENGTH_SHORT).show();
+            return false;
+        }
     }
 
 
@@ -125,7 +173,16 @@ public class IdentificationActivity extends AppCompatActivity {
         } else {
             randomChild = db.getRandomChildByhhid(MainApp.hhid);
             finish();
-            startActivity(new Intent(this, ConsentActivity.class));
+            if (MainApp.form.getUid().equals("") ? insertNewRecord() : updateDB()) {
+                if (bi.hh12ab.isChecked()) {
+                    Intent endingActivityIntent = new Intent(this, EndingActivity.class);
+                    endingActivityIntent.putExtra("complete", false);
+                    endingActivityIntent.putExtra("checkToEnable", 11);
+                    startActivity(endingActivityIntent);
+                } else {
+                    startActivity(new Intent(this, ConsentActivity.class));
+                }
+            }
         }
 
     }
@@ -133,21 +190,15 @@ public class IdentificationActivity extends AppCompatActivity {
 
     public void btnEnd(View view) {
         finish();
-        // startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
     }
 
 
     private boolean hhExists() throws JSONException {
-
-
         MainApp.form = new Form();
-
         MainApp.form = db.getFormByhhid();
-
         return MainApp.form != null;
-
-
     }
+
 
     public void checkEBNumber(View view) {
         if (!formValidation()) return;
@@ -157,6 +208,10 @@ public class IdentificationActivity extends AppCompatActivity {
         bi.hh08.setText(null);      //  Tehsil
         bi.hh09.setText(null);      //  City/Village
         bi.hh16a.setText(null);
+        bi.childName.setText(null);
+        bi.childgrp.setText(null);
+        bi.childName2.setText(null);
+        bi.childgrp2.setText(null);
 
         bi.checkHh06.setChecked(false);
         bi.checkHh07.setChecked(false);
@@ -167,6 +222,8 @@ public class IdentificationActivity extends AppCompatActivity {
         bi.headhh.setVisibility(View.GONE);
         bi.llchildName1.setVisibility(View.GONE);
         bi.llchildName2.setVisibility(View.GONE);
+        bi.cvhh12a.setVisibility(View.GONE);
+        bi.hh12a.clearCheck();
 
         bi.btnContinue.setBackgroundTintList(ContextCompat.getColorStateList(IdentificationActivity.this, R.color.gray));
         bi.btnContinue.setEnabled(false);
@@ -193,7 +250,15 @@ public class IdentificationActivity extends AppCompatActivity {
         if (!formValidation()) return;
 
         bi.hh16a.setText(null);
+        bi.childName.setText(null);
+        bi.childgrp.setText(null);
+        bi.childName2.setText(null);
+        bi.childgrp2.setText(null);
         bi.headhh.setVisibility(View.GONE);
+        bi.llchildName1.setVisibility(View.GONE);
+        bi.llchildName2.setVisibility(View.GONE);
+        bi.cvhh12a.setVisibility(View.GONE);
+        bi.hh12a.clearCheck();
 
         bi.btnContinue.setBackgroundTintList(ContextCompat.getColorStateList(IdentificationActivity.this, R.color.gray));
         bi.btnContinue.setEnabled(false);
@@ -206,20 +271,25 @@ public class IdentificationActivity extends AppCompatActivity {
 
             List<RandomHH> randomHH = db.getRandomChildByhhid(MainApp.hhid);
             childNames = new ArrayList<>();
+            childGrp = new ArrayList<>();
 
             for (RandomHH random : randomHH) {
                 childNames.add(random.getChildName());
+                childGrp.add(random.getChildGrp());
             }
 //            bi.childName.setText(selectedHousehold.getChildName());
             bi.childName.setText(childNames.get(0));
+            bi.childgrp.setText(childGrp.get(0));
 
             if (childNames.size() > 1) {
                 bi.llchildName2.setVisibility(View.VISIBLE);
                 bi.childName2.setText(childNames.get(1));
+                bi.childgrp2.setText(childGrp.get(1));
             }
 
             bi.headhh.setVisibility(View.VISIBLE);
             bi.llchildName1.setVisibility(View.VISIBLE);
+            bi.cvhh12a.setVisibility(View.VISIBLE);
             bi.btnContinue.setBackgroundTintList(ContextCompat.getColorStateList(this, R.color.colorAccent));
             bi.btnContinue.setEnabled(true);
         } else {

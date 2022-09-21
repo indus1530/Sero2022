@@ -26,7 +26,6 @@ import edu.aku.imranahmed.sero2022.contracts.TableContracts;
 import edu.aku.imranahmed.sero2022.core.MainApp;
 import edu.aku.imranahmed.sero2022.database.DatabaseHelper;
 import edu.aku.imranahmed.sero2022.databinding.ActivitySectionIm2Binding;
-import edu.aku.imranahmed.sero2022.ui.ChildEndingActivity;
 
 public class SectionIM2Activity extends AppCompatActivity {
 
@@ -123,14 +122,8 @@ public class SectionIM2Activity extends AppCompatActivity {
     public void btnContinue(View view) {
         if (!formValidation()) return;
         if (updateDB()) {
-            Intent forwardIntent = new Intent(this, SectionFActivity.class);
-            forwardIntent.putExtra("requestCode", requestCode);
-            forwardIntent.putExtra("complete", true);
-            forwardIntent.setFlags(Intent.FLAG_ACTIVITY_FORWARD_RESULT);
-            setResult(RESULT_OK, forwardIntent);
-
-            startActivity(forwardIntent);
             finish();
+            startActivity(new Intent(this, SectionFActivity.class));
         } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
     }
 

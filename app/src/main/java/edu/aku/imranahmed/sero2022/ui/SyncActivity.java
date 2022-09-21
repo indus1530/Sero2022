@@ -505,13 +505,12 @@ public class SyncActivity extends AppCompatActivity {
                     }
                 }
                 //mTextView1.append("\n" + workInfo.getState().name());
-                if (workInfo.getState() != null &&
-                        workInfo.getState() == WorkInfo.State.FAILED) {
+                if (workInfo.getState() != null && workInfo.getState() == WorkInfo.State.FAILED) {
                     String message = workInfo.getOutputData().getString("error");
                     downloadTables.get(position).setstatus("Process Failed7");
                     downloadTables.get(position).setstatusID(1);
                     downloadTables.get(position).setInfo("Time: " + time + "/" + getTime() + "\t Size: " + size);
-                    downloadTables.get(position).setmessage(message);
+                    downloadTables.get(position).setmessage(MainApp.superuser ? message : "Testing");
                     syncListAdapter.updatesyncList(downloadTables);
 
                     if (position == 0 && workInfo.getOutputData().getString("deviceTime") != null) {

@@ -58,8 +58,8 @@ import edu.aku.hassannaqvi.tpvics_r2.models.Villages;
 public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = PROJECT_NAME + ".db";
     public static final String DATABASE_COPY = PROJECT_NAME + "_copy.db";
-    private static final int DATABASE_VERSION = 2;
     public static final String DATABASE_PASSWORD = IBAHC;
+    private static final int DATABASE_VERSION = 2;
     private final String TAG = "DatabaseHelper";
 
     public DatabaseHelper(Context context) {
@@ -119,16 +119,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsTable.COLUMN_GPSACC, form.getGpsAcc());
 
         values.put(FormsTable.COLUMN_SHH, form.sHHtoString());
-
-     /*   values.put(FormsTable.COLUMN_SSS, form.sMtoString());
-        values.put(FormsTable.COLUMN_SCB, form.sNtoString());
-        values.put(FormsTable.COLUMN_IM, form.sOtoString());*/
+        values.put(FormsTable.COLUMN_SSS, form.sSStoString());
 
         values.put(FormsTable.COLUMN_ISTATUS, form.getiStatus());
         values.put(FormsTable.COLUMN_DEVICETAGID, form.getDeviceTag());
-/*
-        values.put(FormsTable.COLUMN_ENTRY_TYPE, form.getEntryType());
-*/
+
         values.put(FormsTable.COLUMN_DEVICEID, form.getDeviceId());
         values.put(FormsTable.COLUMN_APPVERSION, form.getAppver());
         values.put(FormsTable.COLUMN_SYNCED, form.getSynced());
@@ -512,6 +507,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             values.put(RandomHHTable.COLUMN_SNO, randomHH.getSno());
             values.put(RandomHHTable.COLUMN_CHILD_NAME, randomHH.getChildName());
             values.put(RandomHHTable.COLUMN_CHILD_SNO, randomHH.getChildSno());
+            values.put(RandomHHTable.COLUMN_CHILD_GRP, randomHH.getChildGrp());
 
             long rowID = db.insertOrThrow(RandomHHTable.TABLE_NAME, null, values);
             if (rowID != -1) insertCount++;

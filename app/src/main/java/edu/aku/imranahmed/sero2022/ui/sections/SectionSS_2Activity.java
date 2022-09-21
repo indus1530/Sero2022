@@ -59,15 +59,10 @@ public class SectionSS_2Activity extends AppCompatActivity {
 
     public void btnContinue(View view) {
         if (!formValidation()) return;
-        // if (!insertNewRecord()) return;
-        // saveDraft();
         if (updateDB()) {
             setResult(RESULT_OK);
-            Intent i;
-//            i = new Intent(this, SectionCBActivity.class).putExtra("complete", true).setFlags(Intent.FLAG_ACTIVITY_FORWARD_RESULT);
-            i = new Intent(this, ChildSelectionActivity.class).putExtra("complete", true).setFlags(Intent.FLAG_ACTIVITY_FORWARD_RESULT);
-            startActivity(i);
             finish();
+            startActivity(new Intent(this, ChildSelectionActivity.class));
         } else {
             Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
         }

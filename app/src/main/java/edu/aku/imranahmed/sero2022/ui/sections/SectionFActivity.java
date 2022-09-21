@@ -68,24 +68,16 @@ public class SectionFActivity extends AppCompatActivity {
     public void btnContinue(View view) {
         if (!formValidation()) return;
         if (updateDB()) {
-            Intent forwardIntent = new Intent(this, SectionGActivity.class);
-            forwardIntent.putExtra("requestCode", requestCode);
-            forwardIntent.putExtra("complete", true);
-            forwardIntent.setFlags(Intent.FLAG_ACTIVITY_FORWARD_RESULT);
-            setResult(RESULT_OK, forwardIntent);
-
-            startActivity(forwardIntent);
             finish();
+            startActivity(new Intent(this, SectionGActivity.class));
         } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
     }
 
 
     public void btnEnd(View view) {
-
         Intent returnIntent = new Intent();
         returnIntent.putExtra("requestCode", requestCode);
         setResult(RESULT_CANCELED, returnIntent);
-        //startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
         finish();
     }
 
@@ -96,7 +88,6 @@ public class SectionFActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        //Toast.makeText(this, "Back Press Not Allowed", Toast.LENGTH_SHORT).show();
         Intent returnIntent = new Intent();
         returnIntent.putExtra("requestCode", requestCode);
         setResult(RESULT_CANCELED, returnIntent);

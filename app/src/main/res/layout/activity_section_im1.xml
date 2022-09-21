@@ -23,19 +23,55 @@
         android:orientation="vertical">
 
 
-        <!-- CUSTOM TOOLBAR -->
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            style="@null"
+        <!--EndButton LinearLayout-->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorPrimary"
-            android:minHeight="?attr/actionBarSize"
-            android:theme="@style/CustomToolbarTheme"
-            app:popupTheme="@style/CustomPopupTheme"
-            app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
-            app:title="@string/immainheading"
-            app:titleTextAppearance="@style/Toolbar.TitleText" />
+            android:orientation="horizontal">
+
+
+            <!-- CUSTOM TOOLBAR -->
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                style="@null"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/colorPrimary"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="@style/CustomToolbarTheme"
+                app:popupTheme="@style/CustomPopupTheme"
+                app:subtitle="@string/cbsubheading"
+                app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
+                app:title="@string/immainheading"
+                app:titleTextAppearance="@style/Toolbar.TitleText" />
+
+            <Button
+                android:id="@+id/btn_End"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                android:onClick="btnEnd"
+                android:text="Cancel"
+                android:textColor="@color/colorPrimary"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btn_Continue"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/capsule"
+                android:backgroundTintMode="src_atop"
+                android:onClick="btnContinue"
+                android:padding="10dp"
+                android:text="Save"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+        <!--EndButton LinearLayout-->
 
 
         <ScrollView
@@ -386,178 +422,167 @@
 
                         </LinearLayout>
 
-                        <TableLayout
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-
                             android:orientation="horizontal">
 
-                            <TableRow android:layoutDirection="ltr">
+                            <TextView
+                                style="@style/textView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/im04dd" />
 
-                                <TextView
-                                    style="@style/sub_labels"
-                                    android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="1"
-                                    android:text="@string/im04dd" />
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/im04dd"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:enabled="@{!form.im0497.equals(`97`)}"
+                                android:gravity="center"
+                                android:hint="##"
+                                android:inputType="number"
+                                android:maxLength="2"
+                                android:text="@={form.im04dd}"
+                                app:maxValue="99"
+                                app:minValue="1"
+                                app:pattern="^[0-9]{2,2}$"
+                                app:type="range" />
 
-                                <TextView
-                                    style="@style/sub_labels"
-                                    android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="1"
-                                    android:text="@string/im04mm" />
+                            <TextView
+                                style="@style/textView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/im04mm" />
 
-                                <TextView
-                                    style="@style/sub_labels"
-                                    android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="1"
-                                    android:text="@string/im04yy" />
-                            </TableRow>
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/im04mm"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:enabled="@{!form.im0497.equals(`97`)}"
+                                android:gravity="center"
+                                android:hint="##"
+                                android:inputType="number"
+                                android:maxLength="2"
+                                android:text="@={form.im04mm}"
+                                app:maxValue="12"
+                                app:minValue="1"
+                                app:pattern="^[0-9]{2,2}$"
+                                app:type="range" />
 
-                            <TableRow android:layoutDirection="ltr">
+                            <TextView
+                                style="@style/textView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/im04yy" />
 
-                                <com.edittextpicker.aliazaz.EditTextPicker
-                                    android:id="@+id/im04dd"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:enabled="@{!form.im0497.equals(`97`)}"
-                                    android:gravity="center"
-                                    android:hint="##"
-                                    android:inputType="number"
-                                    android:maxLength="2"
-                                    android:text="@={form.im04dd}"
-                                    app:maxValue="99"
-                                    app:minValue="1"
-                                    app:pattern="^[0-9]{2,2}$"
-                                    app:type="range" />
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/im04yy"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:enabled="@{!form.im0497.equals(`97`)}"
+                                android:gravity="center"
+                                android:hint="####"
+                                android:inputType="number"
+                                android:maxLength="4"
+                                android:text="@={form.im04yy}"
+                                app:maxValue="2022"
+                                app:minValue="2020"
+                                app:type="range" />
 
+                        </LinearLayout>
 
-                                <com.edittextpicker.aliazaz.EditTextPicker
-                                    android:id="@+id/im04mm"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:enabled="@{!form.im0497.equals(`97`)}"
-                                    android:gravity="center"
-                                    android:hint="##"
-                                    android:inputType="number"
-                                    android:maxLength="2"
-                                    android:text="@={form.im04mm}"
-                                    app:maxValue="12"
-                                    app:minValue="1"
-                                    app:pattern="^[0-9]{2,2}$"
-                                    app:type="range" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
+                            <TextView
+                                style="@style/textView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/cb04mm" />
 
-                                <com.edittextpicker.aliazaz.EditTextPicker
-                                    android:id="@+id/im04yy"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:enabled="@{!form.im0497.equals(`97`)}"
-                                    android:gravity="center"
-                                    android:hint="####"
-                                    android:inputType="number"
-                                    android:maxLength="4"
-                                    android:text="@={form.im04yy}"
-                                    app:maxValue="2022"
-                                    app:minValue="2020"
-                                    app:type="range" />
-                            </TableRow>
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/cb04mm"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:enabled="false"
+                                android:gravity="center"
+                                android:hint="##"
+                                android:inputType="number"
+                                android:maxLength="2"
+                                android:text="@={form.cb04mm}"
+                                app:maxValue="12"
+                                app:minValue="1"
+                                app:pattern="^[0-9]{2,2}$"
+                                app:type="range" />
 
-                            <TableRow>
+                            <TextView
+                                style="@style/textView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/cb04yy" />
 
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/cb04yy"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:enabled="false"
+                                android:gravity="center"
+                                android:hint="####"
+                                android:inputType="number"
+                                android:maxLength="4"
+                                android:text="@={form.cb04yy}"
+                                app:maxValue="2022"
+                                app:minValue="2020"
+                                app:type="range" />
 
-                                <TextView
-                                    style="@style/sub_labels"
-                                    android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="1"
-                                    android:text="@string/cb04mm" />
+                        </LinearLayout>
 
-                                <TextView
-                                    style="@style/sub_labels"
-                                    android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="1"
-                                    android:text="@string/cb04yy" />
-                            </TableRow>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
-                            <TableRow>
+                            <CheckBox
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:checked="@{form.im0497.equals(`97`)}"
+                                android:onClick="@{()->form.setIm0497(form.im0497.equals(`97`)?``:`97`)}"
+                                android:tag="-1"
+                                android:text="@string/im0497" />
 
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:background="@{form.trueAgeInMonths > 23 || form.trueAgeInMonths &lt; 6 ?  context.getResources().getColor(R.color.redOverlay) : context.getResources().getColor(R.color.grayLight)}"
+                                android:gravity="center"
+                                android:includeFontPadding="true"
+                                android:paddingEnd="12dp"
+                                android:text="@{`Age in months: `+form.trueAgeInMonths}"
+                                android:textColor="@{form.trueAgeInMonths > 23 || form.trueAgeInMonths &lt; 6 ?  context.getResources().getColor(R.color.redDark) : context.getResources().getColor(R.color.gray)}"
+                                android:textSize="13sp"
+                                android:visibility="@{form.trueAgeInMonths != -1 ? View.VISIBLE : View.GONE}"
+                                tools:background="@color/grayLight"
+                                tools:text="Age in months: 99" />
 
-                                <com.edittextpicker.aliazaz.EditTextPicker
-                                    android:id="@+id/cb04mm"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:enabled="false"
-                                    android:gravity="center"
-                                    android:hint="##"
-                                    android:inputType="number"
-                                    android:maxLength="2"
-                                    android:text="@={form.cb04mm}"
-                                    app:maxValue="12"
-                                    app:minValue="1"
-                                    app:pattern="^[0-9]{2,2}$"
-                                    app:type="range" />
-
-
-                                <com.edittextpicker.aliazaz.EditTextPicker
-                                    android:id="@+id/cb04yy"
-                                    android:layout_width="0dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_weight="1"
-                                    android:enabled="false"
-                                    android:gravity="center"
-                                    android:hint="####"
-                                    android:inputType="number"
-                                    android:maxLength="4"
-                                    android:text="@={form.cb04yy}"
-                                    app:maxValue="2022"
-                                    app:minValue="2020"
-                                    app:type="range" />
-                            </TableRow>
-
-                            <TableRow>
-
-                                <TextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    tools:background="@color/grayLight"
-                                    android:background="@{form.trueAgeInMonths > 23 || form.trueAgeInMonths &lt; 6 ?  context.getResources().getColor(R.color.redOverlay) : context.getResources().getColor(R.color.grayLight)}"
-                                    android:gravity="end"
-                                    android:includeFontPadding="true"
-                                    android:paddingEnd="12dp"
-                                    android:text="@{`Age in months: `+form.trueAgeInMonths}"
-                                    android:textColor="@{form.trueAgeInMonths > 23 || form.trueAgeInMonths &lt; 6 ?  context.getResources().getColor(R.color.redDark) : context.getResources().getColor(R.color.gray)}"
-                                    android:textSize="13sp"
-                                    android:visibility="@{form.trueAgeInMonths != -1 ? View.VISIBLE : View.GONE}"
-                                    tools:text="Age in months: 99" />
-                            </TableRow>
-
-                            <TableRow>
-
-                                <CheckBox
-                                    android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="1"
-                                    android:checked="@{form.im0497.equals(`97`)}"
-                                    android:onClick="@{()->form.setIm0497(form.im0497.equals(`97`)?``:`97`)}"
-                                    android:tag="-1"
-                                    android:text="@string/im0497" />
-                            </TableRow>
-
-
-                        </TableLayout>
-
+                        </LinearLayout>
 
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- im05 VACCINATIONS -->
                 <LinearLayout
@@ -736,9 +761,9 @@
                                         android:layout_width="0dp"
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
-                                        android:background="@color/colorAccentOverlay"
-                                        android:text="@string/im05t1"
-                                        android:textColor="@color/colorPrimaryDark" />
+                                        android:background="@color/motherBg"
+                                        android:text="@string/im05t1" />
+
                                 </TableRow>
 
                                 <TableRow android:id="@+id/trIm0501">
@@ -817,9 +842,9 @@
                                 </TableRow>
 
                                 <TableRow
-                                    style="@style/sub_labels"
                                     android:gravity="end"
                                     android:paddingTop="4dp"
+                                    android:background="@color/colorAccentLight"
                                     android:paddingBottom="0dp">
 
                                     <CheckBox
@@ -914,9 +939,9 @@
                                 </TableRow>
 
                                 <TableRow
-                                    style="@style/sub_labels"
                                     android:gravity="end"
                                     android:paddingTop="4dp"
+                                    android:background="@color/colorAccentLight"
                                     android:paddingBottom="0dp">
 
                                     <CheckBox
@@ -1017,9 +1042,8 @@
                                         android:layout_width="0dp"
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
-                                        android:background="@color/colorAccentOverlay"
-                                        android:text="@string/im05t2"
-                                        android:textColor="@color/colorPrimaryDark" />
+                                        android:background="@color/motherBg"
+                                        android:text="@string/im05t2" />
 
                                 </TableRow>
 
@@ -1096,9 +1120,9 @@
                                 </TableRow>
 
                                 <TableRow
-                                    style="@style/sub_labels"
                                     android:gravity="end"
                                     android:paddingTop="4dp"
+                                    android:background="@color/colorAccentLight"
                                     android:paddingBottom="0dp">
 
                                     <CheckBox
@@ -1193,9 +1217,9 @@
                                 </TableRow>
 
                                 <TableRow
-                                    style="@style/sub_labels"
                                     android:gravity="end"
                                     android:paddingTop="4dp"
+                                    android:background="@color/colorAccentLight"
                                     android:paddingBottom="0dp">
 
                                     <CheckBox
@@ -1289,9 +1313,9 @@
                                 </TableRow>
 
                                 <TableRow
-                                    style="@style/sub_labels"
                                     android:gravity="end"
                                     android:paddingTop="4dp"
+                                    android:background="@color/colorAccentLight"
                                     android:paddingBottom="0dp">
 
                                     <CheckBox
@@ -1391,9 +1415,8 @@
                                         android:layout_width="0dp"
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
-                                        android:background="@color/colorAccentOverlay"
-                                        android:text="@string/im05t3"
-                                        android:textColor="@color/colorPrimaryDark" />
+                                        android:background="@color/motherBg"
+                                        android:text="@string/im05t3" />
 
                                 </TableRow>
 
@@ -1471,9 +1494,9 @@
                                 </TableRow>
 
                                 <TableRow
-                                    style="@style/sub_labels"
                                     android:gravity="end"
                                     android:paddingTop="4dp"
+                                    android:background="@color/colorAccentLight"
                                     android:paddingBottom="0dp">
 
                                     <CheckBox
@@ -1568,9 +1591,9 @@
                                 </TableRow>
 
                                 <TableRow
-                                    style="@style/sub_labels"
                                     android:gravity="end"
                                     android:paddingTop="4dp"
+                                    android:background="@color/colorAccentLight"
                                     android:paddingBottom="0dp">
 
                                     <CheckBox
@@ -1664,9 +1687,9 @@
                                 </TableRow>
 
                                 <TableRow
-                                    style="@style/sub_labels"
                                     android:gravity="end"
                                     android:paddingTop="4dp"
+                                    android:background="@color/colorAccentLight"
                                     android:paddingBottom="0dp">
 
                                     <CheckBox
@@ -1766,9 +1789,8 @@
                                         android:layout_width="0dp"
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
-                                        android:background="@color/colorAccentOverlay"
-                                        android:text="@string/im05t4"
-                                        android:textColor="@color/colorPrimaryDark" />
+                                        android:background="@color/motherBg"
+                                        android:text="@string/im05t4" />
 
                                 </TableRow>
 
@@ -1845,9 +1867,9 @@
                                 </TableRow>
 
                                 <TableRow
-                                    style="@style/sub_labels"
                                     android:gravity="end"
                                     android:paddingTop="4dp"
+                                    android:background="@color/colorAccentLight"
                                     android:paddingBottom="0dp">
 
                                     <CheckBox
@@ -1940,9 +1962,9 @@
                                 </TableRow>
 
                                 <TableRow
-                                    style="@style/sub_labels"
                                     android:gravity="end"
                                     android:paddingTop="4dp"
+                                    android:background="@color/colorAccentLight"
                                     android:paddingBottom="0dp">
 
                                     <CheckBox
@@ -2036,9 +2058,9 @@
                                 </TableRow>
 
                                 <TableRow
-                                    style="@style/sub_labels"
                                     android:gravity="end"
                                     android:paddingTop="4dp"
+                                    android:background="@color/colorAccentLight"
                                     android:paddingBottom="0dp">
 
                                     <CheckBox
@@ -2137,9 +2159,8 @@
                                         android:layout_width="0dp"
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
-                                        android:background="@color/colorAccentOverlay"
-                                        android:text="@string/im05t5"
-                                        android:textColor="@color/colorPrimaryDark" />
+                                        android:background="@color/motherBg"
+                                        android:text="@string/im05t5" />
 
                                 </TableRow>
 
@@ -2216,9 +2237,9 @@
                                 </TableRow>
 
                                 <TableRow
-                                    style="@style/sub_labels"
                                     android:gravity="end"
                                     android:paddingTop="4dp"
+                                    android:background="@color/colorAccentLight"
                                     android:paddingBottom="0dp">
 
                                     <CheckBox
@@ -2311,9 +2332,9 @@
                                 </TableRow>
 
                                 <TableRow
-                                    style="@style/sub_labels"
                                     android:gravity="end"
                                     android:paddingTop="4dp"
+                                    android:background="@color/colorAccentLight"
                                     android:paddingBottom="0dp">
 
                                     <CheckBox
@@ -2412,9 +2433,8 @@
                                         android:layout_width="0dp"
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
-                                        android:background="@color/colorAccentOverlay"
-                                        android:text="@string/im05t6"
-                                        android:textColor="@color/colorPrimaryDark" />
+                                        android:background="@color/motherBg"
+                                        android:text="@string/im05t6" />
 
                                 </TableRow>
 
@@ -2487,7 +2507,9 @@
                                         android:onClick="@{()->form.setIm051698(form.im051698.equals(`98`)?``:`98`)}"
                                         android:tag="-1"
                                         android:visibility="invisible" />
+
                                 </TableRow>
+
                             </TableLayout>
 
 
@@ -2557,48 +2579,10 @@
                                     android:text="@string/im0702" />
                             </RadioGroup>
                         </LinearLayout>
-                    </androidx.cardview.widget.CardView>
--->
-                </LinearLayout>
+                    </androidx.cardview.widget.CardView>-->
 
-
-                <!--EndButton LinearLayout-->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="end"
-                    android:layout_marginTop="24dp"
-                    android:orientation="horizontal"
-                    android:padding="24dp">
-
-                    <Button
-                        android:id="@+id/btn_End"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:background="@android:color/transparent"
-                        android:onClick="btnEnd"
-                        android:text="Cancel"
-                        android:textColor="@color/colorPrimary"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-
-                    <Button
-                        android:id="@+id/btn_Continue"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:background="@drawable/capsule"
-                        android:backgroundTint="@color/colorAccent"
-                        android:backgroundTintMode="src_atop"
-                        android:onClick="btnContinue"
-                        android:text="Save"
-                        android:textColor="@color/colorPrimary"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
 
                 </LinearLayout>
-                <!--EndButton LinearLayout-->
 
             </LinearLayout>
 

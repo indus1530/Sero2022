@@ -60,14 +60,10 @@ public class SectionSS_1Activity extends AppCompatActivity {
 
     public void btnContinue(View view) {
         if (!formValidation()) return;
-        // if (!insertNewRecord()) return;
-        // saveDraft();
         if (updateDB()) {
             setResult(RESULT_OK);
-            Intent i;
-            i = new Intent(this, SectionSS_2Activity.class).putExtra("complete", true).setFlags(Intent.FLAG_ACTIVITY_FORWARD_RESULT);
-            startActivity(i);
             finish();
+            startActivity(new Intent(this, SectionSS_2Activity.class));
         } else {
             Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
         }
@@ -77,7 +73,6 @@ public class SectionSS_1Activity extends AppCompatActivity {
     public void btnEnd(View view) {
         setResult(RESULT_CANCELED);
         finish();
-        //  startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
     }
 
     private boolean formValidation() {

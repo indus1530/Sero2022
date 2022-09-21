@@ -90,53 +90,27 @@ public class ChangePasswordActivity extends AppCompatActivity {
 
 
     public void attemptReset(View view) {
-
         if (!formValidation()) return;
-
-
         bi.pBarUser.setVisibility(View.VISIBLE);
         bi.btnResetPassword.setVisibility(View.GONE);
-
         WorkManager workManager = WorkManager.getInstance(this);
-
         try {
             String hashedPassword = generatePassword(bi.password2.getText().toString(), null);
-
-            Data data = new Data.Builder()
-                    .putString("newPassword", hashedPassword)
-                    //    .putString("data", uploadData.get(i).toString())
-
-                    //.putString("columns", "_id, sysdate")
-                    // .putString("where", where)
-                    .build();
-
+            Data data = new Data.Builder().putString("newPassword", hashedPassword).build();
             final OneTimeWorkRequest workRequest1 = new OneTimeWorkRequest.Builder(UserWorker.class).setInputData(data).build();
             workManager.enqueue(workRequest1);
-
             workManager.getWorkInfoByIdLiveData(workRequest1.getId())
                     .observe(this, new Observer<WorkInfo>() {
                         @Override
                         public void onChanged(@Nullable WorkInfo workInfo) {
-
-
-                            //String progress = workInfo.getProgress().getString("progress");
-                            //bi.wmError.setText("Progress: " + progress);
                             Log.d(TAG, "onChanged: " + workInfo.getState());
-
-                            if (workInfo.getState() != null &&
-                                    workInfo.getState() == WorkInfo.State.SUCCEEDED) {
-
+                            if (workInfo.getState() != null && workInfo.getState() == WorkInfo.State.SUCCEEDED) {
                                 Log.d(TAG, "onChanged: SUCCEEDED");
                                 db.updatePassword(hashedPassword);
-
-                                //Displaying the status into TextView
-                                //mTextView1.append("\n" + workInfo.getState().name());
                                 bi.pBarUser.setVisibility(View.GONE);
-
                                 String message = workInfo.getOutputData().getString("message");
                                 try {
                                     JSONArray json = new JSONArray(message);
-
                                     message = new JSONObject(json.getString(0)).getString("message");
                                     String error = new JSONObject(json.getString(0)).getString("error");
                                     bi.txtMessage.setText(message);

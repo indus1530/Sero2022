@@ -22,6 +22,7 @@ import edu.aku.imranahmed.sero2022.core.MainApp;
 import edu.aku.imranahmed.sero2022.database.DatabaseHelper;
 import edu.aku.imranahmed.sero2022.databinding.ActivityChildEndingBinding;
 import edu.aku.imranahmed.sero2022.models.EntryLog;
+import edu.aku.imranahmed.sero2022.ui.sections.ChildSelectionActivity;
 
 public class ChildEndingActivity extends AppCompatActivity {
 
@@ -103,17 +104,13 @@ public class ChildEndingActivity extends AppCompatActivity {
         if (!formValidation()) return;
         saveDraft();
         if (UpdateDB()) {
-
             recordEntry();
-            Intent forwardIntent = new Intent();
-            forwardIntent.putExtra("requestCode", requestCode);
-            //forwardIntent.setFlags(Intent.FLAG_ACTIVITY_FORWARD_RESULT);
-            setResult(RESULT_OK, forwardIntent);
-            //startActivity(forwardIntent);
             finish();
-           /* Intent i = new Intent(this, MainActivity.class);
-            startActivity(i);
-           */
+            if (MainApp.randomChild.size() > 0) {
+                startActivity(new Intent(this, ChildSelectionActivity.class));
+            } else {
+                startActivity(new Intent(this, EndingActivity.class).putExtra("checkToEnable", 1));
+            }
             Toast.makeText(this, "Data has been updated.", Toast.LENGTH_SHORT).show();
 
         } else {

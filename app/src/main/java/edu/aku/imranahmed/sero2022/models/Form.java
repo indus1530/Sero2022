@@ -75,6 +75,7 @@ public class Form extends BaseObservable implements Observable {
     private String hh10 = _EMPTY_;
     private String hh11 = _EMPTY_;
     private String hh12 = _EMPTY_;
+    private String hh12a = _EMPTY_;
     private String hh13 = _EMPTY_;
     private String hh18 = _EMPTY_;
     private String hh13a = _EMPTY_;
@@ -658,6 +659,16 @@ public class Form extends BaseObservable implements Observable {
     public void setHh12(String hh12) {
         this.hh12 = hh12;
         notifyPropertyChanged(BR.hh12);
+    }
+
+    @Bindable
+    public String getHh12a() {
+        return hh12a;
+    }
+
+    public void setHh12a(String hh12a) {
+        this.hh12a = hh12a;
+        notifyPropertyChanged(BR.hh12a);
     }
 
     @Bindable
@@ -1528,6 +1539,7 @@ public class Form extends BaseObservable implements Observable {
             this.hh10 = json.getString("hh10");
             this.hh11 = json.getString("hh11");
             this.hh12 = json.getString("hh12");
+            this.hh12a = json.getString("hh12a");
             this.hh13 = json.getString("hh13");
             this.hh18 = json.getString("hh18");
             this.hh13a = json.getString("hh13a");
@@ -1638,6 +1650,7 @@ public class Form extends BaseObservable implements Observable {
                 .put("hh10", hh10)
                 .put("hh11", hh11)
                 .put("hh12", hh12)
+                .put("hh12a", hh12a)
                 .put("hh13", hh13)
                 .put("hh18", hh18)
                 .put("hh13a", hh13a)

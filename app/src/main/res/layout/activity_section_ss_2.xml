@@ -1,6 +1,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+
     <data>
 
         <import type="android.view.View" />
@@ -8,7 +9,9 @@
         <variable
             name="form"
             type="edu.aku.imranahmed.sero2022.models.Form" />
+
     </data>
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,24 +20,66 @@
         android:orientation="vertical">
 
 
-        <!-- CUSTOM TOOLBAR -->
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            style="@null"
+        <!--EndButton LinearLayout-->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorPrimary"
-            android:minHeight="?attr/actionBarSize"
-            android:theme="@style/CustomToolbarTheme"
-            app:popupTheme="@style/CustomPopupTheme"
-            app:subtitle="@string/sectionsssocioeconomicstatussssubheading"
-            app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
-            app:title="@string/sectionsssocioeconomicstatusssmainheading"
-            app:titleTextAppearance="@style/Toolbar.TitleText" />
+            android:orientation="horizontal">
+
+
+            <!-- CUSTOM TOOLBAR -->
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                style="@null"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/colorPrimary"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="@style/CustomToolbarTheme"
+                app:popupTheme="@style/CustomPopupTheme"
+                app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
+                app:title="@string/sectionsssocioeconomicstatusssmainheading"
+                app:titleTextAppearance="@style/Toolbar.TitleText" />
+
+            <Button
+                android:id="@+id/btn_End"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                android:onClick="btnEnd"
+                android:text="Cancel"
+                android:textColor="@color/colorPrimary"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btn_Continue"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/capsule"
+                android:backgroundTintMode="src_atop"
+                android:onClick="btnContinue"
+                android:padding="10dp"
+                android:text="Save"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+        <!--EndButton LinearLayout-->
+
+        <TextView
+            style="@style/sub_labels"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/sectionsssocioeconomicstatussssubheading" />
+
 
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
 
             <LinearLayout
                 android:id="@+id/GrpName"
@@ -187,6 +232,7 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
+
                 <!-- ss18  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVss18"
@@ -229,10 +275,9 @@
                             android:layout_height="wrap_content">
 
                             <TextView
-                                style="@style/sub_labels"
+                                style="@style/textView"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="12dp"
                                 android:text="@string/ss18atitle" />
 
                             <RadioButton
@@ -252,10 +297,9 @@
                                 android:text="@string/ss18b" />
 
                             <TextView
-                                style="@style/sub_labels"
+                                style="@style/textView"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="12dp"
                                 android:text="@string/ss18ctitle" />
 
                             <RadioButton
@@ -275,10 +319,9 @@
                                 android:text="@string/ss18f" />
 
                             <TextView
-                                style="@style/sub_labels"
+                                style="@style/textView"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="12dp"
                                 android:text="@string/ss18gtitle" />
 
                             <RadioButton
@@ -358,6 +401,7 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
+
                 <!-- ss19  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVss19"
@@ -393,10 +437,9 @@
                             android:layout_height="wrap_content">
 
                             <TextView
-                                style="@style/sub_labels"
+                                style="@style/textView"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="12dp"
                                 android:text="@string/ss19atitle" />
 
                             <RadioButton
@@ -424,10 +467,9 @@
                                 android:text="@string/ss19c" />
 
                             <TextView
-                                style="@style/sub_labels"
+                                style="@style/textView"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="12dp"
                                 android:text="@string/ss19dtitle" />
 
                             <RadioButton
@@ -463,10 +505,9 @@
                                 android:text="@string/ss19g" />
 
                             <TextView
-                                style="@style/sub_labels"
+                                style="@style/textView"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="12dp"
                                 android:text="@string/ss19htitle" />
 
                             <RadioButton
@@ -542,8 +583,11 @@
                                 android:tag="ss19x"
                                 android:text="@={form.ss19xx}"
                                 android:visibility="@{form.ss19.equals(`96`) ? View.VISIBLE : View.GONE}" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
 
@@ -582,35 +626,34 @@
                             android:layout_height="wrap_content">
 
                             <TextView
-                                style="@style/sub_labels"
+                                style="@style/textView"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="12dp"
                                 android:text="@string/ss20atitle" />
 
-                                    <RadioButton
-                                        android:id="@+id/ss20a"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:checked="@{form.ss20.equals(`11`)}"
-                                        android:onClick="@{()->form.setSs20(`11`)}"
-                                        android:text="@string/ss20a" />
+                            <RadioButton
+                                android:id="@+id/ss20a"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.ss20.equals(`11`)}"
+                                android:onClick="@{()->form.setSs20(`11`)}"
+                                android:text="@string/ss20a" />
 
-                                    <RadioButton
-                                        android:id="@+id/ss20b"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:checked="@{form.ss20.equals(`12`)}"
-                                        android:onClick="@{()->form.setSs20(`12`)}"
-                                        android:text="@string/ss20b" />
+                            <RadioButton
+                                android:id="@+id/ss20b"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.ss20.equals(`12`)}"
+                                android:onClick="@{()->form.setSs20(`12`)}"
+                                android:text="@string/ss20b" />
 
-                                    <RadioButton
-                                        android:id="@+id/ss20c"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:checked="@{form.ss20.equals(`13`)}"
-                                        android:onClick="@{()->form.setSs20(`13`)}"
-                                        android:text="@string/ss20c" />
+                            <RadioButton
+                                android:id="@+id/ss20c"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.ss20.equals(`13`)}"
+                                android:onClick="@{()->form.setSs20(`13`)}"
+                                android:text="@string/ss20c" />
 
                             <RadioButton
                                 android:id="@+id/ss20d"
@@ -622,10 +665,9 @@
 
 
                             <TextView
-                                style="@style/sub_labels"
+                                style="@style/textView"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="12dp"
                                 android:text="@string/ss20dtitle" />
 
                             <RadioButton
@@ -637,58 +679,57 @@
                                 android:text="@string/ss20e" />
 
                             <RadioButton
-                                        android:id="@+id/ss20f"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:checked="@{form.ss20.equals(`23`)}"
-                                        android:onClick="@{()->form.setSs20(`23`)}"
-                                        android:text="@string/ss20f" />
-
-                                    <RadioButton
-                                        android:id="@+id/ss20g"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:checked="@{form.ss20.equals(`24`)}"
-                                        android:onClick="@{()->form.setSs20(`24`)}"
-                                        android:text="@string/ss20g" />
-
-                                    <RadioButton
-                                        android:id="@+id/ss20h"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:checked="@{form.ss20.equals(`25`)}"
-                                        android:onClick="@{()->form.setSs20(`25`)}"
-                                        android:text="@string/ss20h" />
-
-                                    <RadioButton
-                                        android:id="@+id/ss20i"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:checked="@{form.ss20.equals(`26`)}"
-                                        android:onClick="@{()->form.setSs20(`26`)}"
-                                        android:text="@string/ss20i" />
-
-                                    <RadioButton
-                                        android:id="@+id/ss20j"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:checked="@{form.ss20.equals(`27`)}"
-                                        android:onClick="@{()->form.setSs20(`27`)}"
-                                        android:text="@string/ss20j" />
-
-                                    <RadioButton
-                                        android:id="@+id/ss20k"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:checked="@{form.ss20.equals(`31`)}"
-                                        android:onClick="@{()->form.setSs20(`31`)}"
-                                        android:text="@string/ss20k" />
-
-                            <TextView
-                                style="@style/sub_labels"
+                                android:id="@+id/ss20f"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="12dp"
+                                android:checked="@{form.ss20.equals(`23`)}"
+                                android:onClick="@{()->form.setSs20(`23`)}"
+                                android:text="@string/ss20f" />
+
+                            <RadioButton
+                                android:id="@+id/ss20g"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.ss20.equals(`24`)}"
+                                android:onClick="@{()->form.setSs20(`24`)}"
+                                android:text="@string/ss20g" />
+
+                            <RadioButton
+                                android:id="@+id/ss20h"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.ss20.equals(`25`)}"
+                                android:onClick="@{()->form.setSs20(`25`)}"
+                                android:text="@string/ss20h" />
+
+                            <RadioButton
+                                android:id="@+id/ss20i"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.ss20.equals(`26`)}"
+                                android:onClick="@{()->form.setSs20(`26`)}"
+                                android:text="@string/ss20i" />
+
+                            <RadioButton
+                                android:id="@+id/ss20j"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.ss20.equals(`27`)}"
+                                android:onClick="@{()->form.setSs20(`27`)}"
+                                android:text="@string/ss20j" />
+
+                            <RadioButton
+                                android:id="@+id/ss20k"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.ss20.equals(`31`)}"
+                                android:onClick="@{()->form.setSs20(`31`)}"
+                                android:text="@string/ss20k" />
+
+                            <TextView
+                                style="@style/textView"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
                                 android:text="@string/ss20ktitle" />
 
                             <RadioButton
@@ -715,21 +756,21 @@
                                 android:onClick="@{()->form.setSs20(`34`)}"
                                 android:text="@string/ss20n" />
 
-                                    <RadioButton
-                                        android:id="@+id/ss20o"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:checked="@{form.ss20.equals(`35`)}"
-                                        android:onClick="@{()->form.setSs20(`35`)}"
-                                        android:text="@string/ss20o" />
+                            <RadioButton
+                                android:id="@+id/ss20o"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.ss20.equals(`35`)}"
+                                android:onClick="@{()->form.setSs20(`35`)}"
+                                android:text="@string/ss20o" />
 
-                                    <RadioButton
-                                        android:id="@+id/ss20p"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:checked="@{form.ss20.equals(`36`)}"
-                                        android:onClick="@{()->form.setSs20(`36`)}"
-                                        android:text="@string/ss20p" />
+                            <RadioButton
+                                android:id="@+id/ss20p"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.ss20.equals(`36`)}"
+                                android:onClick="@{()->form.setSs20(`36`)}"
+                                android:text="@string/ss20p" />
 
                             <RadioButton
                                 android:id="@+id/ss20x"
@@ -748,9 +789,13 @@
                                 android:tag="ss20x"
                                 android:text="@={form.ss20xx}"
                                 android:visibility="@{form.ss20.equals(`96`) ? View.VISIBLE : View.GONE}" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- ss21  Title   -->
                 <androidx.cardview.widget.CardView
@@ -795,6 +840,7 @@
                             app:type="range" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- ss22  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -851,6 +897,7 @@
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- ss23  Radio   -->
                 <androidx.cardview.widget.CardView
@@ -944,6 +991,7 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
+
                 <!-- ss24  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVss24"
@@ -999,6 +1047,7 @@
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- ss25  Title   -->
                 <androidx.cardview.widget.CardView
@@ -1228,6 +1277,7 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
+
                 <!-- ss26  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVss26"
@@ -1265,7 +1315,7 @@
 
                             <RadioButton
                                 android:id="@+id/ss26a"
-                                android:layout_width="0dp"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:checked="@{form.ss26.equals(`1`)}"
@@ -1274,15 +1324,19 @@
 
                             <RadioButton
                                 android:id="@+id/ss26b"
-                                android:layout_width="0dp"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:checked="@{form.ss26.equals(`2`)}"
                                 android:onClick="@{()->form.setSs26(`2`)}"
                                 android:text="@string/ss26b" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- ss27title  Title   -->
                 <androidx.cardview.widget.CardView
@@ -1301,6 +1355,7 @@
                             android:text="@string/ss27title" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- ss27  Input   -->
                 <androidx.cardview.widget.CardView
@@ -1339,8 +1394,8 @@
                                 android:focusable="false"
                                 android:gravity="center"
                                 android:hint="HH:mm"
-                                app:is24HourView="true"
                                 android:text="@={form.ss27}"
+                                app:is24HourView="true"
                                 app:theme="@style/DatePickerEditTextDialogTheme"
                                 app:timeFormat="HH:mm" />
 
@@ -1348,6 +1403,7 @@
 
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
+
 
                 <!-- ss28  TextArea   -->
                 <androidx.cardview.widget.CardView
@@ -1389,49 +1445,17 @@
                             android:text="@={form.ss28}" />
 
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
-
-                <!--EndButton LinearLayout-->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="end"
-                    android:layout_marginTop="24dp"
-                    android:orientation="horizontal"
-                    android:padding="24dp">
-
-                    <Button
-                        android:id="@+id/btn_End"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:background="@android:color/transparent"
-                        android:onClick="btnEnd"
-                        android:text="Cancel"
-                        android:textColor="@color/colorPrimary"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-
-                    <Button
-                        android:id="@+id/btn_Continue"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:background="@drawable/capsule"
-                        android:backgroundTint="@color/colorAccent"
-                        android:backgroundTintMode="src_atop"
-                        android:onClick="btnContinue"
-                        android:text="Save"
-                        android:textColor="@color/white"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-
-                </LinearLayout>
-                <!--EndButton LinearLayout-->
 
 
             </LinearLayout>
+
+
         </ScrollView>
 
+
     </LinearLayout>
+
+
 </layout>

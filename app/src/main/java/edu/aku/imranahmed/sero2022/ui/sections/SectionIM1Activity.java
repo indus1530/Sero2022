@@ -17,7 +17,6 @@ import android.widget.Toast;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.view.ContextThemeWrapper;
-import androidx.compose.ui.platform.InspectableModifier;
 import androidx.databinding.DataBindingUtil;
 
 import com.validatorcrawler.aliazaz.Validator;
@@ -37,7 +36,7 @@ import edu.aku.imranahmed.sero2022.contracts.TableContracts;
 import edu.aku.imranahmed.sero2022.core.MainApp;
 import edu.aku.imranahmed.sero2022.database.DatabaseHelper;
 import edu.aku.imranahmed.sero2022.databinding.ActivitySectionIm1Binding;
-import edu.aku.imranahmed.sero2022.ui.EndingActivity;
+import edu.aku.imranahmed.sero2022.ui.ChildEndingActivity;
 import edu.aku.imranahmed.sero2022.ui.TakePhoto;
 
 public class SectionIM1Activity extends AppCompatActivity {
@@ -224,6 +223,17 @@ public class SectionIM1Activity extends AppCompatActivity {
 
     public void btnContinue(View view) {
         if (!formValidation()) return;
+        if (bi.fldGrpCVim04.getVisibility() == View.GONE) {
+            if (child.getAgeInMonths() < 6 || child.getAgeInMonths() > 23) {
+                invalidChildDialog(child.getChildName(), child.getAgeInMonths());
+                return;
+            }
+        } else {
+            if (child.getTrueAgeInMonths() < 6 || child.getTrueAgeInMonths() > 23) {
+                invalidChildDialog(child.getChildName(), child.getTrueAgeInMonths());
+                return;
+            }
+        }
         if (updateDB()) {
             Intent forwardIntent = new Intent(this, SectionIM2Activity.class);
             forwardIntent.putExtra("requestCode", requestCode);
@@ -987,4 +997,25 @@ public class SectionIM1Activity extends AppCompatActivity {
                 .show();
 
     }
+
+
+    private AlertDialog invalidChildDialog(String name, Long age) {
+        return new AlertDialog.Builder(new ContextThemeWrapper(this, R.style.DatePickerDialog))
+                .setTitle(name.toUpperCase())
+                .setCancelable(false)
+                .setMessage("Please Recheck Child Age: \n\nChild Name: \t" + name.toUpperCase() + "\nChild Age: \t\t" + age + " Month(s)")
+                .setPositiveButton("No I'm Sure", (dialog, which) -> {
+                    finish();
+                    startActivity(new Intent(this, ChildEndingActivity.class).putExtra("checkToEnable", 5));
+                })
+                .setNegativeButton("OK", (dialog, id) -> {
+                    if (bi.fldGrpCVim04.getVisibility() == View.GONE) {
+                        finish();
+                        startActivity(new Intent(this, SectionCBActivity.class));
+                    } else dialog.cancel();
+                })
+                .setIcon(R.drawable.ic_alert_24)
+                .show();
+    }
+
 }

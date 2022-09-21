@@ -26,6 +26,7 @@ import edu.aku.imranahmed.sero2022.contracts.TableContracts;
 import edu.aku.imranahmed.sero2022.core.MainApp;
 import edu.aku.imranahmed.sero2022.database.DatabaseHelper;
 import edu.aku.imranahmed.sero2022.databinding.ActivitySectionChBinding;
+import edu.aku.imranahmed.sero2022.ui.ChildEndingActivity;
 
 public class SectionCHActivity extends AppCompatActivity {
 
@@ -109,14 +110,19 @@ public class SectionCHActivity extends AppCompatActivity {
     public void btnContinue(View view) {
         if (!formValidation()) return;
         if (!insertNewRecord()) return;
-        // saveDraft();
         if (updateDB()) {
-            //     Intent i;
-            //   i = new Intent(this, SectionCBActivity.class).putExtra("complete", true);
-            //  startActivity(i);
-            Intent returnIntent = new Intent();
-            returnIntent.putExtra("requestCode", requestCode);
-            setResult(RESULT_OK, returnIntent);
+            Intent forwardIntent;
+            if (child.getEc21().equals("1")) {
+                forwardIntent = new Intent(this, SectionIM1Activity.class).putExtra("complete", true);
+                forwardIntent.putExtra("requestCode", requestCode);
+            } else {
+                forwardIntent = new Intent(this, ChildEndingActivity.class).putExtra("complete", false);
+                forwardIntent.putExtra("requestCode", requestCode);
+                forwardIntent.putExtra("checkToEnable", 3);
+            }
+            forwardIntent.setFlags(Intent.FLAG_ACTIVITY_FORWARD_RESULT);
+            setResult(RESULT_OK, forwardIntent);
+            startActivity(forwardIntent);
             finish();
         } else {
             Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
