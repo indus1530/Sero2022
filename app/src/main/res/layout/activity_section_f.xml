@@ -19,55 +19,20 @@
         android:orientation="vertical">
 
 
-        <!--EndButton LinearLayout-->
-        <LinearLayout
+        <!-- CUSTOM TOOLBAR -->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="@null"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-
-            <!-- CUSTOM TOOLBAR -->
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
-                style="@null"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@color/colorPrimary"
-                android:minHeight="?attr/actionBarSize"
-                android:theme="@style/CustomToolbarTheme"
-                app:popupTheme="@style/CustomPopupTheme"
-                app:subtitle="@string/cbsubheading"
-                app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
-                app:title="F: Child Health Status"
-                app:titleTextAppearance="@style/Toolbar.TitleText" />
-
-            <Button
-                android:id="@+id/btn_End"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:background="@android:color/transparent"
-                android:onClick="btnEnd"
-                android:text="Cancel"
-                android:textColor="@color/colorPrimary"
-                android:textSize="12sp"
-                android:textStyle="bold" />
-
-            <Button
-                android:id="@+id/btn_Continue"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:background="@drawable/capsule"
-                android:backgroundTintMode="src_atop"
-                android:onClick="btnContinue"
-                android:padding="10dp"
-                android:text="Save"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="12sp"
-                android:textStyle="bold" />
-
-        </LinearLayout>
-        <!--EndButton LinearLayout-->
+            android:background="@color/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="@style/CustomToolbarTheme"
+            app:popupTheme="@style/CustomPopupTheme"
+            app:subtitle="@string/cbsubheading"
+            app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
+            app:title="F: Child Health Status"
+            app:titleTextAppearance="@style/Toolbar.TitleText" />
 
 
         <ScrollView
@@ -610,6 +575,42 @@
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
+
+
+                <!--EndButton LinearLayout-->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layoutDirection="ltr"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btn_End"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/transparent"
+                        android:onClick="btnEnd"
+                        android:text="Cancel"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btn_Continue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/capsule"
+                        android:backgroundTintMode="src_atop"
+                        android:onClick="btnContinue"
+                        android:padding="10dp"
+                        android:text="Save"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+                <!--EndButton LinearLayout-->
 
 
             </LinearLayout>

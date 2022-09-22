@@ -23,55 +23,20 @@
         android:orientation="vertical">
 
 
-        <!--EndButton LinearLayout-->
-        <LinearLayout
+        <!-- CUSTOM TOOLBAR -->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="@null"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-
-            <!-- CUSTOM TOOLBAR -->
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
-                style="@null"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@color/colorPrimary"
-                android:minHeight="?attr/actionBarSize"
-                android:theme="@style/CustomToolbarTheme"
-                app:popupTheme="@style/CustomPopupTheme"
-                app:subtitle="@string/cbsubheading"
-                app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
-                app:title="@string/immainheading"
-                app:titleTextAppearance="@style/Toolbar.TitleText" />
-
-            <Button
-                android:id="@+id/btn_End"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:background="@android:color/transparent"
-                android:onClick="btnEnd"
-                android:text="Cancel"
-                android:textColor="@color/colorPrimary"
-                android:textSize="12sp"
-                android:textStyle="bold" />
-
-            <Button
-                android:id="@+id/btn_Continue"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:background="@drawable/capsule"
-                android:backgroundTintMode="src_atop"
-                android:onClick="btnContinue"
-                android:padding="10dp"
-                android:text="Save"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="12sp"
-                android:textStyle="bold" />
-
-        </LinearLayout>
-        <!--EndButton LinearLayout-->
+            android:background="@color/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="@style/CustomToolbarTheme"
+            app:popupTheme="@style/CustomPopupTheme"
+            app:subtitle="@string/cbsubheading"
+            app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
+            app:title="@string/immainheading"
+            app:titleTextAppearance="@style/Toolbar.TitleText" />
 
 
         <ScrollView
@@ -348,8 +313,8 @@
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.im03.equals(`3`)}"
                                 android:onClick="@{()->form.setIm03(`3`)}"
-                                android:visibility="gone"
-                                android:text="@string/im0303" />
+                                android:text="@string/im0303"
+                                android:visibility="gone" />
 
                             <RadioButton
                                 android:id="@+id/im0304"
@@ -609,25 +574,24 @@
                                 android:orientation="horizontal">
 
                                 <Button
-                                    android:background="@drawable/button_shape_gray"
-
                                     android:id="@+id/frontPhoto"
+
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center"
                                     android:layout_marginStart="8dp"
                                     android:layout_marginTop="15dp"
                                     android:layout_marginEnd="8dp"
-                                    android:backgroundTint="@color/colorAccent"
-                                    android:paddingStart="12dp"
-                                    android:paddingEnd="12dp"
                                     android:layout_marginBottom="15dp"
+                                    android:background="@drawable/button_shape_gray"
+                                    android:backgroundTint="@color/colorAccent"
                                     android:drawableStart="@drawable/ic_camera"
                                     android:onClick="takePhoto"
+                                    android:paddingStart="12dp"
+                                    android:paddingEnd="12dp"
                                     android:text="Take Front Photo" />
 
                                 <Button
-                                    android:background="@drawable/button_shape_gray"
                                     android:id="@+id/backPhoto"
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
@@ -635,12 +599,13 @@
                                     android:layout_marginStart="8dp"
                                     android:layout_marginTop="15dp"
                                     android:layout_marginEnd="8dp"
-                                    android:backgroundTint="@color/colorAccent"
-                                    android:paddingStart="12dp"
-                                    android:paddingEnd="12dp"
                                     android:layout_marginBottom="15dp"
+                                    android:background="@drawable/button_shape_gray"
+                                    android:backgroundTint="@color/colorAccent"
                                     android:drawableStart="@drawable/ic_camera"
                                     android:onClick="takePhoto"
+                                    android:paddingStart="12dp"
+                                    android:paddingEnd="12dp"
                                     android:text="Take Back Photo" />
 
                             </LinearLayout>
@@ -653,11 +618,11 @@
                                 android:orientation="horizontal">
 
                                 <TextView
-                                    android:background="@null"
                                     android:id="@+id/frontFileName"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
+                                    android:background="@null"
                                     android:enabled="false"
                                     android:minHeight="48dp"
                                     android:text="@={form.frontfilename}"
@@ -665,11 +630,11 @@
                                     android:textSize="14sp" />
 
                                 <TextView
-                                    android:background="@null"
                                     android:id="@+id/backFileName"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
+                                    android:background="@null"
                                     android:enabled="false"
                                     android:minHeight="48dp"
                                     android:text="@={form.backfilename}"
@@ -819,9 +784,9 @@
                                         android:gravity="center"
                                         android:hint="####"
                                         android:inputType="number"
-                                        android:textColor="@drawable/edit_text_selector"
                                         android:maxLength="4"
                                         android:text="@={form.im0501yy}"
+                                        android:textColor="@drawable/edit_text_selector"
                                         android:textDirection="ltr"
                                         app:maxValue="2022"
                                         app:minValue="2020"
@@ -832,9 +797,9 @@
                                         android:id="@+id/checkim0501"
                                         android:layout_width="wrap_content"
                                         android:layout_height="match_parent"
+                                        android:background="@color/redOverlay"
                                         android:checked="@{form.im050198.equals(`98`)}"
                                         android:onClick="@{()->form.setIm050198(form.im050198.equals(`98`)?``:`98`)}"
-                                        android:background="@color/redOverlay"
                                         android:tag="-1"
                                         android:visibility="invisible"
                                         tools:visibility="visible" />
@@ -842,9 +807,9 @@
                                 </TableRow>
 
                                 <TableRow
+                                    android:background="@color/colorAccentLight"
                                     android:gravity="end"
                                     android:paddingTop="4dp"
-                                    android:background="@color/colorAccentLight"
                                     android:paddingBottom="0dp">
 
                                     <CheckBox
@@ -939,9 +904,9 @@
                                 </TableRow>
 
                                 <TableRow
+                                    android:background="@color/colorAccentLight"
                                     android:gravity="end"
                                     android:paddingTop="4dp"
-                                    android:background="@color/colorAccentLight"
                                     android:paddingBottom="0dp">
 
                                     <CheckBox
@@ -1016,12 +981,12 @@
                                         android:enabled="@{!checkim0510a.checked &amp;&amp; !form.im0510add.equals(`44`)  &amp;&amp; !form.im0510add.equals(`66`)  &amp;&amp; !form.im0510add.equals(`97`)  &amp;&amp; !form.im0510add.equals(`88`)}"
                                         android:gravity="center"
                                         android:hint="####"
-                                        app:pattern="^[0-9]{4,4}$"
                                         android:inputType="number"
                                         android:maxLength="4"
                                         android:text="@={form.im0510ayy}"
                                         app:maxValue="2022"
                                         app:minValue="2020"
+                                        app:pattern="^[0-9]{4,4}$"
                                         app:type="range" />
 
                                     <CheckBox
@@ -1100,12 +1065,12 @@
                                         android:enabled="@{!checkim0503.checked &amp;&amp; !form.im0503dd.equals(`44`)  &amp;&amp; !form.im0503dd.equals(`66`)  &amp;&amp; !form.im0503dd.equals(`97`)  &amp;&amp; !form.im0503dd.equals(`88`)}"
                                         android:gravity="center"
                                         android:hint="####"
-                                        app:pattern="^[0-9]{4,4}$"
                                         android:inputType="number"
                                         android:maxLength="4"
                                         android:text="@={form.im0503yy}"
                                         app:maxValue="2022"
                                         app:minValue="2020"
+                                        app:pattern="^[0-9]{4,4}$"
                                         app:type="range" />
 
                                     <CheckBox
@@ -1120,9 +1085,9 @@
                                 </TableRow>
 
                                 <TableRow
+                                    android:background="@color/colorAccentLight"
                                     android:gravity="end"
                                     android:paddingTop="4dp"
-                                    android:background="@color/colorAccentLight"
                                     android:paddingBottom="0dp">
 
                                     <CheckBox
@@ -1196,12 +1161,12 @@
                                         android:enabled="@{!checkim0504.checked &amp;&amp; !form.im0504dd.equals(`44`)  &amp;&amp; !form.im0504dd.equals(`66`)  &amp;&amp; !form.im0504dd.equals(`97`)  &amp;&amp; !form.im0504dd.equals(`88`)}"
                                         android:gravity="center"
                                         android:hint="####"
-                                        app:pattern="^[0-9]{4,4}$"
                                         android:inputType="number"
                                         android:maxLength="4"
                                         android:text="@={form.im0504yy}"
                                         app:maxValue="2022"
                                         app:minValue="2020"
+                                        app:pattern="^[0-9]{4,4}$"
                                         app:type="range" />
 
                                     <CheckBox
@@ -1217,9 +1182,9 @@
                                 </TableRow>
 
                                 <TableRow
+                                    android:background="@color/colorAccentLight"
                                     android:gravity="end"
                                     android:paddingTop="4dp"
-                                    android:background="@color/colorAccentLight"
                                     android:paddingBottom="0dp">
 
                                     <CheckBox
@@ -1313,9 +1278,9 @@
                                 </TableRow>
 
                                 <TableRow
+                                    android:background="@color/colorAccentLight"
                                     android:gravity="end"
                                     android:paddingTop="4dp"
-                                    android:background="@color/colorAccentLight"
                                     android:paddingBottom="0dp">
 
                                     <CheckBox
@@ -1475,10 +1440,10 @@
                                         android:hint="####"
                                         android:inputType="number"
                                         android:maxLength="4"
-                                        app:pattern="^[0-9]{4,4}$"
                                         android:text="@={form.im0507yy}"
                                         app:maxValue="2022"
                                         app:minValue="2020"
+                                        app:pattern="^[0-9]{4,4}$"
                                         app:type="range" />
 
                                     <CheckBox
@@ -1494,9 +1459,9 @@
                                 </TableRow>
 
                                 <TableRow
+                                    android:background="@color/colorAccentLight"
                                     android:gravity="end"
                                     android:paddingTop="4dp"
-                                    android:background="@color/colorAccentLight"
                                     android:paddingBottom="0dp">
 
                                     <CheckBox
@@ -1570,12 +1535,12 @@
                                         android:enabled="@{!checkim0508.checked &amp;&amp; !form.im0508dd.equals(`44`)  &amp;&amp; !form.im0508dd.equals(`66`)  &amp;&amp; !form.im0508dd.equals(`97`)  &amp;&amp; !form.im0508dd.equals(`88`)}"
                                         android:gravity="center"
                                         android:hint="####"
-                                        app:pattern="^[0-9]{4,4}$"
                                         android:inputType="number"
                                         android:maxLength="4"
                                         android:text="@={form.im0508yy}"
                                         app:maxValue="2022"
                                         app:minValue="2020"
+                                        app:pattern="^[0-9]{4,4}$"
                                         app:type="range" />
 
                                     <CheckBox
@@ -1591,9 +1556,9 @@
                                 </TableRow>
 
                                 <TableRow
+                                    android:background="@color/colorAccentLight"
                                     android:gravity="end"
                                     android:paddingTop="4dp"
-                                    android:background="@color/colorAccentLight"
                                     android:paddingBottom="0dp">
 
                                     <CheckBox
@@ -1667,12 +1632,12 @@
                                         android:enabled="@{!checkim0509.checked &amp;&amp; !form.im0509dd.equals(`44`)  &amp;&amp; !form.im0509dd.equals(`66`)  &amp;&amp; !form.im0509dd.equals(`97`)  &amp;&amp; !form.im0509dd.equals(`88`)}"
                                         android:gravity="center"
                                         android:hint="####"
-                                        app:pattern="^[0-9]{4,4}$"
                                         android:inputType="number"
                                         android:maxLength="4"
                                         android:text="@={form.im0509yy}"
                                         app:maxValue="2022"
                                         app:minValue="2020"
+                                        app:pattern="^[0-9]{4,4}$"
                                         app:type="range" />
 
                                     <CheckBox
@@ -1687,9 +1652,9 @@
                                 </TableRow>
 
                                 <TableRow
+                                    android:background="@color/colorAccentLight"
                                     android:gravity="end"
                                     android:paddingTop="4dp"
-                                    android:background="@color/colorAccentLight"
                                     android:paddingBottom="0dp">
 
                                     <CheckBox
@@ -1762,12 +1727,12 @@
                                         android:enabled="@{!checkim0510.checked &amp;&amp; !form.im0510dd.equals(`44`)  &amp;&amp; !form.im0510dd.equals(`66`)  &amp;&amp; !form.im0510dd.equals(`97`)  &amp;&amp; !form.im0510dd.equals(`88`)}"
                                         android:gravity="center"
                                         android:hint="####"
-                                        app:pattern="^[0-9]{4,4}$"
                                         android:inputType="number"
                                         android:maxLength="4"
                                         android:text="@={form.im0510yy}"
                                         app:maxValue="2022"
                                         app:minValue="2020"
+                                        app:pattern="^[0-9]{4,4}$"
                                         app:type="range" />
 
                                     <CheckBox
@@ -1847,12 +1812,12 @@
                                         android:enabled="@{!checkim0511.checked &amp;&amp; !form.im0511dd.equals(`44`)  &amp;&amp; !form.im0511dd.equals(`66`)  &amp;&amp; !form.im0511dd.equals(`97`)  &amp;&amp; !form.im0511dd.equals(`88`)}"
                                         android:gravity="center"
                                         android:hint="####"
-                                        app:pattern="^[0-9]{4,4}$"
                                         android:inputType="number"
                                         android:maxLength="4"
                                         android:text="@={form.im0511yy}"
                                         app:maxValue="2022"
                                         app:minValue="2020"
+                                        app:pattern="^[0-9]{4,4}$"
                                         app:type="range" />
 
                                     <CheckBox
@@ -1867,9 +1832,9 @@
                                 </TableRow>
 
                                 <TableRow
+                                    android:background="@color/colorAccentLight"
                                     android:gravity="end"
                                     android:paddingTop="4dp"
-                                    android:background="@color/colorAccentLight"
                                     android:paddingBottom="0dp">
 
                                     <CheckBox
@@ -1944,10 +1909,10 @@
                                         android:hint="####"
                                         android:inputType="number"
                                         android:maxLength="4"
-                                        app:pattern="^[0-9]{4,4}$"
                                         android:text="@={form.im0512yy}"
                                         app:maxValue="2022"
                                         app:minValue="2020"
+                                        app:pattern="^[0-9]{4,4}$"
                                         app:type="range" />
 
                                     <CheckBox
@@ -1962,9 +1927,9 @@
                                 </TableRow>
 
                                 <TableRow
+                                    android:background="@color/colorAccentLight"
                                     android:gravity="end"
                                     android:paddingTop="4dp"
-                                    android:background="@color/colorAccentLight"
                                     android:paddingBottom="0dp">
 
                                     <CheckBox
@@ -2040,10 +2005,10 @@
                                         android:hint="####"
                                         android:inputType="number"
                                         android:maxLength="4"
-                                        app:pattern="^[0-9]{4,4}$"
                                         android:text="@={form.im0513yy}"
                                         app:maxValue="2022"
                                         app:minValue="2020"
+                                        app:pattern="^[0-9]{4,4}$"
                                         app:type="range" />
 
                                     <CheckBox
@@ -2058,9 +2023,9 @@
                                 </TableRow>
 
                                 <TableRow
+                                    android:background="@color/colorAccentLight"
                                     android:gravity="end"
                                     android:paddingTop="4dp"
-                                    android:background="@color/colorAccentLight"
                                     android:paddingBottom="0dp">
 
                                     <CheckBox
@@ -2134,12 +2099,12 @@
                                         android:enabled="@{!checkim0514.checked &amp;&amp; !form.im0514dd.equals(`44`)  &amp;&amp; !form.im0514dd.equals(`66`)  &amp;&amp; !form.im0514dd.equals(`97`)  &amp;&amp; !form.im0514dd.equals(`88`)}"
                                         android:gravity="center"
                                         android:hint="####"
-                                        app:pattern="^[0-9]{4,4}$"
                                         android:inputType="number"
                                         android:maxLength="4"
                                         android:text="@={form.im0514yy}"
                                         app:maxValue="2022"
                                         app:minValue="2020"
+                                        app:pattern="^[0-9]{4,4}$"
                                         app:type="range" />
 
                                     <CheckBox
@@ -2219,10 +2184,10 @@
                                         android:hint="####"
                                         android:inputType="number"
                                         android:maxLength="4"
-                                        app:pattern="^[0-9]{4,4}$"
                                         android:text="@={form.im0515yy}"
                                         app:maxValue="2022"
                                         app:minValue="2020"
+                                        app:pattern="^[0-9]{4,4}$"
                                         app:type="range" />
 
                                     <CheckBox
@@ -2237,9 +2202,9 @@
                                 </TableRow>
 
                                 <TableRow
+                                    android:background="@color/colorAccentLight"
                                     android:gravity="end"
                                     android:paddingTop="4dp"
-                                    android:background="@color/colorAccentLight"
                                     android:paddingBottom="0dp">
 
                                     <CheckBox
@@ -2332,9 +2297,9 @@
                                 </TableRow>
 
                                 <TableRow
+                                    android:background="@color/colorAccentLight"
                                     android:gravity="end"
                                     android:paddingTop="4dp"
-                                    android:background="@color/colorAccentLight"
                                     android:paddingBottom="0dp">
 
                                     <CheckBox
@@ -2408,12 +2373,12 @@
                                         android:enabled="@{!checkim0517.checked &amp;&amp; !form.im0517dd.equals(`44`)  &amp;&amp; !form.im0517dd.equals(`66`)  &amp;&amp; !form.im0517dd.equals(`97`)  &amp;&amp; !form.im0517dd.equals(`88`)}"
                                         android:gravity="center"
                                         android:hint="####"
-                                        app:pattern="^[0-9]{4,4}$"
                                         android:inputType="number"
                                         android:maxLength="4"
                                         android:text="@={form.im0517yy}"
                                         app:maxValue="2022"
                                         app:minValue="2020"
+                                        app:pattern="^[0-9]{4,4}$"
                                         app:type="range" />
 
                                     <CheckBox
@@ -2495,8 +2460,8 @@
                                         android:maxLength="4"
                                         android:text="@={form.im0516yy}"
                                         app:maxValue="2022"
-                                        app:pattern="^[0-9]{4,4}$"
                                         app:minValue="2020"
+                                        app:pattern="^[0-9]{4,4}$"
                                         app:type="range" />
 
                                     <CheckBox
@@ -2583,6 +2548,42 @@
 
 
                 </LinearLayout>
+
+
+                <!--EndButton LinearLayout-->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layoutDirection="ltr"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btn_End"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/transparent"
+                        android:onClick="btnEnd"
+                        android:text="Cancel"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btn_Continue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/capsule"
+                        android:backgroundTintMode="src_atop"
+                        android:onClick="btnContinue"
+                        android:padding="10dp"
+                        android:text="Save"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+                <!--EndButton LinearLayout-->
 
             </LinearLayout>
 

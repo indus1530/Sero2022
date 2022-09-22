@@ -6,6 +6,7 @@
     <data>
 
         <import type="android.view.View" />
+
         <import type="edu.aku.imranahmed.sero2022.R" />
 
         <variable
@@ -22,55 +23,20 @@
         android:orientation="vertical">
 
 
-        <!--EndButton LinearLayout-->
-        <LinearLayout
+        <!-- CUSTOM TOOLBAR -->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="@null"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-
-            <!-- CUSTOM TOOLBAR -->
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
-                style="@null"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@color/colorPrimary"
-                android:minHeight="?attr/actionBarSize"
-                android:theme="@style/CustomToolbarTheme"
-                app:popupTheme="@style/CustomPopupTheme"
-                app:subtitle="@string/sectionchlistofchildren0623monthsoldmainheading"
-                app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
-                app:title="@string/sectionchlistofchildren0623monthsoldmainheading"
-                app:titleTextAppearance="@style/Toolbar.TitleText" />
-
-            <Button
-                android:id="@+id/btn_End"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:background="@android:color/transparent"
-                android:onClick="btnEnd"
-                android:text="Cancel"
-                android:textColor="@color/colorPrimary"
-                android:textSize="12sp"
-                android:textStyle="bold" />
-
-            <Button
-                android:id="@+id/btn_Continue"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:background="@drawable/capsule"
-                android:backgroundTintMode="src_atop"
-                android:onClick="btnContinue"
-                android:padding="10dp"
-                android:text="Save"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="12sp"
-                android:textStyle="bold" />
-
-        </LinearLayout>
-        <!--EndButton LinearLayout-->
+            android:background="@color/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="@style/CustomToolbarTheme"
+            app:popupTheme="@style/CustomPopupTheme"
+            app:subtitle="@string/sectionchlistofchildren0623monthsoldmainheading"
+            app:subtitleTextAppearance="@style/Toolbar.SubtitleText"
+            app:title="@string/sectionchlistofchildren0623monthsoldmainheading"
+            app:titleTextAppearance="@style/Toolbar.TitleText" />
 
 
         <ScrollView
@@ -130,8 +96,8 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:minHeight="48dp"
                         android:background="@drawable/bottom"
+                        android:minHeight="48dp"
                         android:orientation="horizontal">
 
                         <TextView
@@ -148,8 +114,8 @@
 
                         <TextView
                             android:id="@+id/ec14"
-                            android:layout_width="0dp"
                             style="@style/sub_labels"
+                            android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="2"
                             android:hint="@string/ec14"
@@ -249,8 +215,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz "
-                            android:inputType="textPersonName|textCapWords"
                             android:hint="@string/ec16"
+                            android:inputType="textPersonName|textCapWords"
                             android:text="@={child.ec16}" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -378,13 +344,13 @@
                                 android:enabled="@{!child.cb03dk.equals(`98`)}"
                                 android:gravity="center"
                                 android:hint="##"
+                                android:imeOptions="actionNext"
                                 android:inputType="number"
                                 android:maxLength="2"
-                                app:pattern="^[0-9]{2,2}$"
                                 android:text="@={child.cb03dd}"
-                                android:imeOptions="actionNext"
                                 app:maxValue="31"
                                 app:minValue="1"
+                                app:pattern="^[0-9]{2,2}$"
                                 app:type="range" />
 
                             <TextView
@@ -402,9 +368,9 @@
                                 android:enabled="@{!child.cb03dk.equals(`98`)}"
                                 android:gravity="center"
                                 android:hint="##"
+                                android:imeOptions="actionNext"
                                 android:inputType="number"
                                 android:maxLength="2"
-                                android:imeOptions="actionNext"
                                 android:text="@={child.cb03mm}"
                                 app:maxValue="12"
                                 app:minValue="1"
@@ -506,11 +472,11 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
+                                android:enabled="@{cb03dk.checked}"
                                 android:gravity="center"
                                 android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
-                                android:enabled="@{cb03dk.checked}"
                                 android:text="@={child.cb04mm}"
                                 app:maxValue="11"
                                 app:minValue="0"
@@ -528,14 +494,14 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
+                                android:enabled="@{cb03dk.checked}"
                                 android:gravity="center"
                                 android:hint="#"
+                                android:imeOptions="actionNext"
                                 android:inputType="number"
                                 android:maxLength="1"
-                                android:enabled="@{cb03dk.checked}"
                                 android:text="@={child.cb04yy}"
                                 app:maxValue="2"
-                                android:imeOptions="actionNext"
                                 app:minValue="0"
                                 app:type="range" />
 
@@ -558,6 +524,42 @@
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
+
+
+                <!--EndButton LinearLayout-->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layoutDirection="ltr"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btn_End"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/transparent"
+                        android:onClick="btnEnd"
+                        android:text="Cancel"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btn_Continue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/capsule"
+                        android:backgroundTintMode="src_atop"
+                        android:onClick="btnContinue"
+                        android:padding="10dp"
+                        android:text="Save"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+                <!--EndButton LinearLayout-->
 
 
             </LinearLayout>
