@@ -3332,9 +3332,6 @@ public class Child extends BaseObservable implements Observable {
             //this.ec12 = json.getString("ec12");
             this.ec13 = json.getString("ec13");
             this.ec14 = json.getString("ec14");
-            this.ec15 = json.getString("ec15");
-            this.ec16 = json.getString("ec16");
-            this.ec17 = json.getString("ec17");
             this.cb04mm = json.getString("cb04mm");
             this.cb04yy = json.getString("cb04yy");
             this.ageInMonths = json.getLong("ageInMonths");
@@ -3360,6 +3357,9 @@ public class Child extends BaseObservable implements Observable {
             this.ec09 = json.getString("ec09");
             this.ec11 = json.getString("ec11");
             this.ec12 = json.getString("ec12");
+            this.ec15 = json.has("ec15") ? json.getString("ec15") : "";
+            this.ec16 = json.has("ec16") ? json.getString("ec16") : "";
+            this.ec17 = json.has("ec17") ? json.getString("ec17") : "";
             this.ec18 = json.getString("ec18");
             this.ec19 = json.getString("ec19");
             this.ec21 = json.getString("ec21");
@@ -3620,9 +3620,6 @@ public class Child extends BaseObservable implements Observable {
         JSONObject json = new JSONObject();
         json.put("ec13", ec13)
                 .put("ec14", ec14)
-                .put("ec15", ec15)
-                .put("ec16", ec16)
-                .put("ec17", ec17)
                 .put("cb04mm", cb04mm)
                 .put("cb04yy", cb04yy)
                 .put("ageInMonths", ageInMonths);
@@ -3806,6 +3803,9 @@ public class Child extends BaseObservable implements Observable {
                 .put("ec09", ec09)
                 .put("ec11", ec11)
                 .put("ec12", ec12)
+                .put("ec15", ec15)
+                .put("ec16", ec16)
+                .put("ec17", ec17)
                 .put("ec18", ec18)
                 .put("ec19", ec19)
                 .put("ec21", ec21)

@@ -279,12 +279,12 @@ public class IdentificationActivity extends AppCompatActivity {
             }
 //            bi.childName.setText(selectedHousehold.getChildName());
             bi.childName.setText(childNames.get(0));
-            bi.childgrp.setText(childGrp.get(0));
+            bi.childgrp.setText(childGrp.get(0).equals("1") ? "6-11" : "12-23");
 
             if (childNames.size() > 1) {
                 bi.llchildName2.setVisibility(View.VISIBLE);
                 bi.childName2.setText(childNames.get(1));
-                bi.childgrp2.setText(childGrp.get(1));
+                bi.childgrp2.setText(childGrp.get(1).equals("1") ? "6-11" : "12-23");
             }
 
             bi.headhh.setVisibility(View.VISIBLE);
