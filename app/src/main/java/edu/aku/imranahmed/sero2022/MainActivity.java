@@ -40,8 +40,7 @@ import edu.aku.imranahmed.sero2022.ui.sections.SectionCBActivity;
 import edu.aku.imranahmed.sero2022.ui.sections.SectionCHActivity;
 import edu.aku.imranahmed.sero2022.ui.sections.SectionIM1Activity;
 import edu.aku.imranahmed.sero2022.ui.sections.SectionRIActivity;
-import edu.aku.imranahmed.sero2022.ui.sections.SectionSS_1Activity;
-import edu.aku.imranahmed.sero2022.ui.sections.SectionSS_2Activity;
+import edu.aku.imranahmed.sero2022.ui.sections.SectionSActivity;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -148,12 +147,7 @@ public class MainActivity extends AppCompatActivity {
 
             case R.id.secss1:
                 MainApp.form = new Form();
-                startActivity(new Intent(this, SectionSS_1Activity.class));
-                break;
-
-            case R.id.secess2:
-                MainApp.form = new Form();
-                startActivity(new Intent(this, SectionSS_2Activity.class));
+                startActivity(new Intent(this, SectionSActivity.class));
                 break;
 
             case R.id.seceCH:

@@ -19,24 +19,25 @@ import edu.aku.imranahmed.sero2022.R;
 import edu.aku.imranahmed.sero2022.contracts.TableContracts;
 import edu.aku.imranahmed.sero2022.core.MainApp;
 import edu.aku.imranahmed.sero2022.database.DatabaseHelper;
-import edu.aku.imranahmed.sero2022.databinding.ActivitySectionSs2Binding;
+import edu.aku.imranahmed.sero2022.databinding.ActivitySectionSBinding;
 
-public class SectionSS_2Activity extends AppCompatActivity {
+public class SectionSActivity extends AppCompatActivity {
 
 
-    private static final String TAG = "SectionSS_2Activity";
-    ActivitySectionSs2Binding bi;
+    private static final String TAG = "SectionSActivity";
+    ActivitySectionSBinding bi;
     private DatabaseHelper db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTheme(MainApp.langRTL ? R.style.AppThemeUrdu : R.style.AppThemeEnglish1);
-        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_ss_2);
+        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_s);
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
         bi.setForm(form);
     }
+
 
     private boolean updateDB() {
         if (MainApp.superuser) return true;
@@ -44,7 +45,7 @@ public class SectionSS_2Activity extends AppCompatActivity {
         db = MainApp.appInfo.getDbHelper();
         long updcount = 0;
         try {
-            updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_SSS, form.sSStoString());
+            updcount = db.updatesFormColumn(TableContracts.FormsTable.COLUMN_SSS, form.sStoString());
         } catch (JSONException e) {
             e.printStackTrace();
             Log.d(TAG, R.string.upd_db + e.getMessage());
@@ -70,11 +71,8 @@ public class SectionSS_2Activity extends AppCompatActivity {
 
 
     public void btnEnd(View view) {
-        Intent returnIntent = new Intent();
-        returnIntent.putExtra("requestCode", "1");
-        setResult(RESULT_CANCELED, returnIntent);
+        setResult(RESULT_CANCELED);
         finish();
-        //  startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
     }
 
     private boolean formValidation() {
@@ -85,7 +83,8 @@ public class SectionSS_2Activity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         Toast.makeText(this, "Back Press Not Allowed", Toast.LENGTH_SHORT).show();
-        //  setResult(RESULT_CANCELED); finish();
+        setResult(RESULT_CANCELED);
+        finish();
     }
 
 

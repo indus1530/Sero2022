@@ -109,7 +109,7 @@ public class SectionRIActivity extends AppCompatActivity {
         if (updateDB()) {
             finish();
             if (form.getHh20().equals("1")) {
-                startActivity(new Intent(this, SectionSS_1Activity.class));
+                startActivity(new Intent(this, SectionSActivity.class));
             } else {
                 startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false).putExtra("checkToEnable", 7));
             }

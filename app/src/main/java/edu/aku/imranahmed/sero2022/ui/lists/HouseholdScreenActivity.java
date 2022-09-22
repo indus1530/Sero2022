@@ -31,7 +31,7 @@ import edu.aku.imranahmed.sero2022.databinding.ActivityHouseholdScreenBinding;
 import edu.aku.imranahmed.sero2022.models.Child;
 import edu.aku.imranahmed.sero2022.ui.EndingActivity;
 import edu.aku.imranahmed.sero2022.ui.sections.SectionCHActivity;
-import edu.aku.imranahmed.sero2022.ui.sections.SectionSS_1Activity;
+import edu.aku.imranahmed.sero2022.ui.sections.SectionSActivity;
 
 
 public class HouseholdScreenActivity extends AppCompatActivity {
@@ -262,7 +262,7 @@ public class HouseholdScreenActivity extends AppCompatActivity {
 
     private void addHouseholdInfo() {
         //TODO: UNCOMMENT two line to launch the child info activity (CH)
-        Intent intent = new Intent(this, SectionSS_1Activity.class);
+        Intent intent = new Intent(this, SectionSActivity.class);
         intent.putExtra("requestCode", "1");
         MemberInfoLauncher.launch(intent);
     }

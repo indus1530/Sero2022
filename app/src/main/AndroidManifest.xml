@@ -155,13 +155,7 @@
             android:theme="@style/AppThemeEnglish1"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".ui.sections.SectionSS_1Activity"
-            android:exported="false"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppThemeEnglish1"
-            android:windowSoftInputMode="adjustResize" />
-        <activity
-            android:name=".ui.sections.SectionSS_2Activity"
+            android:name=".ui.sections.SectionSActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeEnglish1"

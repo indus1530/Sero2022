@@ -119,51 +119,11 @@ public class Form extends BaseObservable implements Observable {
     private String ss14q = _EMPTY_;
     private String ss14r = _EMPTY_;
     private String ss14s = _EMPTY_;
-    private String ss17 = _EMPTY_;
-    private String ss17xx = _EMPTY_;
-    private String ss18 = _EMPTY_;
-    private String ss18xx = _EMPTY_;
-    private String ss19 = _EMPTY_;
-    private String ss19xx = _EMPTY_;
-    private String ss20 = _EMPTY_;
-    private String ss20xx = _EMPTY_;
-    private String ss21a = _EMPTY_;
-    private String ss22 = _EMPTY_;
-    private String ss23 = _EMPTY_;
-    private String ss23landx = _EMPTY_;
-    private String ss24 = _EMPTY_;
-    private String ss25a = _EMPTY_;
-    private String ss25b = _EMPTY_;
-    private String ss25c = _EMPTY_;
-    private String ss25d = _EMPTY_;
-    private String ss25e = _EMPTY_;
-    private String ss25f = _EMPTY_;
-    private String ss25g = _EMPTY_;
-    private String ss26 = _EMPTY_;
     private String ss27 = _EMPTY_;
     private String ss28 = _EMPTY_;
 
-/*    private String ec13= _EMPTY_;
-    private String ec14= _EMPTY_;
-    private String ec15= _EMPTY_;
-    private String ec16= _EMPTY_;
-    private String ec17= _EMPTY_;
-    private String cb03_dd= _EMPTY_;
-    private String cb03_mm= _EMPTY_;
-    private String cb03_yy= _EMPTY_;
-    private String cb03_dk= _EMPTY_;
-    private String cb04_mm= _EMPTY_;
-    private String cb04_yy= _EMPTY_;*/
-
 
     public Form() {
-
-/*        setSysDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
-        setUserName(MainApp.user.getUserName());
-        setDeviceId(MainApp.deviceid);
-        setAppver(MainApp.appInfo.getAppVersion());
-        setAppver(MainApp.appInfo.getAppVersion());*/
-
     }
 
 
@@ -172,13 +132,11 @@ public class Form extends BaseObservable implements Observable {
         setSysDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH).format(new Date().getTime()));
         setUserName(MainApp.user.getUserName());
         setDeviceId(MainApp.deviceid);
-        //   setUuid(MainApp.form.getUid());  // not applicable in Form table
         setAppver(MainApp.appInfo.getAppVersion());
         setProjectName(PROJECT_NAME);
         setEbCode(MainApp.selectedHousehold.getEbCode());
         setHhid(MainApp.selectedHousehold.getHhid());
         setSno(MainApp.selectedHousehold.getSno());
-        // setEntryType(String.valueOf(MainApp.entryType));
 
         //SECTION VARIABLES
         setHh05(MainApp.selectedHousehold.getEbCode());
@@ -822,30 +780,7 @@ public class Form extends BaseObservable implements Observable {
         notifyPropertyChanged(BR.hh21xx);
     }
 
-    @Bindable
-    public String getsHH() {
-        return sHH;
-    }
 
-    @Bindable
-    public String getsCH() {
-        return sCH;
-    }
-
-    @Bindable
-    public String getsSS() {
-        return sSS;
-    }
-
-    @Bindable
-    public String getsCB() {
-        return sCB;
-    }
-
-    @Bindable
-    public String getsIM() {
-        return sIM;
-    }
 
     @Bindable
     public String getSs01() {
@@ -1135,228 +1070,6 @@ public class Form extends BaseObservable implements Observable {
     }
 
 
-    @Bindable
-    public String getSs17() {
-        return ss17;
-    }
-
-    public void setSs17(String ss17) {
-        this.ss17 = ss17;
-        setSs17xx(ss17.equals("96") ? this.ss17xx : ""); // for all skips, mention all skipped questions
-        notifyPropertyChanged(BR.ss17);
-    }
-
-    @Bindable
-    public String getSs17xx() {
-        return ss17xx;
-    }
-
-    public void setSs17xx(String ss17xx) {
-        this.ss17xx = ss17xx;
-        notifyPropertyChanged(BR.ss17xx);
-    }
-
-    @Bindable
-    public String getSs18() {
-        return ss18;
-    }
-
-    public void setSs18(String ss18) {
-        this.ss18 = ss18;
-        setSs18xx(ss18.equals("96") ? this.ss18xx : ""); // for all skips, mention all skipped questions
-        notifyPropertyChanged(BR.ss18);
-    }
-
-    @Bindable
-    public String getSs18xx() {
-        return ss18xx;
-    }
-
-    public void setSs18xx(String ss18xx) {
-        this.ss18xx = ss18xx;
-        notifyPropertyChanged(BR.ss18xx);
-    }
-
-    @Bindable
-    public String getSs19() {
-        return ss19;
-    }
-
-    public void setSs19(String ss19) {
-        this.ss19 = ss19;
-        setSs19xx(ss19.equals("96") ? this.ss19xx : ""); // for all skips, mention all skipped questions
-        notifyPropertyChanged(BR.ss19);
-    }
-
-    @Bindable
-    public String getSs19xx() {
-        return ss19xx;
-    }
-
-    public void setSs19xx(String ss19xx) {
-        this.ss19xx = ss19xx;
-        notifyPropertyChanged(BR.ss19xx);
-    }
-
-    @Bindable
-    public String getSs20() {
-        return ss20;
-    }
-
-    public void setSs20(String ss20) {
-        this.ss20 = ss20;
-        setSs20xx(ss20.equals("96") ? this.ss20xx : ""); // for all skips, mention all skipped questions
-        notifyPropertyChanged(BR.ss20);
-    }
-
-    @Bindable
-    public String getSs20xx() {
-        return ss20xx;
-    }
-
-    public void setSs20xx(String ss20xx) {
-        this.ss20xx = ss20xx;
-        notifyPropertyChanged(BR.ss20xx);
-    }
-
-    @Bindable
-    public String getSs21a() {
-        return ss21a;
-    }
-
-    public void setSs21a(String ss21a) {
-        this.ss21a = ss21a;
-        notifyPropertyChanged(BR.ss21a);
-    }
-
-    @Bindable
-    public String getSs22() {
-        return ss22;
-    }
-
-    public void setSs22(String ss22) {
-        this.ss22 = ss22;
-        setSs23(ss22.equals("1") ? this.ss23 : "");
-        notifyPropertyChanged(BR.ss22);
-    }
-
-    @Bindable
-    public String getSs23() {
-        return ss23;
-    }
-
-    public void setSs23(String ss23) {
-        this.ss23 = ss23;
-        setSs23landx(ss23.equals("1") || ss23.equals("2") ? this.ss23landx : "");
-        notifyPropertyChanged(BR.ss23);
-    }
-
-    @Bindable
-    public String getSs23landx() {
-        return ss23landx;
-    }
-
-    public void setSs23landx(String ss23landx) {
-        this.ss23landx = ss23landx;
-        notifyPropertyChanged(BR.ss23landx);
-    }
-
-    @Bindable
-    public String getSs24() {
-        return ss24;
-    }
-
-    public void setSs24(String ss24) {
-        this.ss24 = ss24;
-        setSs25a(ss24.equals("1") ? this.ss25a : "");
-        setSs25b(ss24.equals("1") ? this.ss25b : "");
-        setSs25c(ss24.equals("1") ? this.ss25c : "");
-        setSs25d(ss24.equals("1") ? this.ss25d : "");
-        setSs25e(ss24.equals("1") ? this.ss25e : "");
-        setSs25f(ss24.equals("1") ? this.ss25f : "");
-        setSs25g(ss24.equals("1") ? this.ss25g : "");
-        notifyPropertyChanged(BR.ss24);
-    }
-
-    @Bindable
-    public String getSs25a() {
-        return ss25a;
-    }
-
-    public void setSs25a(String ss25a) {
-        this.ss25a = ss25a;
-        notifyPropertyChanged(BR.ss25a);
-    }
-
-    @Bindable
-    public String getSs25b() {
-        return ss25b;
-    }
-
-    public void setSs25b(String ss25b) {
-        this.ss25b = ss25b;
-        notifyPropertyChanged(BR.ss25b);
-    }
-
-    @Bindable
-    public String getSs25c() {
-        return ss25c;
-    }
-
-    public void setSs25c(String ss25c) {
-        this.ss25c = ss25c;
-        notifyPropertyChanged(BR.ss25c);
-    }
-
-    @Bindable
-    public String getSs25d() {
-        return ss25d;
-    }
-
-    public void setSs25d(String ss25d) {
-        this.ss25d = ss25d;
-        notifyPropertyChanged(BR.ss25d);
-    }
-
-    @Bindable
-    public String getSs25e() {
-        return ss25e;
-    }
-
-    public void setSs25e(String ss25e) {
-        this.ss25e = ss25e;
-        notifyPropertyChanged(BR.ss25e);
-    }
-
-    @Bindable
-    public String getSs25f() {
-        return ss25f;
-    }
-
-    public void setSs25f(String ss25f) {
-        this.ss25f = ss25f;
-        notifyPropertyChanged(BR.ss25f);
-    }
-
-    @Bindable
-    public String getSs25g() {
-        return ss25g;
-    }
-
-    public void setSs25g(String ss25g) {
-        this.ss25g = ss25g;
-        notifyPropertyChanged(BR.ss25g);
-    }
-
-    @Bindable
-    public String getSs26() {
-        return ss26;
-    }
-
-    public void setSs26(String ss26) {
-        this.ss26 = ss26;
-        notifyPropertyChanged(BR.ss26);
-    }
 
     @Bindable
     public String getSs27() {
@@ -1514,7 +1227,7 @@ public class Form extends BaseObservable implements Observable {
 
 
         sHHHydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SHH)));
-        sSSHydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SSS)));
+        sSHydrate(cursor.getString(cursor.getColumnIndexOrThrow(FormsTable.COLUMN_SSS)));
 
         return this;
     }
@@ -1571,8 +1284,8 @@ public class Form extends BaseObservable implements Observable {
         }
     }
 
-    public void sSSHydrate(String string) throws JSONException {
-        Log.d(TAG, "sAHydrate: " + string);
+    public void sSHydrate(String string) throws JSONException {
+        Log.d(TAG, "sSHydrate: " + string);
         if (string != null) {
             JSONObject json = null;
             json = new JSONObject(string);
@@ -1605,27 +1318,6 @@ public class Form extends BaseObservable implements Observable {
             this.ss14q = json.getString("ss14q");
             this.ss14r = json.getString("ss14r");
             this.ss14s = json.getString("ss14s");
-            this.ss17 = json.getString("ss17");
-            this.ss17xx = json.getString("ss17xx");
-            this.ss18 = json.getString("ss18");
-            this.ss18xx = json.getString("ss18xx");
-            this.ss19 = json.getString("ss19");
-            this.ss19xx = json.getString("ss19xx");
-            this.ss20 = json.getString("ss20");
-            this.ss20xx = json.getString("ss20xx");
-            this.ss21a = json.getString("ss21a");
-            this.ss22 = json.getString("ss22");
-            this.ss23 = json.getString("ss23");
-            this.ss23landx = json.getString("ss23landx");
-            this.ss24 = json.getString("ss24");
-            this.ss25a = json.getString("ss25a");
-            this.ss25b = json.getString("ss25b");
-            this.ss25c = json.getString("ss25c");
-            this.ss25d = json.getString("ss25d");
-            this.ss25e = json.getString("ss25e");
-            this.ss25f = json.getString("ss25f");
-            this.ss25g = json.getString("ss25g");
-            this.ss26 = json.getString("ss26");
             this.ss27 = json.getString("ss27");
             this.ss28 = json.getString("ss28");
 
@@ -1634,7 +1326,7 @@ public class Form extends BaseObservable implements Observable {
     }
 
     public String sHHtoString() throws JSONException {
-        Log.d(TAG, "sAtoString: ");
+        Log.d(TAG, "sHHtoString: ");
         JSONObject json = new JSONObject();
         json.put("hh01", hh01)
                 .put("hh02", hh02)
@@ -1683,8 +1375,8 @@ public class Form extends BaseObservable implements Observable {
         return json.toString();
     }
 
-    public String sSStoString() throws JSONException {
-        Log.d(TAG, "sAtoString: ");
+    public String sStoString() throws JSONException {
+        Log.d(TAG, "sStoString: ");
         JSONObject json = new JSONObject();
         json.put("ss01", ss01)
                 .put("ss01xx", ss01xx)
@@ -1714,27 +1406,6 @@ public class Form extends BaseObservable implements Observable {
                 .put("ss14q", ss14q)
                 .put("ss14r", ss14r)
                 .put("ss14s", ss14s)
-                .put("ss17", ss17)
-                .put("ss17xx", ss17xx)
-                .put("ss18", ss18)
-                .put("ss18xx", ss18xx)
-                .put("ss19", ss19)
-                .put("ss19xx", ss19xx)
-                .put("ss20", ss20)
-                .put("ss20xx", ss20xx)
-                .put("ss21a", ss21a)
-                .put("ss22", ss22)
-                .put("ss23", ss23)
-                .put("ss23landx", ss23landx)
-                .put("ss24", ss24)
-                .put("ss25a", ss25a)
-                .put("ss25b", ss25b)
-                .put("ss25c", ss25c)
-                .put("ss25d", ss25d)
-                .put("ss25e", ss25e)
-                .put("ss25f", ss25f)
-                .put("ss25g", ss25g)
-                .put("ss26", ss26)
                 .put("ss27", ss27)
                 .put("ss28", ss28);
 
@@ -1755,7 +1426,6 @@ public class Form extends BaseObservable implements Observable {
         json.put(FormsTable.COLUMN_SYSDATE, this.sysDate);
         json.put(FormsTable.COLUMN_DEVICEID, this.deviceId);
         json.put(FormsTable.COLUMN_DEVICETAGID, this.deviceTag);
-        //    json.put(FormsTable.COLUMN_ENTRY_TYPE, this.entryType);
         json.put(FormsTable.COLUMN_ISTATUS, this.iStatus);
         json.put(FormsTable.COLUMN_SYNCED, this.synced);
         json.put(FormsTable.COLUMN_SYNC_DATE, this.syncDate);
@@ -1774,7 +1444,7 @@ public class Form extends BaseObservable implements Observable {
         json.put(FormsTable.COLUMN_SYNCED, this.synced);
 
         json.put(FormsTable.COLUMN_SHH, new JSONObject(sHHtoString()));
-        json.put(FormsTable.COLUMN_SSS, new JSONObject(sSStoString()));
+        json.put(FormsTable.COLUMN_SSS, new JSONObject(sStoString()));
 
 //        json.put(FormsTable.COLUMN_SYNCED_DATE, this.syncDate);
 //        json.put(FormsTable.COLUMN_DISTRICT_CODE, this.districtCode);

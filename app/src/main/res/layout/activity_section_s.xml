@@ -1307,6 +1307,117 @@
                 </androidx.cardview.widget.CardView>
 
 
+                <!-- ss27title  Title   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVss27title"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/info"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/ss27title" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+
+                <!-- ss27  Input   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVss27"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Qss27" />
+
+                            <TextView
+                                style="@style/sub_labels"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/ss27" />
+
+                            <io.blackbox_vision.datetimepickeredittext.view.TimePickerEditText
+                                android:id="@+id/ss27"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:focusable="false"
+                                android:gravity="center"
+                                android:hint="HH:mm"
+                                android:text="@={form.ss27}"
+                                app:is24HourView="true"
+                                app:theme="@style/DatePickerEditTextDialogTheme"
+                                app:timeFormat="HH:mm" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+
+                <!-- ss28  TextArea   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVss28"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Qss28" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/ss28" />
+
+                        </LinearLayout>
+
+                        <EditText
+                            android:id="@+id/ss28"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. @#%()_-+=?"
+                            android:gravity="start|top"
+                            android:hint="@string/ss28"
+                            android:lines="5"
+                            android:text="@={form.ss28}" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
                 <!--EndButton LinearLayout-->
                 <LinearLayout
                     android:layout_width="wrap_content"
