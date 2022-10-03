@@ -704,7 +704,8 @@
     <string name="im141">Yes </string>
     <string name="im142">No </string>
     <string name="im143">Dont know</string>
-    <string name="im15">How many times was the Pentavalent vaccine received? Number of times</string>
+    <string name="im15">How many times was the PentaValent vaccine received ?</string>
+    <string name="im15a">Number of Times</string>
     <string name="im16">Has (name) ever received a Pneumococcal Conjugate vaccination – that is, an injection to prevent (him/her) from getting pneumococcal disease, including ear infections and meningitis caused by pneumococcus? Probe by indicating that Pneumococcal Conjugate vaccination is sometimes given at the same time as the Pentavalent vaccination.</string>
     <string name="im161">Yes </string>
     <string name="im162">No  </string>

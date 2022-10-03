@@ -376,8 +376,11 @@
                                         android:checked="@{form.im11.equals(`98`)}"
                                         android:onClick="@{()->form.setIm11(`98`)}"
                                         android:text="@string/im113" />
+
                                 </RadioGroup>
+
                             </LinearLayout>
+
                         </androidx.cardview.widget.CardView>
 
 
@@ -1047,8 +1050,11 @@
                                         android:checked="@{form.im21.equals(`98`)}"
                                         android:onClick="@{()->form.setIm21(`98`) }"
                                         android:text="@string/im213" />
+
                                 </RadioGroup>
+
                             </LinearLayout>
+
                         </androidx.cardview.widget.CardView>
 
 
