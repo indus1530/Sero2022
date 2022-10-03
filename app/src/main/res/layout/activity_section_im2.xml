@@ -1322,8 +1322,21 @@
                                     android:checked="@{form.im23a.equals(`96`)}"
                                     android:onClick="@{()->form.setIm23a(`96`)}"
                                     android:text="@string/im23a96" />
+
+                                <EditText
+                                    android:id="@+id/im23a96x"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                                    android:hint="@string/im23a96"
+                                    android:tag="im23a96"
+                                    android:text="@={form.im23a96x}"
+                                    android:visibility="@{form.im23a.equals(`96`) ? View.VISIBLE : View.GONE}" />
+
                             </RadioGroup>
+
                         </LinearLayout>
+
                     </androidx.cardview.widget.CardView>
 
 

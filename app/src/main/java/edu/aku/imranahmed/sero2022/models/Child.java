@@ -189,6 +189,7 @@ public class Child extends BaseObservable implements Observable {
     private String im23 = _EMPTY_;
     private String im236x = _EMPTY_;
     private String im23a = _EMPTY_;
+    private String im23a96x = _EMPTY_;
     private String im2401 = _EMPTY_;
     private String im2402 = _EMPTY_;
     private String im2403 = _EMPTY_;
@@ -2265,7 +2266,18 @@ public class Child extends BaseObservable implements Observable {
 
     public void setIm23a(String im23a) {
         this.im23a = im23a;
+        setIm23a96x(im23a.equals("96") ? this.im23a : "");
         notifyPropertyChanged(BR.im23a);
+    }
+
+    @Bindable
+    public String getIm23a96x() {
+        return im23a96x;
+    }
+
+    public void setIm23a96x(String im23a96x) {
+        this.im23a96x = im23a96x;
+        notifyPropertyChanged(BR.im23a96x);
     }
 
 
@@ -3508,6 +3520,7 @@ public class Child extends BaseObservable implements Observable {
             this.im23 = json.getString("im23");
             this.im236x = json.getString("im236x");
             this.im23a = json.getString("im23a");
+            this.im23a96x = json.has("im23a96x") ? json.getString("im23a96x") : "";
             this.im2401 = json.getString("im2401");
             this.im2402 = json.getString("im2402");
             this.im2403 = json.getString("im2403");
@@ -3758,6 +3771,7 @@ public class Child extends BaseObservable implements Observable {
                 .put("im23", im23)
                 .put("im236x", im236x)
                 .put("im23a", im23a)
+                .put("im23a96x", im23a96x)
                 .put("im2401", im2401)
                 .put("im2402", im2402)
                 .put("im2403", im2403)
