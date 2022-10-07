@@ -4,6 +4,7 @@ import static edu.aku.imranahmed.sero2022.core.MainApp.child;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
@@ -69,6 +70,8 @@ public class SectionGActivity extends AppCompatActivity {
     }
 
     public void btnContinue(View view) {
+        bi.llbtn.setVisibility(View.GONE);
+        new Handler().postDelayed(() -> bi.llbtn.setVisibility(View.VISIBLE), 5000);
         if (!formValidation()) return;
         if (updateDB()) {
             finish();
@@ -112,7 +115,7 @@ public class SectionGActivity extends AppCompatActivity {
 //                Toast.makeText(this, "Scanned: " + result.getContents(), Toast.LENGTH_LONG).show();
                 String strResult = result.getContents();
                 bi.g04.setText(strResult);
-                bi.EndButton.setVisibility(View.VISIBLE);
+                bi.llbtn.setVisibility(View.VISIBLE);
                 /*if (!checkQR()) {
                     bi.EndButton.setVisibility(View.GONE);
                 }*/
@@ -127,14 +130,14 @@ public class SectionGActivity extends AppCompatActivity {
             Toast.makeText(this, "Already Exist", Toast.LENGTH_SHORT).show();
             return false;
         } else {
-            bi.EndButton.setVisibility(View.VISIBLE);
+            bi.llbtn.setVisibility(View.VISIBLE);
             return true;
         }
     }
 
     public void scanQR(View view) {
         // Scan QR Code
-        bi.EndButton.setVisibility(View.GONE);
+        bi.llbtn.setVisibility(View.GONE);
         new IntentIntegrator(this).initiateScan();
     }
 

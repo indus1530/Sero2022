@@ -4,6 +4,7 @@ import static edu.aku.imranahmed.sero2022.core.MainApp.child;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -120,6 +121,8 @@ public class SectionIM2Activity extends AppCompatActivity {
 
 
     public void btnContinue(View view) {
+        bi.llbtn.setVisibility(View.GONE);
+        new Handler().postDelayed(() -> bi.llbtn.setVisibility(View.VISIBLE), 5000);
         if (!formValidation()) return;
         if (updateDB()) {
             finish();

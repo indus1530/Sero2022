@@ -155,44 +155,43 @@
                                 android:tag="ec2296"
                                 android:text="@={child.ec2296x}"
                                 android:visibility="@{child.ec22.equals(`96`) ? View.VISIBLE : View.GONE}" />
+
                         </RadioGroup>
+
                     </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
 
                 <!--EndButton LinearLayout-->
-                <LinearLayout
+                <RelativeLayout
+                    android:id="@+id/llbtn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="end"
-                    android:layout_marginTop="100dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:layoutDirection="ltr"
                     android:orientation="horizontal"
-                    android:padding="24dp">
+                    android:padding="10dp">
 
-
-                    <!--
-                             <enum name="src_over" value="3" />
-                                <enum name="src_in" value="5" />
-                                <enum name="src_atop" value="9" />
-                                <enum name="multiply" value="14" />
-                                <enum name="screen" value="15" />
-                                <enum name="add" value="16" />
-                    -->
                     <Button
-                        android:id="@+id/btn_Continue"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@drawable/capsule"
-                        android:backgroundTint="@color/colorAccentOverlay"
+                        android:id="@+id/btnContinue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/button_shape_green"
                         android:backgroundTintMode="src_atop"
                         android:onClick="btnEnd"
+                        android:padding="10dp"
                         android:text="Save"
-                        android:textColor="@color/white"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        tools:ignore="OnClick" />
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
 
-                </LinearLayout>
+                </RelativeLayout>
                 <!--EndButton LinearLayout-->
 
             </LinearLayout>

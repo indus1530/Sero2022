@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.View;
@@ -108,6 +109,8 @@ public class SectionCHActivity extends AppCompatActivity {
     }
 
     public void btnContinue(View view) {
+        bi.llbtn.setVisibility(View.GONE);
+        new Handler().postDelayed(() -> bi.llbtn.setVisibility(View.VISIBLE), 5000);
         if (!formValidation()) return;
         if (!insertNewRecord()) return;
         if (updateDB()) {

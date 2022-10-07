@@ -5,6 +5,7 @@ import static edu.aku.imranahmed.sero2022.core.MainApp.randomChild;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -95,6 +96,8 @@ public class ChildSelectionActivity extends AppCompatActivity {
     }
 
     public void btnContinue(View view) {
+        bi.llbtn.setVisibility(View.GONE);
+        new Handler().postDelayed(() -> bi.llbtn.setVisibility(View.VISIBLE), 5000);
         if (!formValidation()) return;
         randomChild.remove(bi.es1resp.getSelectedItemPosition() - 1);
 //        childListAll.remove(bi.es1resp.getSelectedItemPosition() - 1);

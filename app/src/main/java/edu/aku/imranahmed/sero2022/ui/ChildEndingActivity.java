@@ -4,6 +4,7 @@ import static edu.aku.imranahmed.sero2022.core.MainApp.child;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Toast;
 
@@ -101,6 +102,8 @@ public class ChildEndingActivity extends AppCompatActivity {
 
 
     public void btnEnd(View view) {
+        bi.llbtn.setVisibility(View.GONE);
+        new Handler().postDelayed(() -> bi.llbtn.setVisibility(View.VISIBLE), 5000);
         if (!formValidation()) return;
         saveDraft();
         if (UpdateDB()) {

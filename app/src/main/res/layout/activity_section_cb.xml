@@ -1,5 +1,6 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
@@ -69,7 +70,6 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:gravity="center_vertical"
                                 android:text="@string/ec01" />
 
                             <io.blackbox_vision.datetimepickeredittext.view.DatePickerEditText
@@ -165,7 +165,6 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:gravity="center_vertical"
                                 android:text="@string/ec13cline" />
 
                             <TextView
@@ -210,7 +209,6 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:gravity="center_vertical"
                                 android:text="@string/ec14cname" />
 
                             <TextView
@@ -457,7 +455,8 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVec19"
                     style="@style/cardView"
-                    android:visibility="gone">
+                    android:visibility="gone"
+                    tools:visibility="visible">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -491,21 +490,23 @@
 
                             <RadioButton
                                 android:id="@+id/ec19a"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{child.ec19.equals(`1`)}"
                                 android:enabled="false"
+                                tools:enabled="true"
                                 android:onClick="@{()->child.setEc19(`1`)}"
                                 android:text="@string/ec19a" />
 
                             <RadioButton
                                 android:id="@+id/ec19b"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{child.ec19.equals(`2`)}"
                                 android:enabled="false"
+                                tools:enabled="true"
                                 android:onClick="@{()->child.setEc19(`2`)}"
                                 android:text="@string/ec19b" />
 
@@ -637,9 +638,8 @@
                                 android:text="@string/cb01a" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
-
                                 android:id="@+id/cb01a"
-                                android:layout_width="0dp"
+                                android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:gravity="center"
@@ -661,7 +661,7 @@
 
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/cb01b"
-                                android:layout_width="0dp"
+                                android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:enabled="@{child.cb01a.equals(`77`)}"
@@ -732,7 +732,7 @@
 
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/cb02a"
-                                android:layout_width="0dp"
+                                android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:gravity="center"
@@ -753,7 +753,7 @@
 
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/cb02b"
-                                android:layout_width="0dp"
+                                android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:enabled="@{child.cb02a.equals(`77`)}"
@@ -819,7 +819,6 @@
                                 style="@style/textView"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:text="@string/cb03dd" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
@@ -843,7 +842,6 @@
                                 style="@style/textView"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:text="@string/cb03mm" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
@@ -866,7 +864,6 @@
                                 style="@style/textView"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:text="@string/cb03yy" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
@@ -888,7 +885,6 @@
                                 android:id="@+id/cb03dk"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:layout_gravity="end"
                                 android:backgroundTint="@color/redOverlay"
                                 android:checked="@{child.cb03dk.equals(`98`)}"
                                 android:onClick="@{()->child.setCb03dk(child.cb03dk.equals(`98`)?``:`98`)}"
@@ -905,10 +901,12 @@
                 </androidx.cardview.widget.CardView>
 
 
-                <!--&lt;!&ndash; ec22  Radio   &ndash;&gt;
+                <!-- ec22  Radio   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVec22"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="gone"
+                    tools:visibility="visible">
 
 
                     <LinearLayout
@@ -1023,45 +1021,60 @@
                                 android:tag="ec2296"
                                 android:text="@={child.ec2296x}"
                                 android:visibility="@{child.ec22.equals(`96`) ? View.VISIBLE : View.GONE}" />
+
                         </RadioGroup>
+
                     </LinearLayout>
-                </androidx.cardview.widget.CardView>-->
+
+                </androidx.cardview.widget.CardView>
 
 
                 <!--EndButton LinearLayout-->
-                <LinearLayout
+                <RelativeLayout
+                    android:id="@+id/llbtn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
                     android:layoutDirection="ltr"
-                    android:gravity="center"
-                    android:padding="20dp"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:padding="10dp">
 
                     <Button
-                        android:id="@+id/btn_End"
+                        android:id="@+id/btnEnd"
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:background="@android:color/transparent"
+                        android:layout_height="48dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/button_shape_red"
                         android:onClick="btnEnd"
+                        android:padding="10dp"
                         android:text="Cancel"
-                        android:textColor="@color/colorPrimary"
-                        android:textSize="12sp"
+                        android:textColor="@color/white"
+                        android:textSize="15sp"
                         android:textStyle="bold" />
 
                     <Button
-                        android:id="@+id/btn_Continue"
+                        android:id="@+id/btnContinue"
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:background="@drawable/capsule"
+                        android:layout_height="48dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/button_shape_green"
                         android:backgroundTintMode="src_atop"
                         android:onClick="btnContinue"
                         android:padding="10dp"
                         android:text="Save"
                         android:textColor="@color/colorPrimaryDark"
-                        android:textSize="12sp"
+                        android:textSize="15sp"
                         android:textStyle="bold" />
 
-                </LinearLayout>
+                </RelativeLayout>
                 <!--EndButton LinearLayout-->
 
 
