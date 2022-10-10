@@ -3,7 +3,6 @@ package edu.aku.imranahmed.sero2022.ui.sections;
 import static edu.aku.imranahmed.sero2022.core.MainApp.child;
 import static edu.aku.imranahmed.sero2022.core.MainApp.form;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -11,8 +10,8 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.CheckBox;
-import android.widget.TableRow;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
@@ -977,22 +976,20 @@ public class SectionIM1Activity extends AppCompatActivity {
     }
 
 
-    private void displayInvalidDateDialog(CheckBox checkBox, int vaccLabel, TableRow tableRow) {
+    private void displayInvalidDateDialog(CheckBox checkBox, int vaccLabel, ViewGroup tableRow) {
         checkBox.setVisibility(View.VISIBLE);
         new AlertDialog.Builder(new ContextThemeWrapper(this, R.style.DatePickerDialog))
                 .setTitle("Invalid Date: " + getResources().getString(vaccLabel))
                 .setMessage("Please recheck date on vaccination card.")
-                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        // Continue with delete operation
-               /*         for (int i = 0; i < tableRow.getChildCount(); i++) {
-                            View child = tableRow.getChildAt(i);
-                            if(child instanceof EditText)
-                            child.setEnabled(false);
-                        }*/
-                        //checkBox.setChecked(false);
-                        checkBox.setVisibility(View.VISIBLE);
-                    }
+                .setPositiveButton("OK", (dialog, which) -> {
+                    // Continue with delete operation
+           /*         for (int i = 0; i < tableRow.getChildCount(); i++) {
+                        View child = tableRow.getChildAt(i);
+                        if(child instanceof EditText)
+                        child.setEnabled(false);
+                    }*/
+                    //checkBox.setChecked(false);
+                    checkBox.setVisibility(View.VISIBLE);
                 })
 
                 // A null listener allows the button to dismiss the dialog and take no further action.

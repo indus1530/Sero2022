@@ -785,6 +785,22 @@
     <string name="im2602">No</string>
     <string name="im2603">Hasn`t Traveled</string>
     <string name="im2698">Don`t know</string>
+
+    <string name="Q_im24aa">im24aa</string>
+    <string name="im24aa">Can you mention the month of this polio campaign in your area</string>
+    <string name="im24aa1">January</string>
+    <string name="im24aa2">February</string>
+    <string name="im24aa3">March</string>
+    <string name="im24aa4">April</string>
+    <string name="im24aa5">May</string>
+    <string name="im24aa6">June</string>
+    <string name="im24aa7">July</string>
+    <string name="im24aa8">August</string>
+    <string name="im24aa9">September</string>
+    <string name="im24aa10">October</string>
+    <string name="im24aa11">November</string>
+    <string name="im24aa12">December</string>
+
     <!--    <string name="im27">COMMENTS IF ANY</string>-->
     <string name="ec13">CHILD Line Number</string>
     <string name="ec14">Child Name</string>

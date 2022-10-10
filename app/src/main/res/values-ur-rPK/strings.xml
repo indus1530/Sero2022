@@ -340,6 +340,22 @@
     <string name="im24a1">ہاں</string>
     <string name="im24a2">نہیں</string>
     <string name="im24a98">معلوم نہیں</string>
+
+    <string name="Q_im24aa">im24aa</string>
+    <string name="im24aa">کیا آپ اس مہینے کا نام بتا سکتے ہیں جس مہینے میں آپ کے علاقے میں پولیو مہم کا انعقاد کیا گیا تھا ؟</string>
+    <string name="im24aa1">جنوری</string>
+    <string name="im24aa2">فروری</string>
+    <string name="im24aa3">مارچ</string>
+    <string name="im24aa4">اپریل</string>
+    <string name="im24aa5">مئی</string>
+    <string name="im24aa6">جون</string>
+    <string name="im24aa7">جولائی</string>
+    <string name="im24aa8">اگست</string>
+    <string name="im24aa9">ستمبر</string>
+    <string name="im24aa10">اکتوبر</string>
+    <string name="im24aa11">نومبر</string>
+    <string name="im24aa12">دسمبر</string>
+
     <string name="im24b">قومی مہم کے دوران بچے کو پولیو کے قطرے کتنی بار پلائے گئے تھے؟</string>
     <string name="im24c">کیا بچے کو گذشتہ قومی پولیو مہم کے دوران پولیو کے قطرے پلائے گئے تھے</string>
     <string name="im24d">جب آخری بار (بچے/بچی ) کو  پولیو کے قطرے پلائے گئے تھے تو کیا اس وقت  بچے  کو پولیو سےبچائو کا ٹیکہIPV بھی لگوایا گیا تھا؟</string>
@@ -361,6 +377,8 @@
     <string name="im2603">سفر نہیں کیا</string>
     <string name="im2698">معلوم نہیں</string>
     <!--    <string name="im26">مشاہدہ اگر کوئی ہے تو لکھیں</string>-->
+
+
     <string name="hh05">اینومیریشن بلاک نمبر </string>
     <string name="hh06">صوبہ  </string>
     <string name="hh07">ضلع</string>
