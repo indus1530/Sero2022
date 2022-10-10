@@ -146,9 +146,9 @@
     <string name="im01">کیا بچے کے لئے آپ کے پاس کبھی کسی سرکاری یا نجی مرکز صحت سے ملا ہوا حفاظتی ٹیکوں کا کارڈ موجود تھا؟ جس میں حفاظتی ٹیکوں کا اندراج موجود ہو۔</string>
     <string name="im011">ہاں</string>
     <string name="im012">نہیں</string>
-    <string name="im02">اگر ہاں:  تو برائے مہربانی کیا میں اسے دیکھ سکتا/ سکتی ہوں؟</string>
-    <string name="im021">ہاںہاں، کارڈدیکھ لیا</string>
-    <string name="im022">کارڈنہیں دیکھا</string>
+    <string name="im02">اگر ہاں:  تو برائے مہربانی کیا میں اسے دیکھ سکتا / سکتی ہوں ؟</string>
+    <string name="im021">جی ہاں، کارڈ دیکھ لیا</string>
+    <string name="im022">کارڈ نہیں دیکھا</string>
     <string name="im02a">اگر نہیں تو، کارڈ نہ دکھانے کی وجہ</string>
     <string name="im02a1">کارڈ اس وقت نہیں مل رہا</string>
     <string name="im02a2">کارڈ گم ہو گیا ہے</string>
@@ -159,9 +159,9 @@
     <string name="im0302">کبھی مرکز صحت میں نہیں گئے </string>
     <string name="im0303">گم گیا ہے </string>
     <string name="im0304">سہولت فراہم کرنے والے کے پاس کارڈ دستیاب نہیں تھا</string>
-    <string name="im0305">ویکسینیٹر/ مرکزصحت نے کارڈ مہیا نہیں کی</string>
+    <string name="im0305">ویکسینیٹر / مرکز صحت نے کارڈ مہیا نہیں کی</string>
     <string name="im0396">دیگر وضاحت کریں</string>
-    <string name="im04">کارڈ پر لکھی ہوئی تاریخ پیدائش چیک کر یں اور درج کریں۔</string>
+    <string name="im04">کارڈ پر لکھی ہوئی تاریخ پیدائش چیک کریں اور درج کریں۔</string>
     <string name="im04dd">دن</string>
     <string name="im04mm">مہینہ</string>
     <string name="im04yy"> سال</string>

@@ -273,7 +273,7 @@
 
                 <!-- Take Photo   -->
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/cv"
+                    android:id="@+id/adminView"
                     style="@style/cardView"
                     android:layout_margin="20dp">
 
@@ -336,7 +336,6 @@
                         </LinearLayout>
 
                         <LinearLayout
-                            android:id="@+id/adminView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="@color/grayLight"

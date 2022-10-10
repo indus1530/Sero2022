@@ -821,6 +821,7 @@ public class Child extends BaseObservable implements Observable {
     }
 
     public void setCb03dk(String cb03dk) {
+        if (this.cb03dk.equals(cb03dk)) return;
         this.cb03dk = cb03dk;
         setCb03dd(cb03dk.equals("98") ? "" : this.cb03dd);
         setCb03mm(cb03dk.equals("98") ? "" : this.cb03mm);
@@ -3385,6 +3386,7 @@ public class Child extends BaseObservable implements Observable {
             this.cb03dd = json.has("cb03dd") ? json.getString("cb03dd") : "";
             this.cb03mm = json.has("cb03mm") ? json.getString("cb03mm") : "";
             this.cb03yy = json.has("cb03yy") ? json.getString("cb03yy") : "";
+            this.cb03dk = json.has("cb03dk") ? json.getString("cb03dk") : "";
         }
     }
 
@@ -3832,7 +3834,8 @@ public class Child extends BaseObservable implements Observable {
                 .put("cb02b", cb02b)
                 .put("cb03dd", cb03dd)
                 .put("cb03mm", cb03mm)
-                .put("cb03yy", cb03yy);
+                .put("cb03yy", cb03yy)
+                .put("cb03dk", cb03dk);
         return json.toString();
     }
 
