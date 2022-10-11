@@ -85,6 +85,7 @@ public class Child extends BaseObservable implements Observable {
     private String ec11 = _EMPTY_;
     private String ec12 = _EMPTY_;
     private String ec18 = _EMPTY_;
+    private String ec1896x = _EMPTY_;
     private String ec19 = _EMPTY_;
     private String ec21 = _EMPTY_;
     private String ec22 = _EMPTY_;
@@ -626,9 +627,20 @@ public class Child extends BaseObservable implements Observable {
 
     public void setEc18(String ec18) {
         this.ec18 = ec18;
+        setEc1896x(ec18.equals("96") ? this.ec1896x : "");
         setEc19(ec18.equals("4") || ec18.equals("96") ? "" : this.ec19);
         setEc21(ec18.equals("4") || ec18.equals("96") ? "" : this.ec21);
         notifyPropertyChanged(BR.ec18);
+    }
+
+    @Bindable
+    public String getEc1896x() {
+        return ec1896x;
+    }
+
+    public void setEc1896x(String ec1896x) {
+        this.ec1896x = ec1896x;
+        notifyPropertyChanged(BR.ec1896x);
     }
 
     @Bindable
@@ -3386,6 +3398,7 @@ public class Child extends BaseObservable implements Observable {
             this.ec16 = json.has("ec16") ? json.getString("ec16") : "";
             this.ec17 = json.has("ec17") ? json.getString("ec17") : "";
             this.ec18 = json.getString("ec18");
+            this.ec1896x = json.has("ec1896x") ? json.getString("ec1896x") : "";
             this.ec19 = json.getString("ec19");
             this.ec21 = json.getString("ec21");
             this.ec22 = json.getString("ec22");
@@ -3837,6 +3850,7 @@ public class Child extends BaseObservable implements Observable {
                 .put("ec16", ec16)
                 .put("ec17", ec17)
                 .put("ec18", ec18)
+                .put("ec1896x", ec1896x)
                 .put("ec19", ec19)
                 .put("ec21", ec21)
                 .put("ec22", ec22)

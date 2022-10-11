@@ -444,6 +444,16 @@
                                 android:onClick="@{()->child.setEc18(`96`) + ec19.clearCheck() + ec21.clearCheck()}"
                                 android:text="@string/ec1896" />
 
+                            <EditText
+                                android:id="@+id/ec1896x"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
+                                android:hint="@string/ec1896"
+                                android:tag="ec1896"
+                                android:text="@={child.ec1896x}"
+                                android:visibility="@{child.ec18.equals(`96`) ? View.VISIBLE : View.GONE}" />
+
                         </RadioGroup>
 
                     </LinearLayout>
