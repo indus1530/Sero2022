@@ -5,10 +5,13 @@ import static edu.aku.imranahmed.sero2022.core.MainApp.randomChild;
 import static edu.aku.imranahmed.sero2022.core.MainApp.selectedCluster;
 import static edu.aku.imranahmed.sero2022.core.MainApp.selectedHousehold;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
@@ -55,6 +58,7 @@ public class IdentificationActivity extends AppCompatActivity {
         if (MainApp.superuser)
             bi.btnContinue.setText("Review Form");
         MainApp.form = new Form();
+        setGPS();
 
 
         bi.hh12.addTextChangedListener(new TextWatcher() {
@@ -294,6 +298,34 @@ public class IdentificationActivity extends AppCompatActivity {
             bi.btnContinue.setEnabled(true);
         } else {
             Toast.makeText(this, "Household not found", Toast.LENGTH_SHORT).show();
+        }
+
+    }
+
+    public void setGPS() {
+        SharedPreferences GPSPref = getSharedPreferences("GPSCoordinates", Context.MODE_PRIVATE);
+        try {
+            String lat = GPSPref.getString("Latitude", "0");
+            String lang = GPSPref.getString("Longitude", "0");
+            String acc = GPSPref.getString("Accuracy", "0");
+
+            if (lat == "0" && lang == "0") {
+                Toast.makeText(this, "Could not obtained points", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(this, "Points set", Toast.LENGTH_SHORT).show();
+            }
+
+            String date = DateFormat.format("dd-MM-yyyy HH:mm", Long.parseLong(GPSPref.getString("Time", "0"))).toString();
+
+            form.setGpsLat(lat);
+            form.setGpsLng(lang);
+            form.setGpsAcc(acc);
+            form.setGpsDT(date); // Timestamp is converted to date above
+
+//            Toast.makeText(this, "GPS set", Toast.LENGTH_SHORT).show();
+
+        } catch (Exception e) {
+            Log.e(TAG, "setGPS: " + e.getMessage());
         }
 
     }
