@@ -45,10 +45,6 @@ public class SectionCBActivity extends AppCompatActivity {
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_cb);
         setSupportActionBar(bi.toolbar);
         db = MainApp.appInfo.dbHelper;
-
-        setGPS();
-
-
         try {
             child = db.getChildByUUid(selectedChildPosition, selectedChildName);
         } catch (JSONException e) {
@@ -78,7 +74,7 @@ public class SectionCBActivity extends AppCompatActivity {
         if (!MainApp.child.getUid().equals("") || MainApp.superuser) return true;
 
         MainApp.child.populateMeta();
-
+        setGPS();
         long rowId = 0;
         try {
             rowId = db.addChild(MainApp.child);

@@ -63,33 +63,27 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
                             android:orientation="horizontal">
 
                             <TextView
-                                android:layout_width="match_parent"
+                                android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:text="@string/hh05" />
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
 
                             <EditText
                                 android:id="@+id/hh05"
                                 android:layout_width="0dp"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:hint="#########"
                                 android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
-                                android:hint="@string/hh05" />
+                                android:maxLength="9" />
 
                             <ImageButton
-                                android:layout_width="48dp"
-                                android:backgroundTint="@color/colorAccent"
+                                android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
+                                android:backgroundTint="@color/colorAccent"
                                 android:onClick="checkEBNumber"
                                 android:src="@drawable/search" />
 
@@ -403,20 +397,12 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/bottom"
                             android:orientation="horizontal">
 
                             <TextView
-                                android:layout_width="match_parent"
+                                android:layout_width="221dp"
                                 android:layout_height="match_parent"
                                 android:text="@string/hh12" />
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
 
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/hh12"
@@ -431,7 +417,7 @@
                                 app:mask="#-####-###" />
 
                             <ImageButton
-                                android:layout_width="48dp"
+                                android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
                                 android:backgroundTint="@color/colorAccent"
                                 android:onClick="checkHH"

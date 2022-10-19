@@ -52,14 +52,10 @@ public class IdentificationActivity extends AppCompatActivity {
         setTheme(MainApp.langRTL ? R.style.AppThemeUrdu : R.style.AppThemeEnglish1);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_identification);
         db = MainApp.appInfo.dbHelper;
-        //   populateSpinner();
 
         bi.btnContinue.setText(R.string.open_hh_form);
-        if (MainApp.superuser)
-            bi.btnContinue.setText("Review Form");
+        if (MainApp.superuser) bi.btnContinue.setText("Review Form");
         MainApp.form = new Form();
-        setGPS();
-
 
         bi.hh12.addTextChangedListener(new TextWatcher() {
             @Override
@@ -113,7 +109,7 @@ public class IdentificationActivity extends AppCompatActivity {
         if (!form.getUid().equals("") || MainApp.superuser) return true;
 
         MainApp.form.populateMeta();
-
+        setGPS();
         long rowId = 0;
         try {
             rowId = db.addForm(MainApp.form);
@@ -308,26 +304,17 @@ public class IdentificationActivity extends AppCompatActivity {
             String lat = GPSPref.getString("Latitude", "0");
             String lang = GPSPref.getString("Longitude", "0");
             String acc = GPSPref.getString("Accuracy", "0");
-
-            if (lat == "0" && lang == "0") {
+            if (lat.equals("0") && lang.equals("0"))
                 Toast.makeText(this, "Could not obtained points", Toast.LENGTH_SHORT).show();
-            } else {
-                Toast.makeText(this, "Points set", Toast.LENGTH_SHORT).show();
-            }
-
+            else Toast.makeText(this, "Points set", Toast.LENGTH_SHORT).show();
             String date = DateFormat.format("dd-MM-yyyy HH:mm", Long.parseLong(GPSPref.getString("Time", "0"))).toString();
-
             form.setGpsLat(lat);
             form.setGpsLng(lang);
             form.setGpsAcc(acc);
-            form.setGpsDT(date); // Timestamp is converted to date above
-
-//            Toast.makeText(this, "GPS set", Toast.LENGTH_SHORT).show();
-
+            form.setGpsDT(date);
         } catch (Exception e) {
             Log.e(TAG, "setGPS: " + e.getMessage());
         }
-
     }
 
 

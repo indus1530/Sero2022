@@ -12,6 +12,7 @@ import android.text.format.DateFormat;
 
 import androidx.core.app.ActivityCompat;
 
+
 public class GPSLocationListener implements LocationListener {
 
     public static long TWO_MINUTES = 1000 * 60 * 2;

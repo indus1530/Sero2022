@@ -83,7 +83,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         switch (oldVersion) {
             case 1:
-                db.execSQL(CreateTable.SQL_ALTER_FORMS_GPS_LAT);
+                /*db.execSQL(CreateTable.SQL_ALTER_FORMS_GPS_LAT);
                 db.execSQL(CreateTable.SQL_ALTER_FORMS_GPS_LNG);
                 db.execSQL(CreateTable.SQL_ALTER_FORMS_GPS_DATE);
                 db.execSQL(CreateTable.SQL_ALTER_FORMS_GPS_ACC);
@@ -91,7 +91,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 db.execSQL(CreateTable.SQL_ALTER_CHILD_GPS_LAT);
                 db.execSQL(CreateTable.SQL_ALTER_CHILD_GPS_LNG);
                 db.execSQL(CreateTable.SQL_ALTER_CHILD_GPS_DATE);
-                db.execSQL(CreateTable.SQL_ALTER_CHILD_GPS_ACC);
+                db.execSQL(CreateTable.SQL_ALTER_CHILD_GPS_ACC);*/
                 // DO NOT BREAK AFTER EACH VERSION
                 //break;
             case 2:
