@@ -664,8 +664,10 @@ public class Child extends BaseObservable implements Observable {
         setCb01b(ec21.equals("1") ? this.cb01b : "");
         setCb02a(ec21.equals("1") ? this.cb02a : "");
         setCb02b(ec21.equals("1") ? this.cb02b : "");
-
-
+        setCb03dd(ec21.equals("1") ? this.cb03dd : "");
+        setCb03mm(ec21.equals("1") ? this.cb03mm : "");
+        setCb03yy(ec21.equals("1") ? this.cb03yy : "");
+        setCb03dk(ec21.equals("1") ? this.cb03dk : "");
         notifyPropertyChanged(BR.ec21);
     }
 
