@@ -107,11 +107,13 @@ public class SectionGActivity extends AppCompatActivity {
     // Get the results:
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
         IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
         if (result != null) {
             if (result.getContents() == null) {
                 Toast.makeText(this, "Cancelled", Toast.LENGTH_LONG).show();
             } else {
+                MainApp.changeLanguage(this, MainApp.selectedLanguage);
 //                Toast.makeText(this, "Scanned: " + result.getContents(), Toast.LENGTH_LONG).show();
                 String strResult = result.getContents();
                 bi.g04.setText(strResult);
@@ -136,10 +138,15 @@ public class SectionGActivity extends AppCompatActivity {
     }
 
     public void scanQR(View view) {
-        // Scan QR Code
         bi.llbtn.setVisibility(View.GONE);
-        new IntentIntegrator(this).initiateScan();
+        new IntentIntegrator(SectionGActivity.this).initiateScan();
     }
+
+    /*@Override
+    protected void onResume() {
+        super.onResume();
+        Toast.makeText(this, "Activity Resumed!" + "\n" + getResources().getString(R.string.app_name), Toast.LENGTH_SHORT).show();
+    }*/
 
 
 }

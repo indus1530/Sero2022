@@ -534,26 +534,24 @@ public class LoginActivity extends AppCompatActivity {
                         .putString("lang", "1")
                         .apply();
                 MainApp.langRTL = true;
-
                 break;
-
 
             default:
                 lang = "en";
-                country = "US";
+                country = "CA";
                 MainApp.editor
                         .putString("lang", "0")
                         .apply();
                 MainApp.langRTL = false;
 
         }
-
         Locale locale = new Locale(lang, country);
         Locale.setDefault(locale);
         Configuration config = new Configuration();
         config.setLocale(locale);
         config.setLayoutDirection(new Locale(lang, country));
         this.getResources().updateConfiguration(config, this.getResources().getDisplayMetrics());
+        onConfigurationChanged(config);
 
     }
 
@@ -566,7 +564,7 @@ public class LoginActivity extends AppCompatActivity {
             MainApp.editor.putString("lang", "0").apply();
         }
 
-        changeLanguage(Integer.parseInt(sharedPref.getString("lang", "0")));
+        MainApp.changeLanguage(this, Integer.parseInt(sharedPref.getString("lang", "0")));
     }
 
     @Override
@@ -575,6 +573,7 @@ public class LoginActivity extends AppCompatActivity {
         inflater.inflate(R.menu.language_menu, menu);
         return true;
     }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -587,15 +586,12 @@ public class LoginActivity extends AppCompatActivity {
                 MainApp.selectedLanguage = 1;
                 MainApp.langRTL = true;
                 break;
-
-
-
             default:
                 MainApp.selectedLanguage = 0;
                 MainApp.langRTL = false;
 
         }
-        changeLanguage(MainApp.selectedLanguage);
+        MainApp.changeLanguage(this, MainApp.selectedLanguage);
         startActivity(new Intent(LoginActivity.this, LoginActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
         overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
 

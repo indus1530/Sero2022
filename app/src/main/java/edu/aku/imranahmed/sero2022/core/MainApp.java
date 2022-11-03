@@ -9,6 +9,8 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.location.LocationManager;
 import android.net.ConnectivityManager;
 import android.net.Network;
@@ -17,6 +19,7 @@ import android.net.NetworkInfo;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
 
@@ -30,6 +33,7 @@ import org.json.JSONArray;
 
 import java.io.File;
 import java.util.List;
+import java.util.Locale;
 
 import edu.aku.imranahmed.sero2022.R;
 import edu.aku.imranahmed.sero2022.models.Child;
@@ -109,7 +113,7 @@ public class MainApp extends Application {
     public static String hhid = "";
 
     public static RandomHH selectedHousehold;
-    public static int selectedLanguage = 0;
+    public static int selectedLanguage = 1;
     public static boolean langRTL = false;
     public static int ageOfIndexChild;
 
@@ -117,7 +121,6 @@ public class MainApp extends Application {
     public static List<Integer> childCompleted;
     public static boolean householdChecked = false;
     public static long preAgeInMonths;
-
 
 
     public static void hideSystemUI(View decorView) {
@@ -265,6 +268,50 @@ public class MainApp extends Application {
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
         }
+    }
+
+    public static void changeLanguage(Context context, int countryCode) {
+        String lang;
+        String country;
+
+        switch (countryCode) {
+            case 1:
+                lang = "ur";
+                country = "rPK";
+                MainApp.editor
+                        .putString("lang", "1")
+                        .apply();
+                MainApp.langRTL = true;
+                break;
+
+            default:
+                lang = "en";
+                country = "rCA";
+                MainApp.editor
+                        .putString("lang", "0")
+                        .apply();
+                MainApp.langRTL = false;
+
+        }
+        Resources res = context.getResources();
+        Locale locale = new Locale(lang, country);
+        Locale.setDefault(locale);
+        DisplayMetrics dm = res.getDisplayMetrics();
+        Configuration conf = res.getConfiguration();
+        conf.setLocale(locale);
+        conf.setLayoutDirection(locale);
+        conf.locale = locale;
+        res.updateConfiguration(conf, dm);
+        //onConfigurationChanged(conf);
+
+    }
+
+    //to change the language and refresh the screen
+    public void setLocale(String localeName) {
+        Resources res = getBaseContext().getResources();
+        DisplayMetrics dm = res.getDisplayMetrics();
+        Configuration conf = res.getConfiguration();
+        res.updateConfiguration(conf, dm);
     }
 
 }

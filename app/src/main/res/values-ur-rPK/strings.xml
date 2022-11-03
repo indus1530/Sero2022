@@ -1,12 +1,96 @@
 <resources>
 
+    <string name="app_name"><big>سیرو</big> <i><u><small>2022</small></u></i></string>
+    <string name="fontFamily">jameel_noori_nastaleeq.ttf</string>
+    <string name="btnDownload" translatable="false">Download Data</string>
     <string name="title_activity_change_password">ChangePasswordActivity</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
+    <string name="district" translatable="false">DISTRICT</string>
+    <string name="uc" translatable="false">UC</string>
+    <string name="btnSave" translatable="false">Save</string>
+    <string name="btnEnd" translatable="false">Cancel</string>
+    <string name="signin" translatable="false">SIGN IN</string>
+    <string name="username" translatable="false">Username</string>
+    <string name="password" translatable="false">Password</string>
+    <string name="newPassword" translatable="false">New Password</string>
+    <string name="confirmPassword" translatable="false">Confirm Password</string>
     <string name="country">Language (Click to change)</string>
+    <string name="pakistan" translatable="false">Pakistan</string>
+    <string name="tajikistan" translatable="false">Tajikistan</string>
+    <string name="btnLogin" translatable="false">Login</string>
+    <string name="btnReset" translatable="false">Reset</string>
+    <string name="btnDownloadData" translatable="false">Download Data</string>
+    <string name="csMAexist" translatable="false">might be already exist</string>
+
+    <!--Error Messages-->
+    <string name="upd_db_form" translatable="false"> updateDB(Form):\t </string>
+    <string name="upd_db_error" translatable="false"> Updating Database… ERROR! </string>
+    <string name="db_excp_error" translatable="false"> Database Exception... ERROR! </string>
+    <string name="upd_db" translatable="false"> Updating Database...\t </string>
+    <string name="fail_db_upd" translatable="false"> Failed to Update Database! </string>
+    <string name="backPress" translatable="false"> Back Press Not Allowed </string>
+    <string name="invalid_response" translatable="false"> Invalid Response </string>
+    <string name="agecal" translatable="false">ageCal:\t</string>
+    <string name="title_child_dialog" translatable="false">Child Count</string>
+    <string name="message_child_dialog_proceeed" translatable="false">You have entered only %1$s of %2$s Children in the household. \nAre you sure you want to continue now?</string>
+    <string name="message_child_dialog_addmore" translatable="false">You have already entered %1$s Children. \nAre you sure you want to add more Child?</string>
+    <string name="network_conn_error" translatable="false"> Network connection not available ! </string>
+    <string name="no_mother_selected_child_list" translatable="false"> No Mother has been selected. Please select a mother before opening Child List </string>
+    <string name="onitemselected" translatable="false"> onItemSelected(Samples):\t </string>
+    <string name="upd_samples" translatable="false"> updateDB(Samples):\t </string>
+    <string name="upd_anthro" translatable="false"> updateDB(Anthro):\t </string>
+    <string name="folder_not_created" translatable="false"> Folder Not Created </string>
+    <string name="invalid_password" translatable="false"> Invalid Password </string>
+    <string name="username_required" translatable="false"> Username is required. </string>
+    <string name="username_password_same" translatable="false"> Username and Password cannot be same. </string>
+    <string name="incorrect_username_or_password" translatable="false">Incorrect Username or Password</string>
+    <string name="open_hh_form" translatable="false"> Open Household Form </string>
+    <string name="hh_not_found" translatable="false">Household not Found</string>
+    <string name="hh_exists_form" translatable="false"> JSONException(Form): \t </string>
+    <string name="child_info_missing" translatable="false">Please fill child sections before entering this information</string>
+    <string name="open_new_form" translatable="false">OPEN NEW FORM</string>
+    <string name="options" translatable="false">Options</string>
+
+
+    <string name="netwrok" translatable="false">Network connection not available!</string>
+    <string name="invalidpass" translatable="false">Invalid Password</string>
+    <string name="unameRequired" translatable="false">Username is required.</string>
+    <string name="incorrcetPass" translatable="false">Incorrect Password</string>
+    <string name="downData" translatable="false">Download Data</string>
+    <string name="permission" translatable="false">Permissions Required</string>
+    <string name="warning" translatable="false">Warning</string>
+    <string name="newApp" translatable="false">New App downloaded!!</string>
+    <string name="appVer" translatable="false">App New Version</string>
+    <string name="downloaded" translatable="false">Downloaded</string>
+    <string name="appDownload" translatable="false">appDownload</string>
+    <string name="newVer" translatable="false">New Version</string>
+    <string name="downloading" translatable="false">Downloading</string>
+    <string name="available" translatable="false">Available</string>
+    <string name="downError" translatable="false">Cant download.. Internet connectivity issue!</string>
+    <string name="backbtn" translatable="false">Press Back again to Exit</string>
+    <string name="noNetwork" translatable="false">No network connection available!</string>
+    <string name="appAvailable" translatable="false">APP is available!</string>
+    <string name="oldAppMsg" translatable="false">App Ver." + " is now available. Your are currently using older Ver."</string>
+    <string name="installNewApp" translatable="false">Install new version to use this app</string>
+    <string name="install" translatable="false">Install</string>
+    <string name="cancel" translatable="false">Cancel</string>
+    <string name="complete" translatable="false">complete</string>
+    <string name="updatingError" translatable="false">Error in updating db!!</string>
+    <string name="updateDbError1" translatable="false">"Sorry. You can't go further."</string>
+    <string name="updateDbError2" translatable="false">"Please contact IT Team (Failed to update DB)"</string>
+    <string name="bckbtn" translatable="false">You Cant go back</string>
+    <string name="processing" translatable="false">Processing</string>
+    <string name="confirmation" translatable="false">Confirmation!</string>
+    <string name="cntbtn" translatable="false">Are you sure, you want to continue - interview</string>
+    <string name="failedUpdateDb" translatable="false">SORRY! Failed to update DB</string>
+    <string name="invalidDate" translatable="false">Invalid date!</string>
+    <string name="ageCalc" translatable="false">"Both Month and Year don't be zero!!"</string>
+    <string name="actiondatabase" translatable="false">Database Manager</string>
+    <string name="actiondatasync" translatable="false">Sync Data</string>
     <string name="sectionhhhouseholdinformationhhmainheading">SECTION HH: HOUSEHOLD INFORMATION  (HH): Household Information</string>
     <string name="hh03">Interviews Code</string>
     <string name="hh03a">Interviewer’s name</string>
@@ -58,7 +142,6 @@
     <string name="sectionchlistofchildren0623monthsoldsubheading"> بارہ سے تیئس ماہ کی عمر کے بچوں کی فہرست</string>
 
     <!--    <string name="istatus">انٹرویوکا نتیجہ: انٹرویوکے درست نتیجے کا دیئے گئے آپشنز کے مطابق تعین کریں</string>-->
-    <string name="app_name"><big>سیرو</big> <i><u><small>2022</small></u></i></string>
     <string name="btnSync">Download Data</string>
     <string name="btnUpload">Upload Data</string>
     <string name="promptemail">Email</string>
@@ -68,7 +151,11 @@
     <string name="splashText"> </string>
     <string name="splashText2">  </string>
     <string name="checkpendingforms">CHECK PENDING FORMS</string>
-    <string name="open_new_form">OPEN NEW FORM</string>
+    <string name="startinterview" translatable="false">START INTERVIEW</string>
+    <string name="openHouseholdForm" translatable="false">OPEN HOUSEHOLD FORM</string>
+    <string name="addChild" translatable="false">ADD A CHILD</string>
+    <string name="openbloodform" translatable="false">UPDATE BLOOD INFORMANTION</string>
+    <string name="openstoolform" translatable="false">UPDATE STOOL INFORMANTION</string>
     <string name="recordssummary">Records Summary</string>
     <string name="mainmenu">Main Menu</string>
     <string name="onlyfortesting">ONLY FOR TESTING</string>
@@ -391,7 +478,7 @@
     <string name="hh12ab">نہیں</string>
     <string name="hh01">انٹرویو کی تاریخ  </string>
     <string name="hh02">انٹرویو کا وقت:</string>
-    <string name="hh18t">السلام علیکم، میرا نام %1$s ہے، اور میرا تعلق آغا خان یونیورسٹی پاکستان سے ہے۔ آغا خان یونیورسٹی کا شعبہ اطفال  آپ کو  اس  سروے میں شرکت کی دعوت دے رہا ہے جس میں ہم  بچوں میں  پولیو کے خلاف قوت مدافعت  کی سطح کا اندازہ   لگا نا چاہ رہے ہیں  جس کی وجہ  اس وقت پاکستان میں پولیو بیماری  کا   تیزی سے  بڑھتا دباؤ   ہے۔ یہ ایک عام سی  بات ہے، اس لیے پولیو ویکسین کی تاثیر کو کم کرنے میں کردار ادا کرنے والے عوامل پر فوری توجہ دینے کی ضرورت ہے، اس سلسلے میں آغا خان یونیورسٹی، ایسے تمام عوامل کے بارے میں جاننے کے لیے ایک سروے کا انعقاد کر رہی ہے جس میں  وہ  معلومات حاصل کی جا ئیں گی  جو پولیو ویکسین کی تاثیر کو کم/متاثر کرتی ہیں۔ اگر آپ اس سروے میں حصہ لینے پر رضامند ہیں اور ہمیں سوالنامہ مکمل کرنے کی اجازت دیتی ہیں، تو ہم آپ سے آپ کے بچپن  میں ہونے ولی بیماریوں اور  صحت سے متعلق  رویوں کے بارے میں پوچھیں گے اس کے علاوہ  ہم آپ سے آپ کے بچوں  کی   حفاظتی ٹیکوں کی معلومات بھی حاصل کریں گے  ۔اس  سروے کے دوران آپ کے بچے میں  پولیو کے خلاف قوت مدافعت کی  جانچ کے لیے آپ کے بچے سے 2 ملی لیٹر خون کا نمونہ لیا جائے گا۔ آغا خان ہسپتال کا ماہر عملہ خون کا نمونہ لے گا اور نمونے کو جانچ کے لیے آغا خان اسپتال بھیجا جائے گا۔ اس پورے طریقہ کار کو مکمل ہونے میں تقریباً 30 منٹ کا وقت درکار ہو گا۔</string>
+    <string name="hh18t">السلام علیکم، میرا نام %1$s ہے، اور میرا تعلق آغا خان یونیورسٹی پاکستان سے ہے۔ آغا خان یونیورسٹی سنٹر آف ایکسی لینس وومن اینڈ چائلڈ ہیلتھ آپ کو اس سروے میں شرکت کی دعوت دے رہا ہے جس میں ہم  بچوں میں  پولیو کے خلاف قوت مدافعت  کی سطح کا اندازہ   لگا نا چاہ رہے ہیں  جس کی وجہ  اس وقت پاکستان میں پولیو بیماری  کا   تیزی سے  بڑھتا دباؤ   ہے۔ یہ ایک عام سی  بات ہے، اس لیے پولیو ویکسین کی تاثیر کو کم کرنے میں کردار ادا کرنے والے عوامل پر فوری توجہ دینے کی ضرورت ہے، اس سلسلے میں آغا خان یونیورسٹی، ایسے تمام عوامل کے بارے میں جاننے کے لیے ایک سروے کا انعقاد کر رہی ہے جس میں  وہ  معلومات حاصل کی جا ئیں گی  جو پولیو ویکسین کی تاثیر کو کم/متاثر کرتی ہیں۔ اگر آپ اس سروے میں حصہ لینے پر رضامند ہیں اور ہمیں سوالنامہ مکمل کرنے کی اجازت دیتی ہیں، تو ہم آپ سے آپ کے بچپن  میں ہونے ولی بیماریوں اور  صحت سے متعلق  رویوں کے بارے میں پوچھیں گے اس کے علاوہ  ہم آپ سے آپ کے بچوں  کی   حفاظتی ٹیکوں کی معلومات بھی حاصل کریں گے  ۔اس  سروے کے دوران آپ کے بچے میں  پولیو کے خلاف قوت مدافعت کی  جانچ کے لیے آپ کے بچے سے 2 ملی لیٹر خون کا نمونہ لیا جائے گا۔ آغا خان ہسپتال کا ماہر عملہ خون کا نمونہ لے گا اور نمونے کو جانچ کے لیے آغا خان اسپتال بھیجا جائے گا۔ اس پورے طریقہ کار کو مکمل ہونے میں تقریباً 30 منٹ کا وقت درکار ہو گا۔</string>
     <string name="hh18">کیا میں اب انٹرویو شروع کر سکتی/سکتا ہوں؟</string>
     <string name="hh18a"> ہاں، اجازت مل گئی ہے</string>
     <string name="hh18b">نہیں، اجازت نہیں ملی </string>

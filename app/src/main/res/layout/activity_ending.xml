@@ -79,74 +79,73 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="@string/istatus01"
-                                android:checked="@{form.hh21.equals(`1`)}"
-                                android:onClick="@{()->form.setHh21(`1`)}"
-                                />
+                                android:onClick="@{()->form.setHh21(`1`)}" />
+                            <!--android:checked="@{form.hh21.equals(`1`)}"-->
 
                             <RadioButton
                                 android:id="@+id/istatusb"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="@string/istatus02"
-                                android:checked="@{form.hh21.equals(`2`)}"
-                                android:onClick="@{()->form.setHh21(`2`)}"/>
+                                android:onClick="@{()->form.setHh21(`2`)}" />
+                            <!--android:checked="@{form.hh21.equals(`2`)}"-->
 
                             <RadioButton
                                 android:id="@+id/istatusc"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="@string/istatus03"
-                                android:checked="@{form.hh21.equals(`3`)}"
                                 android:onClick="@{()->form.setHh21(`3`)}" />
+                            <!--android:checked="@{form.hh21.equals(`3`)}"-->
 
                             <RadioButton
                                 android:id="@+id/istatusd"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="@string/istatus04"
-                                android:checked="@{form.hh21.equals(`4`)}"
                                 android:onClick="@{()->form.setHh21(`4`)}"/>
+                            <!--android:checked="@{form.hh21.equals(`4`)}"-->
 
                             <RadioButton
                                 android:id="@+id/istatuse"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="@string/istatus05"
-                                android:checked="@{form.hh21.equals(`5`)}"
                                 android:onClick="@{()->form.setHh21(`5`)}"/>
+                            <!--android:checked="@{form.hh21.equals(`5`)}"-->
 
                             <RadioButton
                                 android:id="@+id/istatusf"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="@string/istatus06"
-                                android:checked="@{form.hh21.equals(`6`)}"
                                 android:onClick="@{()->form.setHh21(`6`)}"/>
+                            <!--android:checked="@{form.hh21.equals(`6`)}"-->
 
                             <RadioButton
                                 android:id="@+id/istatusg"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="@string/istatus07"
-                                android:checked="@{form.hh21.equals(`7`)}"
                                 android:onClick="@{()->form.setHh21(`7`)}"/>
+                            <!--android:checked="@{form.hh21.equals(`7`)}"-->
 
 
                             <RadioButton
                                 android:id="@+id/istatush"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.hh21.equals(`8`)}"
                                 android:text="@string/ec2205"
                                 android:onClick="@{()->form.setHh21(`8`)}" />
+                            <!--android:checked="@{form.hh21.equals(`8`)}"-->
 
                             <RadioButton
                                 android:id="@+id/istatusi"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:checked="@{form.hh21.equals(`9`)}"
                                 android:text="@string/ec2206"
                                 android:onClick="@{()->form.setHh21(`9`)}" />
+                            <!--android:checked="@{form.hh21.equals(`9`)}"-->
 
 
                             <RadioButton
@@ -154,8 +153,8 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="@string/istatus96"
-                                android:checked="@{form.hh21.equals(`96`)}"
                                 android:onClick="@{()->form.setHh21(`96`)}"/>
+                            <!--android:checked="@{form.hh21.equals(`96`)}"-->
 
                             <EditText
                                 android:id="@+id/istatus96x"
@@ -164,8 +163,8 @@
                                 android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. "
                                 android:hint="@string/istatus96"
                                 android:tag="istatus96"
-                                android:text='@{istatus96.checked ? istatus96x.getText().toString() : ""}'
-                                android:visibility='@{istatus96.checked? View.VISIBLE : View.GONE}' />
+                                android:text="@{form.hh21xx}"
+                                android:visibility="@{form.hh21.equals(`96`) ? View.VISIBLE : View.GONE}" />
 
                         </RadioGroup>
 

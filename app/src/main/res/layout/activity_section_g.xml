@@ -231,10 +231,11 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:gravity="center"
-                                android:hint="#"
+                                android:hint="#.#"
                                 android:inputType="number"
-                                android:maxLength="1"
+                                android:maxLength="2"
                                 android:text="@={child.g03}"
+                                app:mask="#.#"
                                 app:maxValue="8"
                                 app:minValue="1"
                                 app:type="range" />
@@ -316,7 +317,7 @@
                     <Button
                         android:id="@+id/btnEnd"
                         android:layout_width="wrap_content"
-                        android:layout_height="48dp"
+                        android:layout_height="wrap_content"
                         android:layout_alignParentStart="true"
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="10dp"
@@ -333,7 +334,7 @@
                     <Button
                         android:id="@+id/btnContinue"
                         android:layout_width="wrap_content"
-                        android:layout_height="48dp"
+                        android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
                         android:layout_marginTop="10dp"
                         android:layout_marginEnd="10dp"
