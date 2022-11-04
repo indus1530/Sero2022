@@ -14,8 +14,8 @@
     <string name="startinterview" translatable="false">START INTERVIEW</string>
     <string name="openHouseholdForm" translatable="false">OPEN HOUSEHOLD FORM</string>
     <string name="addChild" translatable="false">ADD A CHILD</string>
-    <string name="openbloodform" translatable="false">UPDATE BLOOD INFORMANTION</string>
-    <string name="openstoolform" translatable="false">UPDATE STOOL INFORMANTION</string>
+    <string name="openbloodform" translatable="false">UPDATE BLOOD INFORMATION</string>
+    <string name="openstoolform" translatable="false">UPDATE STOOL INFORMATION</string>
     <string name="recordssummary">Records Summary</string>
     <string name="mainmenu">Main Menu</string>
     <string name="onlyfortesting">ONLY FOR TESTING</string>

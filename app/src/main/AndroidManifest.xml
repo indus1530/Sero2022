@@ -207,9 +207,9 @@
         <meta-data
             android:name="YEK_TRATS"
             android:value="6" />
-        <meta-data
+        <!--<meta-data
             android:name="autoStoreLocales"
-            android:value="true" />
+            android:value="true" />-->
 
         <!--<service
             android:name="androidx.appcompat.app.AppLocalesMetadataHolderService"
