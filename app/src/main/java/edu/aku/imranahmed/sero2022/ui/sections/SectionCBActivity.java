@@ -126,9 +126,7 @@ public class SectionCBActivity extends AppCompatActivity {
             } else {
                 Intent forwardIntent = new Intent(this, ChildEndingActivity.class).putExtra("complete", false);
                 forwardIntent.putExtra("requestCode", requestCode);
-                forwardIntent.putExtra("checkToEnable", child.getEc18().equals("4") ? 4
-                        : child.getEc18().equals("96") ? 4
-                        : 3);
+                forwardIntent.putExtra("checkToEnable", child.getEc18().equals("4") || child.getEc18().equals("96") ? 4 : 3);
                 forwardIntent.setFlags(Intent.FLAG_ACTIVITY_FORWARD_RESULT);
                 setResult(RESULT_OK, forwardIntent);
                 startActivity(forwardIntent);
