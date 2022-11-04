@@ -82,7 +82,6 @@ public class SectionGActivity extends AppCompatActivity {
 
     }
 
-
     public void btnEnd(View view) {
         Intent returnIntent = new Intent();
         returnIntent.putExtra("requestCode", requestCode);
@@ -90,11 +89,9 @@ public class SectionGActivity extends AppCompatActivity {
         finish();
     }
 
-
     private boolean formValidation() {
         return Validator.emptyCheckingContainer(this, bi.GrpName);
     }
-
 
     @Override
     public void onBackPressed() {
@@ -141,5 +138,10 @@ public class SectionGActivity extends AppCompatActivity {
         new IntentIntegrator(this).initiateScan();
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        MainApp.lockScreen(this);
+    }
 
 }

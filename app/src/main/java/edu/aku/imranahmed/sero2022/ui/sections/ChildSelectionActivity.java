@@ -42,7 +42,6 @@ public class ChildSelectionActivity extends AppCompatActivity {
             bi.btnContinue.setText("Review Next");
     }
 
-
     private void populateSpinner() {
 
         // Populate Provinces
@@ -107,14 +106,18 @@ public class ChildSelectionActivity extends AppCompatActivity {
 
     }
 
-
     public void btnEnd(View view) {
         finish();
         startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
     }
 
-
     private boolean formValidation() {
         return Validator.emptyCheckingContainer(this, bi.GrpName);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        MainApp.lockScreen(this);
     }
 }

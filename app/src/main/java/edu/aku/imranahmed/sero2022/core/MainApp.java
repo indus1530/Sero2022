@@ -4,18 +4,22 @@ import static edu.aku.imranahmed.sero2022.database.DatabaseHelper.DATABASE_NAME;
 import static edu.aku.imranahmed.sero2022.database.DatabaseHelper.DATABASE_PASSWORD;
 
 import android.Manifest;
+import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.location.LocationManager;
+import android.media.ToneGenerator;
 import android.net.ConnectivityManager;
 import android.net.Network;
 import android.net.NetworkCapabilities;
 import android.net.NetworkInfo;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.provider.Settings;
 import android.util.Log;
 import android.view.View;
@@ -37,6 +41,7 @@ import edu.aku.imranahmed.sero2022.models.Clusters;
 import edu.aku.imranahmed.sero2022.models.Form;
 import edu.aku.imranahmed.sero2022.models.RandomHH;
 import edu.aku.imranahmed.sero2022.models.Users;
+import edu.aku.imranahmed.sero2022.ui.LockActivity;
 
 
 public class MainApp extends Application {
@@ -117,7 +122,8 @@ public class MainApp extends Application {
     public static List<Integer> childCompleted;
     public static boolean householdChecked = false;
     public static long preAgeInMonths;
-
+    public static CountDownTimer timer;
+    static ToneGenerator toneGen1;
 
 
     public static void hideSystemUI(View decorView) {
@@ -203,6 +209,44 @@ public class MainApp extends Application {
             NetworkInfo nwInfo = connectivityManager.getActiveNetworkInfo();
             return nwInfo != null && nwInfo.isConnected();
         }
+    }
+
+    public static void lockScreen(Context c) {
+
+        if (timer != null) {
+            timer.cancel();
+        }
+
+        //   Context mContext = c;
+        Activity activity = (Activity) c;
+
+
+        timer = new CountDownTimer(15 * 60 * 1000, 1000) {
+            //timer = new CountDownTimer(30 * 1000, 1000) {
+
+            public void onTick(long millisUntilFinished) {
+                //Some code
+                //bi.timeLeft.setText((millisUntilFinished / 1000) + " secs left");
+                if ((millisUntilFinished / 1000) < 14) {
+                    toneGen1.startTone(ToneGenerator.TONE_CDMA_PIP, 150);
+                }
+
+            }
+
+            public void onFinish() {
+                //Logout
+                //
+                //   finish();
+                // lockScreen();
+                Intent intent = new Intent();
+                intent.setClass(c, LockActivity.class);
+                c.startActivity(intent);
+                timer.cancel();
+                //  startActivity(new Intent(((Activity) c).getLocalClassName(), LockActivity.class));
+            }
+        };
+        timer.start();
+
     }
 
     @Override
