@@ -25,7 +25,7 @@
     <item name="android:windowFullscreen">true</item>
     <item name="android:textSize">16dp</item>
 
-    <item name="fontFamily">@font/roboto</item>
+    <!--<item name="fontFamily">@font/roboto</item>-->
     <item name="colorPrimary">@color/colorPrimary</item>
     <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
     <item name="colorAccent">@color/colorAccent</item>
@@ -46,8 +46,8 @@
     <item name="android:fillAfter">true</item>
     <item name="android:enterFadeDuration">600</item>
     <item name="android:exitFadeDuration">200</item>
-    <item name="android:layoutDirection">ltr</item>
-    <item name="android:textDirection">ltr</item>
+    <!--<item name="android:layoutDirection">ltr</item>
+    <item name="android:textDirection">ltr</item>-->
     <item name="android:animateLayoutChanges">false</item>
     <item name="android:datePickerStyle">@style/DatePickerStyle</item>
     <item name="android:timePickerStyle">@style/DatePickerStyle</item>
