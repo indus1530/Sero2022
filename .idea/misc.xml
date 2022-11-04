@@ -9,10 +9,12 @@
         <entry key="..\:/Android Office Work/Sero2022/app/src/main/res/layout/activity_consent.xml" value="0.371875" />
         <entry key="..\:/Android Office Work/Sero2022/app/src/main/res/layout/activity_household_screen.xml" value="0.371875" />
         <entry key="..\:/Android Office Work/Sero2022/app/src/main/res/layout/activity_identification.xml" value="0.371875" />
+        <entry key="..\:/Android Office Work/Sero2022/app/src/main/res/layout/activity_lock.xml" value="0.371875" />
         <entry key="..\:/Android Office Work/Sero2022/app/src/main/res/layout/activity_section_cb.xml" value="0.371875" />
         <entry key="..\:/Android Office Work/Sero2022/app/src/main/res/layout/activity_section_f.xml" value="0.371875" />
         <entry key="..\:/Android Office Work/Sero2022/app/src/main/res/layout/activity_section_g.xml" value="0.371875" />
         <entry key="..\:/Android Office Work/Sero2022/app/src/main/res/layout/activity_section_im2.xml" value="0.20481927710843373" />
+        <entry key="..\:/Android Office Work/Sero2022/app/src/main/res/layout/activity_section_ri.xml" value="0.33916666666666667" />
         <entry key="..\:/Android Office Work/Sero2022/app/src/main/res/layout/activity_section_ss_1.xml" value="0.24629182476716108" />
         <entry key="..\:/Android Office Work/Sero2022/app/src/main/res/layout/custom_spinner.xml" value="0.371875" />
         <entry key="..\:/Android Office Work/TPVICS_R2/app/src/main/res/drawable/ic_home.xml" value="0.3880208333333333" />
@@ -150,7 +152,7 @@
     </option>
   </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_X" default="true" project-jdk-name="16" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_15" project-jdk-name="16" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

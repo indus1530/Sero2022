@@ -158,7 +158,6 @@ public class SectionCHActivity extends AppCompatActivity {
 */
     }
 
-
     @Override
     public void onBackPressed() {
         super.onBackPressed();
@@ -197,5 +196,10 @@ public class SectionCHActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        MainApp.lockScreen(this);
+    }
 
 }

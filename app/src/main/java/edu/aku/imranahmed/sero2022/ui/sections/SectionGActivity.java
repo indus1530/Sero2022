@@ -82,7 +82,6 @@ public class SectionGActivity extends AppCompatActivity {
 
     }
 
-
     public void btnEnd(View view) {
         Intent returnIntent = new Intent();
         returnIntent.putExtra("requestCode", requestCode);
@@ -90,11 +89,9 @@ public class SectionGActivity extends AppCompatActivity {
         finish();
     }
 
-
     private boolean formValidation() {
         return Validator.emptyCheckingContainer(this, bi.GrpName);
     }
-
 
     @Override
     public void onBackPressed() {
@@ -142,11 +139,10 @@ public class SectionGActivity extends AppCompatActivity {
         new IntentIntegrator(SectionGActivity.this).initiateScan();
     }
 
-    /*@Override
+    @Override
     protected void onResume() {
         super.onResume();
-        Toast.makeText(this, "Activity Resumed!" + "\n" + getResources().getString(R.string.app_name), Toast.LENGTH_SHORT).show();
-    }*/
-
+        MainApp.lockScreen(this);
+    }
 
 }

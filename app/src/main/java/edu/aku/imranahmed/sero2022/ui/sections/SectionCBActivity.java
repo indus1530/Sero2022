@@ -69,7 +69,6 @@ public class SectionCBActivity extends AppCompatActivity {
         bi.cb03yy.setMinvalue(Float.parseFloat(String.valueOf(cal.get(Calendar.YEAR))));
     }
 
-
     private boolean insertNewRecord() {
         if (!MainApp.child.getUid().equals("") || MainApp.superuser) return true;
 
@@ -170,7 +169,6 @@ public class SectionCBActivity extends AppCompatActivity {
 
     }
 
-
     @Override
     public void onBackPressed() {
         //Toast.makeText(this, "Back Press Not Allowed", Toast.LENGTH_SHORT).show();
@@ -206,5 +204,11 @@ public class SectionCBActivity extends AppCompatActivity {
             Log.e(TAG, "setGPS: " + e.getMessage());
         }
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        MainApp.lockScreen(this);
     }
 }

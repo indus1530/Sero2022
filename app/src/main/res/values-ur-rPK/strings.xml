@@ -114,6 +114,7 @@
     <string name="im0702">No</string>
     <string name="im12a">How many times was Polio vaccine received during a large campaign? </string>
     <string name="im236">دیگر(وضاحت کریں) </string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>

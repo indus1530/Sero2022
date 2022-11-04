@@ -76,7 +76,6 @@ public class SectionFActivity extends AppCompatActivity {
         } else Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
     }
 
-
     public void btnEnd(View view) {
         Intent returnIntent = new Intent();
         returnIntent.putExtra("requestCode", requestCode);
@@ -88,12 +87,17 @@ public class SectionFActivity extends AppCompatActivity {
         return Validator.emptyCheckingContainer(this, bi.GrpName);
     }
 
-
     @Override
     public void onBackPressed() {
         Intent returnIntent = new Intent();
         returnIntent.putExtra("requestCode", requestCode);
         setResult(RESULT_CANCELED, returnIntent);
         finish();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        MainApp.lockScreen(this);
     }
 }

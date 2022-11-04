@@ -41,7 +41,6 @@ public class ConsentActivity extends AppCompatActivity {
         bi.consentTextView.setText(getString(R.string.hh18t, MainApp.user.getFullname()));
     }
 
-
     private boolean insertNewRecord() {
         if (!form.getUid().equals("") || MainApp.superuser) return true;
 
@@ -103,7 +102,6 @@ public class ConsentActivity extends AppCompatActivity {
             Toast.makeText(this, R.string.fail_db_upd, Toast.LENGTH_SHORT).show();
     }
 
-
     public void btnEnd(View view) {
         finish();
         startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
@@ -113,11 +111,16 @@ public class ConsentActivity extends AppCompatActivity {
         return Validator.emptyCheckingContainer(this, bi.GrpName);
     }
 
-
     @Override
     public void onBackPressed() {
         super.onBackPressed();
         Toast.makeText(this, "Back Press Not Allowed", Toast.LENGTH_SHORT).show();
         setResult(RESULT_CANCELED);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        MainApp.lockScreen(this);
     }
 }
