@@ -1393,69 +1393,6 @@
                                     android:text="@string/im2401" />
 
                                 <CheckBox
-                                    android:id="@+id/im2410"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:checked="@{form.im2410.equals(`10`)}"
-                                    android:enabled="@{!form.im2498.equals(`98`)}"
-                                    android:onClick="@{()->form.setIm2410(form.im2410.equals(`10`)?``:`10`)}"
-                                    android:text="@string/im2410" />
-
-                                <CheckBox
-                                    android:id="@+id/im2411"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:checked="@{form.im2411.equals(`11`)}"
-                                    android:enabled="@{!form.im2498.equals(`98`)}"
-                                    android:onClick="@{()->form.setIm2411(form.im2411.equals(`11`)?``:`11`)}"
-                                    android:text="@string/im2411" />
-
-                                <CheckBox
-                                    android:id="@+id/im2412"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:checked="@{form.im2412.equals(`12`)}"
-                                    android:enabled="@{!form.im2498.equals(`98`)}"
-                                    android:onClick="@{()->form.setIm2412(form.im2412.equals(`12`)?``:`12`)}"
-                                    android:text="@string/im2412" />
-
-                                <CheckBox
-                                    android:id="@+id/im2413"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:checked="@{form.im2413.equals(`13`)}"
-                                    android:enabled="@{!form.im2498.equals(`98`)}"
-                                    android:onClick="@{()->form.setIm2413(form.im2413.equals(`13`)?``:`13`)}"
-                                    android:text="@string/im2413" />
-
-                                <CheckBox
-                                    android:id="@+id/im2414"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:checked="@{form.im2414.equals(`14`)}"
-                                    android:enabled="@{!form.im2498.equals(`98`)}"
-                                    android:onClick="@{()->form.setIm2414(form.im2414.equals(`14`)?``:`14`)}"
-                                    android:text="@string/im2414" />
-
-                                <CheckBox
-                                    android:id="@+id/im2415"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:checked="@{form.im2415.equals(`15`)}"
-                                    android:enabled="@{!form.im2498.equals(`98`)}"
-                                    android:onClick="@{()->form.setIm2415(form.im2415.equals(`15`)?``:`15`)}"
-                                    android:text="@string/im2415" />
-
-                                <CheckBox
-                                    android:id="@+id/im2416"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:checked="@{form.im2416.equals(`16`)}"
-                                    android:enabled="@{!form.im2498.equals(`98`)}"
-                                    android:onClick="@{()->form.setIm2416(form.im2416.equals(`16`)?``:`16`)}"
-                                    android:text="@string/im2416" />
-
-                                <CheckBox
                                     android:id="@+id/im2402"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
@@ -1526,6 +1463,70 @@
                                     android:enabled="@{!form.im2498.equals(`98`)}"
                                     android:onClick="@{()->form.setIm2409(form.im2409.equals(`9`)?``:`9`)}"
                                     android:text="@string/im2409" />
+
+                                <CheckBox
+                                    android:id="@+id/im2410"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{form.im2410.equals(`10`)}"
+                                    android:enabled="@{!form.im2498.equals(`98`)}"
+                                    android:onClick="@{()->form.setIm2410(form.im2410.equals(`10`)?``:`10`)}"
+                                    android:text="@string/im2410" />
+
+                                <CheckBox
+                                    android:id="@+id/im2411"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{form.im2411.equals(`11`)}"
+                                    android:enabled="@{!form.im2498.equals(`98`)}"
+                                    android:onClick="@{()->form.setIm2411(form.im2411.equals(`11`)?``:`11`)}"
+                                    android:text="@string/im2411" />
+
+                                <CheckBox
+                                    android:id="@+id/im2412"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{form.im2412.equals(`12`)}"
+                                    android:enabled="@{!form.im2498.equals(`98`)}"
+                                    android:onClick="@{()->form.setIm2412(form.im2412.equals(`12`)?``:`12`)}"
+                                    android:text="@string/im2412" />
+
+                                <CheckBox
+                                    android:id="@+id/im2413"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{form.im2413.equals(`13`)}"
+                                    android:enabled="@{!form.im2498.equals(`98`)}"
+                                    android:onClick="@{()->form.setIm2413(form.im2413.equals(`13`)?``:`13`)}"
+                                    android:text="@string/im2413" />
+
+                                <CheckBox
+                                    android:id="@+id/im2414"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{form.im2414.equals(`14`)}"
+                                    android:enabled="@{!form.im2498.equals(`98`)}"
+                                    android:onClick="@{()->form.setIm2414(form.im2414.equals(`14`)?``:`14`)}"
+                                    android:text="@string/im2414" />
+
+                                <CheckBox
+                                    android:id="@+id/im2415"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{form.im2415.equals(`15`)}"
+                                    android:enabled="@{!form.im2498.equals(`98`)}"
+                                    android:onClick="@{()->form.setIm2415(form.im2415.equals(`15`)?``:`15`)}"
+                                    android:text="@string/im2415"
+                                    android:visibility="gone" />
+
+                                <CheckBox
+                                    android:id="@+id/im2416"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{form.im2416.equals(`16`)}"
+                                    android:enabled="@{!form.im2498.equals(`98`)}"
+                                    android:onClick="@{()->form.setIm2416(form.im2416.equals(`16`)?``:`16`)}"
+                                    android:text="@string/im2416" />
 
                                 <CheckBox
                                     android:id="@+id/im2496"
