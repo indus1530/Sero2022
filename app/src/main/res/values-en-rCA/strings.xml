@@ -876,6 +876,7 @@
     <string name="g0202">Can’t bleed child</string>
     <string name="g0296">Other, specify</string>
     <string name="g03">If yes, write the volume of blood taken</string>
+    <string name="g03a">Mili Liter(ml)</string>
     <string name="g04">Sample Barcode ID</string>
 
 

@@ -883,10 +883,9 @@
     <string name="g0201">بچے نے خون لینے نہیں دیا</string>
     <string name="g0202">بچے کا خون نہیں نکلا</string>
     <string name="g0296">دیگر وضاحت کریں</string>
-    <string name="g03">اگر ہاں، تو لئے گئے  خون کے نمونے کی مقدار لکھیں۔</string>
+    <string name="g03">اگر ہاں، تو لئے گئے خون کے نمونے کی مقدار لکھیں۔</string>
+    <string name="g03a">ملی لیٹر ( m l )</string>
     <string name="g04">نمونہ کی بارکوڈ آئی ڈی</string>
-
-
 
     <string name='Qcb0title'>cb0title</string>
     <string name='Qcb01'>cb01</string>

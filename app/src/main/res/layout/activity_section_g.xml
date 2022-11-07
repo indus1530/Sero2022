@@ -224,7 +224,7 @@
                                 style="@style/textView"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="Mili Liter(ml)" />
+                                android:text="@string/g03a" />
 
                             <com.edittextpicker.aliazaz.EditTextPicker
                                 android:id="@+id/g03"
@@ -271,9 +271,8 @@
                                 android:text="@string/Q_g04" />
 
                             <TextView
-                                android:layout_width="0dp"
+                                android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:text="@string/g04" />
 
                             <EditText
@@ -281,18 +280,15 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:editable="false"
+                                android:enabled="false"
                                 android:gravity="center"
-                                android:hint="##########"
+                                android:hint="@string/g04"
                                 android:text="@={child.g04}" />
 
                             <ImageButton
                                 android:id="@+id/scanQrFA"
-                                android:layout_width="56dp"
-                                android:layout_height="56dp"
-                                android:layout_alignParentEnd="true"
-                                android:layout_centerInParent="true"
-                                android:layout_margin="8dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
                                 android:onClick="scanQR"
                                 android:src="@drawable/ic_qrcode" />
 
