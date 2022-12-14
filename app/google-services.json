@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "38490923776",
+    "project_id": "sero-2022",
+    "storage_bucket": "sero-2022.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:38490923776:android:4dbe4ce7dad50e312449e5",
+        "android_client_info": {
+          "package_name": "edu.aku.imranahmed.sero2022"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "38490923776-jdu1sijf64b94us1srn7pb9mtdq33fpj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBvgDIVVQERI95V-qw8vncDBn10GJx1vqo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "38490923776-jdu1sijf64b94us1srn7pb9mtdq33fpj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

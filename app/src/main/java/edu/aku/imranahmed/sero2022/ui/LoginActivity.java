@@ -9,6 +9,7 @@ import static edu.aku.imranahmed.sero2022.database.DatabaseHelper.DATABASE_COPY;
 import static edu.aku.imranahmed.sero2022.database.DatabaseHelper.DATABASE_NAME;
 
 import android.Manifest;
+import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -16,7 +17,9 @@ import android.content.res.Configuration;
 import android.location.LocationManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.text.TextUtils;
 import android.text.method.PasswordTransformationMethod;
 import android.util.Base64;
@@ -78,7 +81,7 @@ public class LoginActivity extends AppCompatActivity {
     private final int pos = 0;
     ActivityLoginBinding bi;
     Spinner spinnerDistrict;
-    String DirectoryName;
+    //    String DirectoryName;
     DatabaseHelper db;
     ArrayAdapter<String> provinceAdapter;
     int attemptCounter = 0;
@@ -162,7 +165,7 @@ public class LoginActivity extends AppCompatActivity {
         MainApp.user = new Users();
         bi.txtinstalldate.setText(MainApp.appInfo.getAppInfo());
 
-        dbBackup();
+        dbBackup(LoginActivity.this);
         String plainText = "This is an encrypted message.";
         String encrypted = "awqqGx60wJZAl0s0NVpEWkxJQVRIR0xFT3VRUk8rZEU3eE80c2lqelpTcE8yYW9WeXJNPXfsBUWaMeWMuRhbH1aAxIo=";
         try {
@@ -208,10 +211,11 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
-    public void dbBackup() {
+    public static File dbBackup(Activity activity) {
 
 
         if (sharedPref.getBoolean("flag", false)) {
+//        if (sharedPref.getBoolean("flag", true)) {
 
             String dt = sharedPref.getString("dt", new SimpleDateFormat("dd-MM-yy").format(new Date()));
 
@@ -221,14 +225,20 @@ public class LoginActivity extends AppCompatActivity {
             }
 
             // File folder = new File(Environment.getExternalStorageDirectory() + File.separator + PROJECT_NAME);
-            File folder = new File(this.getExternalFilesDir("Backups"), File.separator);
+            File folder;
+            if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+//                folder = new File(activity.getExternalFilesDir("Backups"), File.separator);
+                folder = new File(activity.getExternalFilesDir("").getAbsolutePath() + File.separator + PROJECT_NAME);
+            }else{
+                folder= new File(Environment.getExternalStorageDirectory().toString() + File.separator);
+            }
             boolean success = true;
             if (!folder.exists()) {
                 success = folder.mkdirs();
             }
             if (success) {
 
-                DirectoryName = folder.getPath() + File.separator + sharedPref.getString("dt", "");
+                String DirectoryName = folder.getPath() + File.separator + sharedPref.getString("dt", "");
                 folder = new File(DirectoryName);
                 if (!folder.exists()) {
                     success = folder.mkdirs();
@@ -236,11 +246,17 @@ public class LoginActivity extends AppCompatActivity {
                 if (success) {
 
                     try {
-                        File dbFile = new File(this.getDatabasePath(DATABASE_NAME).getPath());
+                        File dbFile = new File(activity.getDatabasePath(DATABASE_NAME).getPath());
                         FileInputStream fis = new FileInputStream(dbFile);
                         String outFileName = DirectoryName + File.separator + DATABASE_COPY;
+
+                        // For Special case - Use when needed to extract database from local storage
+                        File file = new File(outFileName);
                         // Open the empty db as the output stream
-                        OutputStream output = new FileOutputStream(outFileName);
+                        OutputStream output = new FileOutputStream(file);
+
+//                        // Open the empty db as the output stream
+//                        OutputStream output = new FileOutputStream(outFileName);
 
                         // Transfer bytes from the inputfile to the outputfile
                         byte[] buffer = new byte[1024];
@@ -252,6 +268,8 @@ public class LoginActivity extends AppCompatActivity {
                         output.flush();
                         output.close();
                         fis.close();
+
+                        return file;
                     } catch (IOException e) {
                         Log.e("dbBackup:", Objects.requireNonNull(e.getMessage()));
                     }
@@ -259,10 +277,10 @@ public class LoginActivity extends AppCompatActivity {
                 }
 
             } else {
-                Toast.makeText(this, getString(R.string.folder_not_created), Toast.LENGTH_SHORT).show();
+                Toast.makeText(activity, activity.getString(R.string.folder_not_created), Toast.LENGTH_SHORT).show();
             }
         }
-
+        return null;
     }
 
     public void onShowPasswordClick(View view) {

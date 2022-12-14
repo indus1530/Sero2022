@@ -1047,6 +1047,8 @@
     <string name='Qss27'>ss27</string>
     <string name='Qss27title'>ss27title</string>
     <string name='Qss28'>ss28</string>
+    <string name="file_not_found">File not found</string>
+    <string name="pick_email_provider">Pick an email provider</string>
 
 
 </resources>
