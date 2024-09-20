@@ -892,8 +892,8 @@
                                     android:inputType="number"
                                     android:maxLength="4"
                                     android:text="@={child.cb03yy}"
-                                    app:maxValue="2022"
-                                    app:minValue="2018"
+                                    app:maxValue="2024"
+                                    app:minValue="2020"
                                     app:type="range" />
 
                                 <CheckBox

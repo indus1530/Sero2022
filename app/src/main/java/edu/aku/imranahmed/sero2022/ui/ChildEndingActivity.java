@@ -36,7 +36,8 @@ public class ChildEndingActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        MainApp.changeLanguage(this, MainApp.selectedLanguage);
+//        MainApp.changeLanguage(this, MainApp.selectedLanguage);
+        setTheme(MainApp.langRTL ? R.style.AppThemeUrdu : R.style.AppThemeEnglish1);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_child_ending);
         bi.setChild(MainApp.child);
         Intent intent = getIntent();
